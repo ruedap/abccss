@@ -1,0 +1,68 @@
+- provide :body_classes, "d-StyleguideIndex"
+- arg = local_assigns.has_key?(:arg_name) ? arg_name : nil
+
+%h1 Styleguide#index
+%p.foo Find me in app/views/styleguide/index.html.haml
+
+%h2 HTMLから参照するアセット
+%div(style="display: flex;")
+  .d-StyleguideIndex-htmlImageOuter
+    %img.d-StyleguideIndex-htmlImage{src: asset_pack_path("images/styleguide/test.png")}
+  .d-StyleguideIndex-htmlImageOuter
+    %img.d-StyleguideIndex-htmlImage{src: asset_pack_path("images/styleguide/test.jpg")}
+  .d-StyleguideIndex-htmlImageOuter
+    %img.d-StyleguideIndex-htmlImage{src: asset_pack_path("images/styleguide/test.svg")}
+
+%h2 CSSから参照するアセット
+%div(style="display: flex;")
+  .d-StyleguideIndex-cssImageOuter
+    .d-StyleguideIndex-cssImage.d-StyleguideIndex-cssImage--png
+  .d-StyleguideIndex-cssImageOuter
+    .d-StyleguideIndex-cssImage.d-StyleguideIndex-cssImage--jpg
+  .d-StyleguideIndex-cssImageOuter
+    .d-StyleguideIndex-cssImage.d-StyleguideIndex-cssImage--svg
+
+%h2 SVGスプライト
+%div
+  %svg(style="width: 100px; height: 100px;")= svg_sprite('fa-thumbs-o-up')
+  %svg(style="width: 100px; height: 100px;")= svg_sprite('fa-arrow-circle-right')
+
+%h2 CSS Grid
+.d-StyleguideIndex-grid
+  .d-StyleguideIndex-cell.d-StyleguideIndex-cell--1a 1
+  .d-StyleguideIndex-cell.d-StyleguideIndex-cell--2a 2
+  .d-StyleguideIndex-cell.d-StyleguideIndex-cell--3a 3
+  .d-StyleguideIndex-cell.d-StyleguideIndex-cell--4a 4
+.d-StyleguideIndex-grid
+  .d-StyleguideIndex-cell.d-StyleguideIndex-cell--1b 1
+  .d-StyleguideIndex-cell.d-StyleguideIndex-cell--2b 2
+  .d-StyleguideIndex-cell.d-StyleguideIndex-cell--3b 3
+  .d-StyleguideIndex-cell.d-StyleguideIndex-cell--4b 4
+.d-StyleguideIndex-grid
+  .d-StyleguideIndex-cell 1 (collapsing in IE11)
+  .d-StyleguideIndex-cell 2 (collapsing in IE11)
+  .d-StyleguideIndex-cell 3 (collapsing in IE11)
+  .d-StyleguideIndex-cell 4 (collapsing in IE11)
+  .d-StyleguideIndex-cell 5 (collapsing in IE11)
+  .d-StyleguideIndex-cell 6 (collapsing in IE11)
+
+%h2 Bootstrap: Tooltips
+%button(type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top") Tooltip on top
+
+%h2 iOS用ブレイクポイント
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone5 iPhone 5
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone6 iPhone 6
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone6plus iPhone 6 Plus
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--ipad iPad
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--ipadpro iPad Pro
+
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone5Only iPhone 5 only
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone6Only iPhone 6 only
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone6plusOnly iPhone 6 Plus only
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--ipadOnly iPad only
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--ipadproOnly iPad Pro only
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone5Between iPhone 5 between
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone6Between iPhone 6 between
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone6plusBetween iPhone 6 Plus between
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--ipadBetween iPad between
+.d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--ipadproBetween iPad Pro between

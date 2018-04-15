@@ -1,0 +1,37 @@
+// =============================================================================
+// HTMLページ全体（＝body要素）を表します。
+// すべてのページで適用されるコンポーネントになるので、抽象度の高いスタイルのみ
+// を含むようにします。
+// =============================================================================
+
+.c-Page {
+  // Abstractions
+  // ===========================================================================
+
+  $_: &;
+  $_body-minWidth: $a-minWidth-Page-body;
+  $_body-color: $a-color-text;
+  $_body-fontFamily: $a-fontFamily-sans;
+  $_body-fontSize: $a-fontSize-base;
+
+  @mixin _ {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "palt" 1;
+  }
+
+  // Block
+  // ===========================================================================
+
+  @include _;
+  min-width: $_body-minWidth;
+  font-family: $_body-fontFamily;
+  font-size: $_body-fontSize;
+  color: $_body-color;
+
+  // Elements
+  // ===========================================================================
+
+  // Modifiers
+  // ===========================================================================
+}

@@ -1,0 +1,46 @@
+// Emma.css 0.13.0
+
+$emma-font-size-xs: $a-fontSize-xs;
+$emma-font-size-sm: $a-fontSize-sm;
+$emma-font-size-md: $a-fontSize-md;
+$emma-font-size-lg: $a-fontSize-lg;
+$emma-font-size-xl: $a-fontSize-xl;
+
+$emma-font-size-h1: $a-fontSize-h1;
+$emma-font-size-h2: $a-fontSize-h2;
+$emma-font-size-h3: $a-fontSize-h3;
+$emma-font-size-h4: $a-fontSize-h4;
+$emma-font-size-h5: $a-fontSize-h5;
+$emma-font-size-h6: $a-fontSize-h6;
+
+$emma-line-height-xs: $a-lineHeight-xs;
+$emma-line-height-sm: $a-lineHeight-sm;
+$emma-line-height-md: $a-lineHeight-md;
+$emma-line-height-lg: $a-lineHeight-lg;
+$emma-line-height-xl: $a-lineHeight-xl;
+
+$emma-margin-xs: $a-margin-xs;
+$emma-margin-sm: $a-margin-sm;
+$emma-margin-md: $a-margin-md;
+$emma-margin-lg: $a-margin-lg;
+$emma-margin-xl: $a-margin-xl;
+
+$emma-padding-xs: $a-padding-xs;
+$emma-padding-sm: $a-padding-sm;
+$emma-padding-md: $a-padding-md;
+$emma-padding-lg: $a-padding-lg;
+$emma-padding-xl: $a-padding-xl;
+
+$emma-color-primary: $a-color-primary;
+$emma-color-secondary: $a-color-secondary;
+$emma-color-success: $a-color-success;
+$emma-color-info: $a-color-info;
+$emma-color-warning: $a-color-warning;
+$emma-color-danger: $a-color-danger;
+$emma-color-light: $a-color-light;
+$emma-color-dark: $a-color-dark;
+
+$emma-prefix: "u-";
+
+@import "~emma.css/scss/vars";
+@import "~emma.css/scss/mixins";

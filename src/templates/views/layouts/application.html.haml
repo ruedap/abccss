@@ -1,0 +1,17 @@
+!!!
+%html.c-Document.c-Document--stickyFooter(lang="ja"){ class: yield(:browser_gem_classes) }
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="x-ua-compatible" content="ie=edge")
+    %title ABCCSS
+    -# TODO: description
+    %meta(name="description" content="")
+    %meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    = csrf_meta_tags
+    = stylesheet_pack_tag    'application', media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag    'application'
+  %body.c-Document-body.c-Page{ class: yield(:body_classes) }
+    %header.c-Document-header.c-Page-header
+    .c-Document-content.c-Page-content= yield
+    %footer.c-Document-footer.c-Page-header

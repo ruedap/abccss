@@ -1,0 +1,90 @@
+@mixin a-linkColors(
+  $normal: null,
+  $hover: null,
+  $active: null,
+  $visited: null,
+  $focus: null
+) {
+  @if $normal != null {
+    @if $hover == null {
+      $hover: $normal;
+    }
+    @if $active == null {
+      $active: $normal;
+    }
+    @if $visited == null {
+      $visited: $normal;
+    }
+  }
+
+  @if $normal {
+    color: $normal;
+  }
+  @if $hover {
+    &:hover {
+      color: $hover;
+    }
+  }
+  @if $active {
+    &:active {
+      color: $active;
+    }
+  }
+  @if $visited {
+    &:visited {
+      color: $visited;
+    }
+  }
+  @if $focus {
+    &:focus {
+      color: $focus;
+    }
+  }
+}
+
+// Bootstrap ベース
+// https://github.com/twbs/bootstrap/blob/v4.1.0/scss/_variables.scss#L8
+// -----------------------------------------------------------------------------
+
+$a-color-white: #fff;
+$a-color-gray-100: #f8f9fa;
+$a-color-gray-200: #e9ecef;
+$a-color-gray-300: #dee2e6;
+$a-color-gray-400: #ced4da;
+$a-color-gray-500: #adb5bd;
+$a-color-gray-600: #868e96;
+$a-color-gray-700: #495057;
+$a-color-gray-800: #343a40;
+$a-color-gray-900: #212529;
+$a-color-black: #000;
+
+$a-color-blue: #007bff;
+$a-color-indigo: #6610f2;
+$a-color-purple: #6f42c1;
+$a-color-pink: #e83e8c;
+$a-color-red: #dc3545;
+$a-color-orange: #fd7e14;
+$a-color-yellow: #ffc107;
+$a-color-green: #28a745;
+$a-color-teal: #20c997;
+$a-color-cyan: #17a2b8;
+
+$a-color-primary: $a-color-blue;
+$a-color-secondary: $a-color-gray-600;
+$a-color-success: $a-color-green;
+$a-color-info: $a-color-cyan;
+$a-color-warning: $a-color-yellow;
+$a-color-danger: $a-color-red;
+$a-color-light: $a-color-gray-100;
+$a-color-dark: $a-color-gray-800;
+
+$a-color-text: #111;
+
+$a-color-link: #0ca5e6;
+$a-color-link--hover: #155eab;
+$a-color-link--active: null;
+$a-color-link--visited: null;
+$a-color-link--focus: null;
+
+// ここからプロジェクト固有
+// -----------------------------------------------------------------------------

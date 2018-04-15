@@ -1,0 +1,22 @@
+// =============================================================================
+// 1つのSCSSファイルにつき、1つのコンポーネントを定義します。
+// ファイル名はコンポーネント名と同じにします。
+// ここで定義されるコンポーネントはSUIT CSSの命名規則に従います。
+// https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
+// =============================================================================
+
+// Atoms
+// @import "./components/Button";
+// @import "./components/List";
+
+// Molecules
+
+// Organisms
+
+// Templates
+
+// Pages
+@import "./components/Page";
+@import "./components/Document";
+
+// 未分類
