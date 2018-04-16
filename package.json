@@ -4,6 +4,21 @@
   "description": "Easy CSS architecture to arrange in alphabetical order",
   "author": "ruedap",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruedap/abccss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ruedap/abccss/issues"
+  },
+  "homepage": "https://github.com/ruedap/abccss",
+  "keywords": [
+    "css",
+    "scss",
+    "css-architecture",
+    "bem",
+    "suit-css"
+  ],
   "main": "src/index.js",
   "bin": {
     "abccss": "src/index.js"
