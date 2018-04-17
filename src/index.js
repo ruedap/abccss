@@ -22,6 +22,8 @@ const rcSkeletonFile = `${skeletonsDir}rc.js`;
 const rcSkeleton = require(rcSkeletonFile);
 const rcFile = `.${appName}rc`;
 
+const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
+
 function isExistFile(file) {
   try {
     fs.statSync(file);
@@ -41,7 +43,7 @@ function putGeneratedLog(path) {
 
 var program = require("commander");
 
-program.version("0.0.0"); // TODO: from package.json
+program.version(pkg.version);
 
 program
   .command("init")
