@@ -66,15 +66,23 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
   * 参考: [実装を引き受ける前に詰めておくべき Web フロントエンドの想定漏れチェックシート](https://qiita.com/y_hokkey/items/de88447bd31d9379b80a)
 * 多言語対応
   * 日本語のみ
-* ソーシャル(SEO)対応
-  * Facebook OG
-    * site_name, title, description, image の各テキストデータ
-    * 1200 x 630 の画像
-  * Twitter Card
-    * site_name, title, description, image の各テキストデータ
-    * [カードの種類に対応した画像](https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/ja/cards/overview)
+* ソーシャル対応
+  * [Facebook Open Graph](https://developers.facebook.com/docs/sharing/best-practices?locale=ja_JP)
+    * 必須: site_name, title, description, keywords, type の各データ
+      * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
+    * 必須: 1200 x 630 ピクセル以上の画像
+    * 任意: Facebook アプリ ID (fb:app_id)
+    * 参考: [OGP 画像シミュレータ](http://ogimage.tsmallfield.com/)
+    * 参考: [Open Graph Debugger - Facebook for Developers](https://developers.facebook.com/tools/debug/)
+  * [Twitter Summary Card with Large Image](https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/cards/types/summary-large-image.html)
+    * 必須: site_name, title, description, keywords, card の各データ
+      * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
+    * 必須: 1200 x 630 ピクセル以上の画像(Summary Card with Large Image の場合)
+    * 任意: Twitter アカウント ID
+    * 参考: [Card Validator - Twitter Developers](https://cards-dev.twitter.com/validator)
 * Analytics 対応
   * Google Analytics, Mixpanel 等の ID または JS コード
+    * production 環境とそれ以外で計測を分ける場合はそれぞれ必要
 * 印刷対応
   * なし
 * 使用するプリプロセッサ
