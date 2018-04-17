@@ -99,7 +99,8 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
 ## エントリーポイント
 
 今回のプロジェクトでは Rails 5.1 以降に導入された Webpacker を使用するため、CSS のエントリーポイントは `app/javascript/stylesheets/application.scss` になります。
-Sprockets 経由の CSS(`app/assets/stylesheets/application.css`)は基本的には使用しません。
+
+Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的には使用しません。
 
 ## グローバル CSS
 
@@ -404,10 +405,10 @@ $ bundle exec rake autoprefixer:info
 
 JavaScript から扱うセレクタには、`js-` または `is-` プレフィックスを付与し、それ以外の **CSS 側で使われているセレクタを直接使用しない**ようにします。
 
-* JavaScript からのみ使用する id/class 属性名のプレフィックスとして `js-`を付ける
+* JavaScript からのみ使用する id/class 属性名のプレフィックスとして `js-` を付ける
   * 例） `#js-foo-list`、`.js-foo-list-item`
   * `js-` プレフィックスの付いた id/class には **CSS のスタイルを適用しない**
-* JavaScript から使用し、且つ CSS のスタイルも適用する class 属性名のプレフィックスとして `is-`を付ける
+* JavaScript から使用し、且つ CSS のスタイルも適用する class 属性名のプレフィックスとして `is-` を付ける
   * 例） `.is-active`、`.is-hidden`
   * `is-` プレフィックスの付いた class には CSS のスタイルを適用してもよい（SUIT CSS のステートクラスに該当）
 
