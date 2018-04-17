@@ -78,7 +78,7 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
     * 必須: site_name, title, description, keywords, card の各データ
       * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
     * 必須: 1200 x 630 ピクセル以上の画像(Summary Card with Large Image の場合)
-    * 任意: Twitter アカウント ID
+    * 任意: Twitter アカウント ID (twitter:site, twitter:creator)
     * 参考: [Card Validator - Twitter Developers](https://cards-dev.twitter.com/validator)
 * Analytics 対応
   * Google Analytics, Mixpanel 等の ID または JS コード
