@@ -324,8 +324,8 @@ React コンポーネント固有のスタイルは、[CSS Modules](http://postd
 例えば `$_foo` や `_bar()` などのように変数名、関数名、ミックスイン名の最初にアンダースコアを付けた場合は、それを定義しているコンポーネント（＝ SCSS ファイル）内でのみ参照されることを表しています。これは、ローカルスコープをプレフィックスで表し、別のコンポーネントや別のファイルからはそれを参照しないことを意味しています。
 
 ```scss
-$color-foo: blue; // 別のコンポーネント（.scssファイル）から使用される可能性がある
-$_color-foo: blue; // 定義したコンポーネント（.scssファイル）内だけで使用される
+$color-foo: #fff; // 別のコンポーネント（.scssファイル）から使用される可能性がある
+$_color-foo: #fff; // 定義したコンポーネント（.scssファイル）内だけで使用される
 ```
 
 ### 変数・関数・mixin の命名規則
@@ -361,17 +361,19 @@ Sass の [extend 機能](http://sass-lang.com/documentation/file.SASS_REFERENCE.
 ```scss
 // NG
 %foo {
-  color: red;
+  color: #fff;
 }
+
 .bar {
   @extend %foo;
 }
 
 // OK
 @mixin foo {
-  color: red;
+  color: #fff;
 }
-.bar {
+
+.baz {
   @include foo;
 }
 ```
@@ -412,10 +414,10 @@ JavaScript から扱うセレクタには、`js-` または `is-` プレフィ�
 ```scss
 // CSS例
 .c-FooList-item {
-  background-color: white;
+  background-color: #fff;
 }
 .c-FooList-item.is-active {
-  background-color: yellow;
+  background-color: #f00;
 }
 .c-FooList-item.is-hidden {
   display: none;
