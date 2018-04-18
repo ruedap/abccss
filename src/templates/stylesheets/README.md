@@ -66,15 +66,23 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
   * 参考: [実装を引き受ける前に詰めておくべき Web フロントエンドの想定漏れチェックシート](https://qiita.com/y_hokkey/items/de88447bd31d9379b80a)
 * 多言語対応
   * 日本語のみ
-* ソーシャル(SEO)対応
-  * Facebook OG
-    * site_name, title, description, image の各テキストデータ
-    * 1200 x 630 の画像
-  * Twitter Card
-    * site_name, title, description, image の各テキストデータ
-    * [カードの種類に対応した画像](https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/ja/cards/overview)
+* ソーシャル対応
+  * [Facebook Open Graph](https://developers.facebook.com/docs/sharing/best-practices?locale=ja_JP)
+    * 必須: site_name, title, description, keywords, type の各データ
+      * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
+    * 必須: 1200 x 630 ピクセル以上の画像
+    * 任意: Facebook アプリ ID (fb:app_id)
+    * 参考: [OGP 画像シミュレータ](http://ogimage.tsmallfield.com/)
+    * 参考: [Open Graph Debugger - Facebook for Developers](https://developers.facebook.com/tools/debug/)
+  * [Twitter Summary Card with Large Image](https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/cards/types/summary-large-image.html)
+    * 必須: site_name, title, description, keywords, card の各データ
+      * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
+    * 必須: 1200 x 630 ピクセル以上の画像(Summary Card with Large Image の場合)
+    * 任意: Twitter アカウント ID (twitter:site, twitter:creator)
+    * 参考: [Card Validator - Twitter Developers](https://cards-dev.twitter.com/validator)
 * Analytics 対応
   * Google Analytics, Mixpanel 等の ID または JS コード
+    * production 環境とそれ以外で計測を分ける場合はそれぞれ必要
 * 印刷対応
   * なし
 * 使用するプリプロセッサ
@@ -91,7 +99,8 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
 ## エントリーポイント
 
 今回のプロジェクトでは Rails 5.1 以降に導入された Webpacker を使用するため、CSS のエントリーポイントは `app/javascript/stylesheets/application.scss` になります。
-Sprockets 経由の CSS(`app/assets/stylesheets/application.css`)は基本的には使用しません。
+
+Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的には使用しません。
 
 ## グローバル CSS
 
@@ -324,8 +333,8 @@ React コンポーネント固有のスタイルは、[CSS Modules](http://postd
 例えば `$_foo` や `_bar()` などのように変数名、関数名、ミックスイン名の最初にアンダースコアを付けた場合は、それを定義しているコンポーネント（＝ SCSS ファイル）内でのみ参照されることを表しています。これは、ローカルスコープをプレフィックスで表し、別のコンポーネントや別のファイルからはそれを参照しないことを意味しています。
 
 ```scss
-$color-foo: blue; // 別のコンポーネント（.scssファイル）から使用される可能性がある
-$_color-foo: blue; // 定義したコンポーネント（.scssファイル）内だけで使用される
+$color-foo: #fff; // 別のコンポーネント（.scssファイル）から使用される可能性がある
+$_color-foo: #fff; // 定義したコンポーネント（.scssファイル）内だけで使用される
 ```
 
 ### 変数・関数・mixin の命名規則
@@ -361,17 +370,19 @@ Sass の [extend 機能](http://sass-lang.com/documentation/file.SASS_REFERENCE.
 ```scss
 // NG
 %foo {
-  color: red;
+  color: #fff;
 }
+
 .bar {
   @extend %foo;
 }
 
 // OK
 @mixin foo {
-  color: red;
+  color: #fff;
 }
-.bar {
+
+.baz {
   @include foo;
 }
 ```
@@ -394,10 +405,10 @@ $ bundle exec rake autoprefixer:info
 
 JavaScript から扱うセレクタには、`js-` または `is-` プレフィックスを付与し、それ以外の **CSS 側で使われているセレクタを直接使用しない**ようにします。
 
-* JavaScript からのみ使用する id/class 属性名のプレフィックスとして `js-`を付ける
+* JavaScript からのみ使用する id/class 属性名のプレフィックスとして `js-` を付ける
   * 例） `#js-foo-list`、`.js-foo-list-item`
   * `js-` プレフィックスの付いた id/class には **CSS のスタイルを適用しない**
-* JavaScript から使用し、且つ CSS のスタイルも適用する class 属性名のプレフィックスとして `is-`を付ける
+* JavaScript から使用し、且つ CSS のスタイルも適用する class 属性名のプレフィックスとして `is-` を付ける
   * 例） `.is-active`、`.is-hidden`
   * `is-` プレフィックスの付いた class には CSS のスタイルを適用してもよい（SUIT CSS のステートクラスに該当）
 
@@ -412,10 +423,10 @@ JavaScript から扱うセレクタには、`js-` または `is-` プレフィ�
 ```scss
 // CSS例
 .c-FooList-item {
-  background-color: white;
+  background-color: #fff;
 }
 .c-FooList-item.is-active {
-  background-color: yellow;
+  background-color: #f00;
 }
 .c-FooList-item.is-hidden {
   display: none;

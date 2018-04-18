@@ -13,14 +13,16 @@ const config = require("rc")(appName, { stylesheetsRootDir: "./" });
 const stylesheetsRootDir = path.normalize(config.stylesheetsRootDir);
 const cmdDir = path.dirname(fs.realpathSync(__filename));
 const stylesheetsDir = `${cmdDir}/templates/stylesheets/`;
-const skeletonsDir = `${cmdDir}/skeletons/`;
-const componentSkeletonFile = `${skeletonsDir}_Component.js`;
-const componentSkeleton = require(componentSkeletonFile);
-const decorationSkeletonFile = `${skeletonsDir}_Decoration.js`;
-const decorationSkeleton = require(decorationSkeletonFile);
-const rcSkeletonFile = `${skeletonsDir}rc.js`;
-const rcSkeleton = require(rcSkeletonFile);
+const placeholdersDir = `${cmdDir}/placeholders/`;
+const componentPlaceholderFile = `${placeholdersDir}_Component.js`;
+const componentPlaceholder = require(componentPlaceholderFile);
+const decorationPlaceholderFile = `${placeholdersDir}_Decoration.js`;
+const decorationPlaceholder = require(decorationPlaceholderFile);
+const rcPlaceholderFile = `${placeholdersDir}rc.js`;
+const rcPlaceholder = require(rcPlaceholderFile);
 const rcFile = `.${appName}rc`;
+
+const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
 
 function isExistFile(file) {
   try {
@@ -41,7 +43,7 @@ function putGeneratedLog(path) {
 
 var program = require("commander");
 
-program.version("0.0.0"); // TODO: from package.json
+program.version(pkg.version);
 
 program
   .command("init")
@@ -56,7 +58,7 @@ program
     fse.copySync(stylesheetsDir, dir);
     putGeneratedLog(dir);
     if (!isExistFile(rcFile)) {
-      fse.outputFileSync(rcFile, rcSkeleton(dir));
+      fse.outputFileSync(rcFile, rcPlaceholder(dir));
       putGeneratedLog(rcFile);
     }
   });
@@ -75,7 +77,7 @@ program
     const file = `${componentsDir}/_${name}.scss`;
     const importFile = path.normalize(`${dir}/_components.scss`);
     fse.mkdirpSync(dir);
-    fse.outputFileSync(file, componentSkeleton(name));
+    fse.outputFileSync(file, componentPlaceholder(name));
     fs.appendFileSync(importFile, `@import "./components/${name}";\n`);
     putGeneratedLog(file);
   });
@@ -94,7 +96,7 @@ program
     const file = `${decorationDir}/_${name}.scss`;
     const importFile = path.normalize(`${dir}/_decorations.scss`);
     fse.mkdirpSync(dir);
-    fse.outputFileSync(file, decorationSkeleton(name));
+    fse.outputFileSync(file, decorationPlaceholder(name));
     fs.appendFileSync(importFile, `@import "./decorations/${name}";\n`);
     putGeneratedLog(file);
   });
