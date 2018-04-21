@@ -1,5 +1,5 @@
-// Emma.css 0.13.0
-// https://github.com/ruedap/emma.css/blob/v0.13.0/scss/all.scss
+// Emma.css 0.14.0
+// https://github.com/ruedap/emma.css/blob/v0.14.0/scss/all.scss
 
 // display
 // @import "~emma.css/scss/rules/position";
@@ -26,7 +26,7 @@
 // @import "~emma.css/scss/rules/overflow-y";
 // @import "~emma.css/scss/rules/visibility";
 // @import "~emma.css/scss/rules/table-layout";
-// @import "~emma.css/scss/rules/absolute-center";
+// @import "~emma.css/scss/rules/center-x-center-y";
 
 // float
 // @import "~emma.css/scss/rules/float";
@@ -113,12 +113,18 @@
 // @import "~emma.css/scss/rules/text-truncation";
 // @import "~emma.css/scss/rules/text-hiding";
 @import "~emma.css/scss/rules/reset-list";
+// @import "~emma.css/scss/rules/default-ol";
+// @import "~emma.css/scss/rules/default-ul";
 // @import "~emma.css/scss/rules/font-smoothing-antialiased";
 
 // other
 // @import "~emma.css/scss/rules/cursor";
 // @import "~emma.css/scss/rules/resize";
 // @import "~emma.css/scss/rules/user-select";
+// @import "~emma.css/scss/rules/transition-delay";
+// @import "~emma.css/scss/rules/transition-timing-function";
+// @import "~emma.css/scss/rules/transition-duration";
+// @import "~emma.css/scss/rules/transition-property";
 // @import "~emma.css/scss/rules/transform";
 // @import "~emma.css/scss/rules/appearance";
 // @import "~emma.css/scss/rules/backface-visibility";
