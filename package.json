@@ -70,6 +70,10 @@
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15"
   },
+  "peerDependencies": {
+    "bootstrap": "^4.1.0",
+    "emma.css": "^0.14.0"
+  },
   "stylelint": {
     "extends": "@ruedap/stylelint-config-abccss"
   }
