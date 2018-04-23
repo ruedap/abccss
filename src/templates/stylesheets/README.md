@@ -55,7 +55,17 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
 * デザインデータ
   * データ形式: Photoshop, Illustrator, Sketch 等
   * Web フォントの有無
-  * [Favicon](https://github.com/audreyr/favicon-cheat-sheet) 用のデータ
+  * Favicon 用のデータ(48px, 96px, 144px, 180px, 192px)
+    * favicon.ico (48px) ※高解像度対応のため。原寸は 16px での表示
+      * .ico ファイルを作成する際は、PNG ではなく減色した GIF から convert コマンドで作成
+        * `$ convert icon-48.gif favicon.ico`
+      * 参考: [Why is my favicon.ico file so much larger than the sum of its parts? - Stack Overflow](https://stackoverflow.com/questions/31395552/why-is-my-favicon-ico-file-so-much-larger-than-the-sum-of-its-parts)
+    * iOS (180px)
+    * Android (48px, 96px, 144px, 192px)
+      * [ウェブアプリのインストール バナー  \|  Web  \|  Google Developers](https://developers.google.com/web/fundamentals/app-install-banners/?hl=ja)
+    * 参考: [favicon やホーム画面アイコンの指定方法 2017](https://mamewaza.com/support/blog/favicon2017.html)
+    * 参考: [favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
+    * 参考: [All About Favicons](https://bitsofco.de/all-about-favicons-and-touch-icons/)
   * リンク各色、ウィンドウ幅増減、hover 表現などのインタラクティブ要素の確認方法
   * エラーページ (404, 422, 500, メンテナンスページ等)
   * バリデーションエラー表示
@@ -72,14 +82,17 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
       * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
     * 必須: 1200 x 630 ピクセル以上の画像
     * 任意: Facebook アプリ ID (fb:app_id)
-    * 参考: [OGP 画像シミュレータ](http://ogimage.tsmallfield.com/)
-    * 参考: [Open Graph Debugger - Facebook for Developers](https://developers.facebook.com/tools/debug/)
   * [Twitter Summary Card with Large Image](https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/cards/types/summary-large-image.html)
     * 必須: site_name, title, description, keywords, card の各データ
       * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
     * 必須: 1200 x 630 ピクセル以上の画像(Summary Card with Large Image の場合)
     * 任意: Twitter アカウント ID (twitter:site, twitter:creator)
-    * 参考: [Card Validator - Twitter Developers](https://cards-dev.twitter.com/validator)
+  * 確認方法
+    * [Open Graph Debugger - Facebook for Developers](https://developers.facebook.com/tools/debug/)
+    * [Card Validator - Twitter Developers](https://cards-dev.twitter.com/validator)
+    * [OGP 画像シミュレータ](http://ogimage.tsmallfield.com/)
+    * [OGP タグ確認に便利！ブックマークレットで手早くチェック](http://sinap.jp/blog/2012/05/ogp.html)
+    * [how to test open graph on localhost - Stack Overflow](https://stackoverflow.com/questions/8569892/how-to-test-open-graph-on-localhost)
 * Analytics 対応
   * Google Analytics, Mixpanel 等の ID または JS コード
     * production 環境とそれ以外で計測を分ける場合はそれぞれ必要

@@ -11,6 +11,12 @@
     = stylesheet_pack_tag    'application', media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag    'application'
+    -# TODO: favicon
+    -# link(rel="icon" src="/icons/icon-192.png" sizes="192x192")
+    -# = favicon_link_tag("/apple-touch-icon.png", rel: "apple-touch-icon", type: "image/png", sizes: "180x180")
+    -# = favicon_link_tag("/favicon.ico")
+    -# link(rel="manifest" href="/manifest.json")
+
   %body.c-Document-body.c-Page{ class: yield(:body_classes) }
     %header.c-Document-header.c-Page-header
     .c-Document-content.c-Page-content= yield
