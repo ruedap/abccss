@@ -251,7 +251,7 @@ yarn run lint:scss:fix
 
 また、時々出力後の HTML を [HTML バリデーター](https://validator.w3.org/) に通して、不備がないかチェックしてください。
 
-納品・リリース前には [Lighthouse](https://github.com/GoogleChrome/lighthouse) や [PageSpeed Insights](https://github.com/addyosmani/psi) でページごとのパフォーマンスやユーザビリティをチェックしてください。
+納品・リリース前には [sonarwhal](https://sonarwhal.com/) や [Lighthouse](https://github.com/GoogleChrome/lighthouse)、 [PageSpeed Insights](https://github.com/addyosmani/psi) でページごとのパフォーマンスやユーザビリティをチェックしてください。
 
 ### 一時的な CSS コードの定義場所
 
