@@ -66,3 +66,59 @@
 .d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--iphone6plusBetween iPhone 6 Plus between
 .d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--ipadBetween iPad between
 .d-StyleguideIndex-breakpoint.d-StyleguideIndex-breakpoint--ipadproBetween iPad Pro between
+
+%h2 Table
+%h3 .c-Table
+%table.c-Table
+  = table = capture_haml do
+    %thead
+      %tr
+        %th #
+        %th First
+        %th Last
+        %th
+          Handle
+          %br
+          Name
+    = tbody = capture_haml do
+      %tbody
+        %tr
+          %th 1
+          %td
+            ポルコ
+            %br
+            （マルコ）
+          %td
+            ロッソ
+            %br
+            （パゴット）
+          %td @porco_rosso
+        %tr
+          %th 2
+          %td フィオ
+          %td ピッコロ
+          %td @fio
+        %tr
+          %th 3
+          %td(colspan="2") ジーナ
+          %td @gina
+
+%h3 .c-Table.c-Table--sm
+%table.c-Table.c-Table--sm
+  = table
+
+%h3 .c-Table.c-Table--bordered
+%table.c-Table.c-Table--bordered
+  = table
+
+%h3 .c-Table.c-Table--borderless
+%table.c-Table.c-Table--borderless
+  = table
+
+%h3 .c-Table.c-Table--striped
+%table.c-Table.c-Table--striped
+  = table
+
+%h3 .c-Table.c-Table--hover
+%table.c-Table.c-Table--hover
+  = table

@@ -1945,6 +1945,46 @@ mark,
   -webkit-transform: rotate(-135deg);
           transform: rotate(-135deg); }
 
+.c-Table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent; }
+  .c-Table th,
+  .c-Table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6; }
+  .c-Table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6; }
+  .c-Table tbody + tbody {
+    border-top: 2px solid #dee2e6; }
+  .c-Table .c-Table {
+    background-color: #fff; }
+  .c-Table--sm th,
+  .c-Table--sm td {
+    padding: 0.3rem; }
+  .c-Table--bordered {
+    border: 1px solid #dee2e6; }
+    .c-Table--bordered th,
+    .c-Table--bordered td {
+      border: 1px solid #dee2e6; }
+    .c-Table--bordered thead th,
+    .c-Table--bordered thead td {
+      border-bottom-width: 2px; }
+  .c-Table--borderless th,
+  .c-Table--borderless td,
+  .c-Table--borderless thead th,
+  .c-Table--borderless tbody + tbody {
+    border: 0; }
+  .c-Table--striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05); }
+  .c-Table--stripeless tbody tr:nth-of-type(odd) {
+    background-color: transparent; }
+  .c-Table--hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075); }
+
 .c-Page {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
