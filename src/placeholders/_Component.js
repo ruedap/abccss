@@ -6,8 +6,12 @@ module.exports = name => `// ===================================================
   // Abstractions
   // ===========================================================================
 
-  $_: &;
-  $_elementName-fontSize: 16px;
+  $_BlockName: &;
+  $_fontSize: a-px2rem(16px);
+  $_elementName-fontSize: a-px2rem(16px);
+  $_elementName--elementModifierName-fontSize: a-px2rem(16px);
+  $_--blockModifierName-bgColor: $a-color-primary;
+  $_--blockModifierName-elementName-bgColor: $a-color-primary;
   content: "ここはこのファイル内のみで使用する変数・関数・ミックスインを定義します。プレフィックスとしてアンダースコアを付与してください。";
 
   // Block
@@ -32,7 +36,7 @@ module.exports = name => `// ===================================================
   &--blockModifierName {
     content: "ここはBEMのBlockのModifierに相当するスタイルを定義します。";
 
-    #{$_} {
+    #{$_BlockName} {
       &-elementName {
         content: "ここはBEMのBlockのModifierのElementに相当するスタイルを定義します。";
       }
