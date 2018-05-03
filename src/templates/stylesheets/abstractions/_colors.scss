@@ -80,8 +80,8 @@ $a-color-dark: $a-color-gray-800;
 
 $a-color-text: #111;
 
-$a-color-link: #0ca5e6;
-$a-color-link--hover: #155eab;
+$a-color-link: $a-color-blue;
+$a-color-link--hover: darken($a-color-link, 15%);
 $a-color-link--active: null;
 $a-color-link--visited: null;
 $a-color-link--focus: null;
