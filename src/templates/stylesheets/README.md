@@ -358,7 +358,7 @@ Sass の機能として利用できる変数・関数・mixin は、グローバ
 
 abstractions 内に配置するグローバルな変数・関数・mixin の命名規則は、[SUIT CSS の非コンポーネントの場合のカスタムプロパティの命名規則](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#theme-variables) を参考に以下のシンタックスで命名し、ネームスペースには abstractions を示す `a-` プレフィックスを付与します。
 
-シンタックス: `<namespace>-(cssProperty|name)[-ComponentName][(--modifierName|-descendentName)]`
+シンタックス: `<namespace>-(cssProperty|name)[-BlockName][(--modifierName|-descendentName)]`
 
 命名例: `$a-lineHeight-md`, `$a-fontSize-h1`, `$a-minWidth-StickyFooter-footer`, `$a-minWidth-StickyFooter--darkTheme-footer`, `$a-minWidth-StickyFooter-footer--active`, `@function a-stripUnit`, `@mixin a-linkColors`
 
@@ -370,7 +370,7 @@ components や decorations のコンポーネント内に配置するローカ�
 
 命名例: `$_minWidth`, `$_footer-minWidth`, `$_--darkTheme-footer-minWidth`, `$_footer--active--minWidth`
 
-`$_` は、ComponentName を指すローカル変数として、[モディファイアのネスト時の文字列展開](https://gist.github.com/ruedap/f622215fc7752db643e5ef8a37c1f3d7) などに使用します。
+`$_BlockName` は、ブロック名を指すローカル変数として、[モディファイアのネスト時の文字列展開](https://gist.github.com/ruedap/f622215fc7752db643e5ef8a37c1f3d7) などに使用します。
 
 ### extend 機能の使用禁止
 

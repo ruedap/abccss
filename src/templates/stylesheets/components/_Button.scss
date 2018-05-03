@@ -10,7 +10,7 @@
   $_focusBoxShadow: $btn-focus-box-shadow;
   $_disabled-opacity: 0.65;
 
-  @mixin _ {
+  @mixin _BlockMixin {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +40,7 @@
   // Block
   // ===========================================================================
 
-  @include _;
+  @include _BlockMixin;
   @include a-linkColors(#fff, #fff, #fff, #fff, #fff);
   min-width: 300px;
   min-height: 50px;
