@@ -34,7 +34,7 @@
   },
   "scripts": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
-    "compile:scss": "webpack",
+    "compile:scss": "webpack --progress --colors",
     "lint:scss": "stylelint 'src/templates/stylesheets/**/*.scss'",
     "lint:scss:fix": "run-s lint:scss -- --fix",
     "format": "run-s format:*",
