@@ -296,10 +296,15 @@ SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-
 
 #### コンポーネントの粒度について
 
-components ディレクトリ内でのコンポーネントの粒度(Atomic Design)については、以下の記事が参考になります。
+コンポーネントの粒度を決める難しさについては、以下の記事が参考になります。
 
 * [真のコンポーネント粒度を求めて \- builderscon tokyo 2017](https://builderscon.io/tokyo/2017/session/9f36fc8a-e174-4b39-87f2-7e4535afe120)
 * [最近のフロントエンドのコンポーネント設計に立ち向かう \- Qiita](https://qiita.com/seya/items/8814e905693f00cdade2)
+
+components ディレクトリ内でのコンポーネントの粒度(Atomic Design)については、以下の記事・書籍が参考になります。
+
+* [Atomic Design を実案件に導入 \- UI コンポーネントの粒度を明確化した結果と副産物 \| ygoto3\.com](https://ygoto3.com/posts/atomic-design-on-actual-project/)
+* [Atomic Design ～堅牢で使いやすい UI を効率良く設計する：書籍案内｜技術評論社](http://gihyo.jp/book/2018/978-4-7741-9705-0)
 
 decorations ディレクトリ内でのコンポーネントの粒度(ECSS)については、以下の記事が参考になります。
 
