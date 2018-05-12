@@ -66,38 +66,38 @@ program
 program
   .command("component <name>")
   .alias("c")
-  .description("generate a component template file")
+  .description("generate a Component template file")
   .option(
     "-d, --dir <string>",
     `set output path. defaults to "${stylesheetsRootDir}"`
   )
   .action(function(name, options) {
     const dir = getStylesheetsRootDir(options.dir);
-    const componentsDir = path.normalize(`${dir}/components`);
+    const componentsDir = path.normalize(`${dir}/Components`);
     const file = `${componentsDir}/_${name}.scss`;
-    const importFile = path.normalize(`${dir}/_components.scss`);
+    const importFile = path.normalize(`${dir}/_Components.scss`);
     fse.mkdirpSync(dir);
     fse.outputFileSync(file, componentPlaceholder(name));
-    fs.appendFileSync(importFile, `@import "./components/${name}";\n`);
+    fs.appendFileSync(importFile, `@import "./Components/${name}";\n`);
     putGeneratedLog(file);
   });
 
 program
   .command("decoration <name>")
   .alias("d")
-  .description("generate a decoration template file")
+  .description("generate a Decoration template file")
   .option(
     "-d, --dir <string>",
     `set output path. defaults to "${stylesheetsRootDir}"`
   )
   .action(function(name, options) {
     const dir = getStylesheetsRootDir(options.dir);
-    const decorationDir = path.normalize(`${dir}/decorations`);
+    const decorationDir = path.normalize(`${dir}/Decorations`);
     const file = `${decorationDir}/_${name}.scss`;
-    const importFile = path.normalize(`${dir}/_decorations.scss`);
+    const importFile = path.normalize(`${dir}/_Decorations.scss`);
     fse.mkdirpSync(dir);
     fse.outputFileSync(file, decorationPlaceholder(name));
-    fs.appendFileSync(importFile, `@import "./decorations/${name}";\n`);
+    fs.appendFileSync(importFile, `@import "./Decorations/${name}";\n`);
     putGeneratedLog(file);
   });
 

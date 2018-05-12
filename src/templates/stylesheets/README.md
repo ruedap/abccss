@@ -119,11 +119,11 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 
 「グローバル CSS」とは、後述する「スコープ付き CSS」の対義語として使っている用語で、スコープ付き CSS 以外のすべての CSS を指します。グローバル CSS のディレクトリ構成は、エントリーポイントの `application.scss` と同じ階層に以下のディレクトリを作成し**この並び順に読み込まれる（カスケードする）ようにします**。
 
-1.  abstractions （抽象）
-2.  basics （基礎）
-3.  components （部品）
-4.  decorations （装飾）
-5.  extras （臨時）
+1.  **A**bstractions （抽象）
+2.  **B**asics （基礎）
+3.  **C**omponents （部品）
+4.  **D**ecorations （装飾）
+5.  **E**xtras （臨時）
 
 各ティレクトリ（グループ）の説明や配置するファイルなどは以下の概念図やツリー図（構成例）を参考にしてください。また、実際の各.scss ファイル内の冒頭にも説明のコメントを入れてありますので、そちらも併せて参照してください。
 
@@ -133,9 +133,9 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 
 ![概念図](README.png)
 
-A→B→C→D の順で抽象度（≒ 影響範囲）が下がるので、実装時は逆の D→C→B→A の順に検討してください。
+**A**→**B**→**C**→**D** の順で抽象度（≒ 影響範囲）が下がるので、実装時は逆の **D**→**C**→**B**→**A** の順に検討してください。
 
-例えば、最初はページ単位(D)で実装していき、ページ間で共通するような部分をコンポーネント単位(C)に抽出し、コンポーネント間でも共通する部分をユーティリティクラスや要素への直接適用する基礎的なスタイル(B)として抽出します。また、それらの中で CSS 全体の範囲で共有したい変数・関数・mixin を抽象コード(A)として抽出します。
+例えば、最初はページ単位(**D**)で実装していき、ページ間で共通するような部分をコンポーネント単位(**C**)に抽出し、コンポーネント間でも共通する部分をユーティリティクラスや要素への直接適用する基礎的なスタイル(**B**)として抽出します。また、それらの中で CSS 全体の範囲で共有したい変数・関数・mixin を抽象コード(**A**)として抽出します。
 
 **上位へ行くほど影響範囲が広がるので、特に Abstractions や Basics へのコードの追加は慎重にお願いします。**
 
@@ -149,28 +149,28 @@ A→B→C→D の順で抽象度（≒ 影響範囲）が下がるので、実�
 └── stylesheets/
      ├── application.scss           - CSSファイルの起点（エントリーポイント）
      ├── ...
-     ├── abstractions/              - 全体で使用する変数・関数・mixin等の定義
+     ├── Abstractions/              - 全体で使用する変数・関数・mixin等の定義
      │   ├── _colors.scss           - 全体で使用する色
      │   ├── _sizes.scss            - 全体で使用するサイズ
      │   ├── _bootstrap-custom.scss - CSSフレームワークの変数・mixinの読み込み・上書き
      │   ├── _z-index.scss          - z-indexの値の管理
      │   └── ...
-     ├── basics/                    - サイト全体で使用する基礎的なスタイル定義
+     ├── Basics/                    - サイト全体で使用する基礎的なスタイル定義
      │   ├── _elements.scss         - 要素に適用するスタイル
      │   ├── _bootstrap-custom.scss - CSSフレームワークのコンポーネント読み込み・上書き
      │   ├── _utilities.scss        - ユーティリティクラス
      │   └── ...
-     ├── components/                - コンポーネント単位のスタイル定義
+     ├── Components/                - コンポーネント単位のスタイル定義
      │   ├── _Button.scss           - Buttonコンポーネント
      │   ├── _Document.scss         - Documentコンポーネント
      │   ├── _Page.scss             - Pageコンポーネント
      │   └── ...
-     ├── decorations/               - ページ単位のスタイル定義
+     ├── Decorations/               - ページ単位のスタイル定義
      │   ├── _HomeIndex.scss        - home#indexページ
      │   ├── _HomeShow.scss         - home#showページ
      │   ├── _AdminHomeShow.scss    - admin/home#showページ
      │   └── ...
-     └── extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
+     └── Extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
          ├── _temp.scss             - 定義場所が不明な一時的な定義
          ├── _shame.scss            - CSSハックやブラウザ固有の定義
          └── ...
@@ -180,7 +180,7 @@ A→B→C→D の順で抽象度（≒ 影響範囲）が下がるので、実�
 
 「スコープ付き CSS」とは、[Vue.js](https://vue-loader.vuejs.org/ja/features/scoped-css.html) や [React.js (CSS Modules)](http://postd.cc/css-modules/) などで利用できる「ハッシュ値の自動付与によるスコープ付きセレクタ」によって書かれた CSS コードを指します。スコープ付き CSS の構成は、`app/javascript/packs/` 以下に JS コンポーネントと 1 対 1 になるように CSS ファイルを作成し、そこにはその JS コンポーネントで使用する CSS コードのみを含めるようにします。よって**グローバル CSS のディレクトリ構成とは別の場所で定義する**ことになります。
 
-1 つのコンポーネントの範囲を超えて別のコンポーネントやグローバル CSS 側と共有したい変数・関数やミックスインがある場合は、グローバル CSS 側の abstractions 内に定義して共有するようにしてください。
+1 つのコンポーネントの範囲を超えて別のコンポーネントやグローバル CSS 側と共有したい変数・関数やミックスインがある場合は、グローバル CSS 側の **A**bstractions 内に定義して共有するようにしてください。
 
 ### スコープ付き CSS の構成例
 
@@ -255,26 +255,26 @@ yarn run lint:scss:fix
 
 ### 一時的な CSS コードの定義場所
 
-どこに CSS コードを分類するべきか迷った場合、もしくは、追加する時点で分類が不明な CSS コードについては、一旦 `/extras/_temp.scss` に追加してください。このファイルに定義されているスタイルは、最終的に適切な名前と定義場所になるようにリファクタリングします。
+どこに CSS コードを分類するべきか迷った場合、もしくは、追加する時点で分類が不明な CSS コードについては、一旦 `/Extras/_temp.scss` に追加してください。このファイルに定義されているスタイルは、最終的に適切な名前と定義場所になるようにリファクタリングします。
 
 ### 分類用プレフィックス
 
-abstractions, basics, components, decorations, extras に分類するディレクトリ構成に合わせて、各ディレクトリ内で使用する CSS コードには、そのディレクトリ名の「頭文字 1 文字+ハイフン」（components であれば `c-`）をプレフィックスとして使用します。基本的にプロジェクト固有に定義する CSS セレクタ名、Sass 変数名等にはこの分類用プレフィックスを付加しますが、何らかの理由でプレフィックスの付加が困難だったり、好ましくない場合は付けなくても構いません。
+**A**bstractions, **B**asics, **C**omponents, **D**ecorations, **E**xtras に分類するディレクトリ構成に合わせて、各ディレクトリ内で使用する CSS コードには、そのディレクトリ名の「頭文字 1 文字の小文字+ハイフン」（**C**omponents であれば `c-`）をプレフィックスとして使用します。基本的にプロジェクト固有に定義する CSS セレクタ名、Sass 変数名等にはこの分類用プレフィックスを付加しますが、何らかの理由でプレフィックスの付加が困難だったり、好ましくない場合は付けなくても構いません。
 
-1.  abstractions （抽象）
+1.  **A**bstractions （抽象）
     * e.g. `$a-color-black`, `@mixin a-zIndex`
-2.  basics （基礎）
+2.  **B**asics （基礎）
     * e.g. `.b-errorMessage`, `.b-theme-primary`
-3.  components （部品）
+3.  **C**omponents （部品）
     * e.g. `.c-Page`, `.c-Page-body` (SUIT CSS の命名規則)
-4.  decorations （装飾）
+4.  **D**ecorations （装飾）
     * e.g. `.d-HomeIndex`, `.d-HomeIndex-show` (SUIT CSS の命名規則)
-5.  extras （臨時）
+5.  **E**xtras （臨時）
     * e.g. `.e-color-temp`
 
 ### コンポーネントの命名規則(SUIT CSS)
 
-このプロジェクトでは、**プロジェクト固有のコンポーネント**（前述の components と decorations ディレクトリに含まれる SCSS ファイル）の命名規則に [SUIT CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md) を採用しています。「プロジェクト固有」には CSS フレームワークやプラグインなどの**外部ライブラリは含まれません**。
+このプロジェクトでは、**プロジェクト固有のコンポーネント**（前述の **C**omponents と **D**ecorations ディレクトリに含まれる SCSS ファイル）の命名規則に [SUIT CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md) を採用しています。「プロジェクト固有」には CSS フレームワークやプラグインなどの**外部ライブラリは含まれません**。
 
 SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) によく似た概念および命名で、重要なのは以下の 5 つのルールです。
 
@@ -301,12 +301,12 @@ SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-
 * [真のコンポーネント粒度を求めて \- builderscon tokyo 2017](https://builderscon.io/tokyo/2017/session/9f36fc8a-e174-4b39-87f2-7e4535afe120)
 * [最近のフロントエンドのコンポーネント設計に立ち向かう \- Qiita](https://qiita.com/seya/items/8814e905693f00cdade2)
 
-components ディレクトリ内でのコンポーネントの粒度(Atomic Design)については、以下の記事・書籍が参考になります。
+**C**omponents ディレクトリ内でのコンポーネントの粒度(Atomic Design)については、以下の記事・書籍が参考になります。
 
 * [Atomic Design を実案件に導入 \- UI コンポーネントの粒度を明確化した結果と副産物 \| ygoto3\.com](https://ygoto3.com/posts/atomic-design-on-actual-project/)
 * [Atomic Design ～堅牢で使いやすい UI を効率良く設計する：書籍案内｜技術評論社](http://gihyo.jp/book/2018/978-4-7741-9705-0)
 
-decorations ディレクトリ内でのコンポーネントの粒度(ECSS)については、以下の記事が参考になります。
+**D**ecorations ディレクトリ内でのコンポーネントの粒度(ECSS)については、以下の記事が参考になります。
 
 * [抽象化を避ける CSS 設計方法論「Enduring CSS」 第 1 回 \| HTML5Experts\.jp](https://html5experts.jp/takazudo/21946/)
 
@@ -344,7 +344,7 @@ React コンポーネント固有のスタイルは、[CSS Modules](http://postd
 
 * [CSS Modules の BEM ベースで命名したサンプルコード](https://gist.github.com/ruedap/5266de65da92c7e620a7c8b1326bf923)
 
-1 つのコンポーネントの範囲を超えて別のコンポーネントやグローバル CSS 側と共有したい変数やミックスインがある場合は、グローバル CSS 側の abstractions 内に定義して共有するようにします。
+1 つのコンポーネントの範囲を超えて別のコンポーネントやグローバル CSS 側と共有したい変数やミックスインがある場合は、グローバル CSS 側の **A**bstractions 内に定義して共有するようにします。
 
 ### ローカルスコープを表すプレフィックス
 
@@ -361,7 +361,7 @@ Sass の機能として利用できる変数・関数・mixin は、グローバ
 
 #### グローバル
 
-abstractions 内に配置するグローバルな変数・関数・mixin の命名規則は、[SUIT CSS の非コンポーネントの場合のカスタムプロパティの命名規則](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#theme-variables) を参考に以下のシンタックスで命名し、ネームスペースには abstractions を示す `a-` プレフィックスを付与します。
+**A**bstractions 内に配置するグローバルな変数・関数・mixin の命名規則は、[SUIT CSS の非コンポーネントの場合のカスタムプロパティの命名規則](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#theme-variables) を参考に以下のシンタックスで命名し、ネームスペースには **A**bstractions を示す `a-` プレフィックスを付与します。
 
 シンタックス: `<namespace>-(cssProperty|name)[-BlockName][(--modifierName|-descendentName)]`
 
@@ -369,7 +369,7 @@ abstractions 内に配置するグローバルな変数・関数・mixin の命�
 
 #### ローカル
 
-components や decorations のコンポーネント内に配置するローカルな変数・関数・mixin の命名規則は以下のシンタックスで命名し、ネームスペース部分にはローカル変数を表すアンダースコアをプレフィックスとして付与します。
+**C**omponents や **D**ecorations のコンポーネント内に配置するローカルな変数・関数・mixin の命名規則は以下のシンタックスで命名し、ネームスペース部分にはローカル変数を表すアンダースコアをプレフィックスとして付与します。
 
 シンタックス: `_[(--modifierName|descendentName|name)-](cssProperty|name)`
 
