@@ -2,3 +2,4 @@ ja:
   meta_tags:
     site: サイト名
     description: サイト紹介文
+    keywords: I18n.t('meta_tags.keywords'), # TODO: キーワード設定
