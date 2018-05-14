@@ -41,6 +41,7 @@
     "format:js": "prettier --write '**/*.js'",
     "format:scss": "prettier --write 'src/templates/stylesheets/**/*.scss'",
     "sprite:svg": "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
+    "storybook": "start-storybook -p 6006 -c .storybook",
     "test": "run-s compile:scss",
     "version": "npm run changelog && git add CHANGELOG.md"
   },
