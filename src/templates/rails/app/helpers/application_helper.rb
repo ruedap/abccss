@@ -12,7 +12,7 @@ module ApplicationHelper
       reverse: true,
       title: nil,
       description: I18n.t('meta_tags.description'), # TODO: 説明文設定
-      keywords: nil, # TODO: キーワード設定
+      keywords: I18n.t('meta_tags.keywords'), # TODO: キーワード設定
       canonical: request.original_url,
       og: {
         site_name: :site,
@@ -48,5 +48,31 @@ module ApplicationHelper
     classes << 'b-browser-windows_vista ' if browser.platform.windows_vista?
     classes << 'b-browser-windows_xp ' if browser.platform.windows_xp?
     classes.rstrip
+  end
+
+  def flash_message(options = {})
+    alert_types = [:success, :danger]
+    flash_messages = []
+    flash.each do |type, message|
+      next if message.blank?
+
+      type = type.to_sym
+      type = alert_types[0] if type == :notice
+      type = alert_types[1] if type == :alert
+      next unless alert_types.include?(type)
+
+      tag_class = options.extract!(:class)[:class]
+      tag_options = {
+        class: "alert alert-#{type} #{tag_class}"
+      }.merge(options)
+
+      Array(message).each do |msg|
+        text = content_tag(:div, msg, tag_options)
+        flash_messages << text if msg
+      end
+    end
+
+    return '' if flash_messages.blank?
+    content_html = flash_messages.join("\n").html_safe
   end
 end
