@@ -7,18 +7,22 @@
   // ===========================================================================
 
   $_BlockName: &;
+  $_item--before-marginRight: 0.6em;
 
   // Block
   // ===========================================================================
 
-  @include emma-reli;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
 
   // Elements
   // ===========================================================================
 
   &-item {
     display: flex;
-    align-items: top;
+    align-items: flex-start;
 
     & + & {
       margin-top: a-px2rem(12px);
@@ -37,7 +41,7 @@
           width: calc(1em - 1px);
           height: calc(1em - 1px);
           margin-top: a-px2rem(4px);
-          margin-right: 0.8em;
+          margin-right: $_item--before-marginRight;
           content: "";
           border: 3px solid #000;
           border-radius: 50%;
@@ -52,27 +56,16 @@
 
   &--circleNumber {
     #{$_BlockName} {
-      @include emma-reli;
-      counter-reset: counter1;
-
       &-item {
-        &::before {
-          $_w: a-px2rem(70px);
-          display: inline-flex;
-          flex: 0 0 auto;
-          align-items: center;
-          justify-content: center;
-          width: $_w;
-          height: $_w;
-          margin-right: 1em;
-          font-size: $a-fontSize-h3;
-          font-weight: $a-fontWeight-bold;
-          color: #000;
-          content: counter(counter1);
-          counter-increment: counter1;
-          background-color: #fff;
-          border: 3px solid #000;
-          border-radius: 50%;
+        $_circleNumberOneUnicodeDecimal: 9312;
+        $_base: $_circleNumberOneUnicodeDecimal - 1;
+        @for $i from 1 through 20 {
+          &:nth-of-type(#{$i}) {
+            &::before {
+              margin-right: $_item--before-marginRight;
+              content: a-backslash(a-dec2hex($_base + $i));
+            }
+          }
         }
       }
     }
