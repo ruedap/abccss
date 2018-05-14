@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 
 const LoremList = props => {
   return (
-    <ul className={`c-List ${props.modifier}`}>
+    <ul className={`c-List ${props.modifiers}`}>
       <li className="c-List-item">
         Tempor iaculis et neque imperdiet bibendum aliquam blandit at lobortis,
         quisque lacinia ligula fringilla hendrerit condimentum primis justo
@@ -39,9 +39,9 @@ const LoremList = props => {
   );
 };
 
-storiesOf("List", module)
-  .add("List", () => <LoremList modifier="" />)
-  .add("List--circle", () => <LoremList modifier="c-List--circle" />)
+storiesOf("Components/Atoms/List", module)
+  .add("List", () => <LoremList modifiers="" />)
+  .add("List--circle", () => <LoremList modifiers="c-List--circle" />)
   .add("List--circleNumber", () => (
-    <LoremList modifier="c-List--circleNumber" />
+    <LoremList modifiers="c-List--circleNumber" />
   ));
