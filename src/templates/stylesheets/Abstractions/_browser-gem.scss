@@ -28,7 +28,7 @@
   @if $sel {
     @return $sel;
   } @else {
-    @error "Function `a-browser` has taken invalid argument: #{$name}.";
+    @error "Function `a-browser-gem` has taken invalid argument: #{$name}.";
   }
 }
 
