@@ -27,5 +27,22 @@ module.exports = (config, env) => {
     include: scssPath
   });
 
+  rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
+      {
+        loader: require.resolve("@storybook/addon-storysource/loader"),
+        options: {
+          prettierConfig: {
+            printWidth: 80,
+            trailingComma: "none",
+            singleQuote: false
+          }
+        }
+      }
+    ],
+    enforce: "pre"
+  });
+
   return config;
 };

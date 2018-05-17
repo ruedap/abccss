@@ -54,6 +54,9 @@
   },
   "devDependencies": {
     "@ruedap/stylelint-config-abccss": "^0.1.0",
+    "@storybook/addon-info": "^4.0.0-alpha.6",
+    "@storybook/addon-storysource": "^4.0.0-alpha.6",
+    "@storybook/addon-viewport": "^4.0.0-alpha.6",
     "@storybook/react": "4.0.0-alpha.6",
     "autoprefixer": "^8.3.0",
     "babel-core": "^6.26.3",
