@@ -249,9 +249,9 @@ Lint の結果の中には自動で修復可能なものがあり、その自動
 yarn run lint:scss:fix
 ```
 
-また、時々出力後の HTML を [HTML バリデーター](https://validator.w3.org/) に通して、不備がないかチェックしてください。
+また、時々出力後の HTML を [HTML5 バリデーター](https://checker.html5.org/) や [aXe](https://www.axe-core.org/) に通して、不備がないかチェックしてください。
 
-納品・リリース前には [sonarwhal](https://sonarwhal.com/) や [Lighthouse](https://github.com/GoogleChrome/lighthouse)、 [PageSpeed Insights](https://github.com/addyosmani/psi) でページごとのパフォーマンスやユーザビリティをチェックしてください。
+納品・リリース前には [Lighthouse](https://github.com/GoogleChrome/lighthouse) でページごとのパフォーマンスやユーザビリティをチェックしてください。[sonarwhal](https://sonarwhal.com/) や [PageSpeed Insights](https://github.com/addyosmani/psi) は URL が必要になるため、ステージング環境やリリース後の本番環境でチェックしてください。
 
 ### 一時的な CSS コードの定義場所
 
