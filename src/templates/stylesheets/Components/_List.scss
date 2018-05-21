@@ -32,7 +32,7 @@
   // Modifiers
   // ===========================================================================
 
-  &--circle {
+  &--circled {
     #{$_BlockName} {
       &-item {
         &::before {
@@ -54,11 +54,11 @@
     }
   }
 
-  &--circleNumber {
+  &--circledNumbers {
     #{$_BlockName} {
       &-item {
-        $_circleNumberOneUnicodeDecimal: 9312;
-        $_base: $_circleNumberOneUnicodeDecimal - 1;
+        $_circledDigitOneUnicodeDecimal: 9312; // hex: 0x2460
+        $_base: $_circledDigitOneUnicodeDecimal - 1;
         @for $i from 1 through 20 {
           &:nth-of-type(#{$i}) {
             &::before {
