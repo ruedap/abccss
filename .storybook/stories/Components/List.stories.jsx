@@ -41,7 +41,7 @@ const LoremList = props => {
 
 storiesOf("Components/Atoms/List", module)
   .add("List", () => <LoremList modifiers="" />)
-  .add("List--circle", () => <LoremList modifiers="c-List--circle" />)
-  .add("List--circleNumber", () => (
-    <LoremList modifiers="c-List--circleNumber" />
+  .add("List--circled", () => <LoremList modifiers="c-List--circled" />)
+  .add("List--circledNumbers", () => (
+    <LoremList modifiers="c-List--circledNumbers" />
   ));
