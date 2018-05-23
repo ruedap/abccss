@@ -55,16 +55,24 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
 * デザインデータ
   * データ形式: Photoshop, Illustrator, Sketch 等
   * Web フォントの有無
-  * Favicon 用のデータ(48px, 96px, 144px, 180px, 192px)
+  * Favicon 用のデータ(48px, 96px, 120px, 144px, 152px, 180px, 192px, 512px)
     * favicon.ico (48px) ※高解像度対応のため。原寸は 16px での表示
       * .ico ファイルを作成する際は、PNG ではなく減色した GIF から convert コマンドで作成
         * `$ convert icon-48.gif favicon.ico`
       * 参考: [Why is my favicon.ico file so much larger than the sum of its parts? - Stack Overflow](https://stackoverflow.com/questions/31395552/why-is-my-favicon-ico-file-so-much-larger-than-the-sum-of-its-parts)
-    * iOS (180px)
-    * Android (48px, 96px, 144px, 192px)
+    * iOS (120px, 152px, 180px)
+      * 以下の 6 種類は iOS 端末から自動的にリクエストが飛んで、ファイルを用意していないとログに ActionController::RoutingError が残るため、これを抑止する場合は用意しておく
+        * apple-touch-icon.png
+        * apple-touch-icon-precomposed.png
+        * apple-touch-icon-120x120.png
+        * apple-touch-icon-120x120-precomposed.png
+        * apple-touch-icon-152x152.png
+        * apple-touch-icon-152x152-precomposed.png
+    * Android (48px, 96px, 144px, 192px, 512px)
       * [ウェブアプリのインストール バナー  \|  Web  \|  Google Developers](https://developers.google.com/web/fundamentals/app-install-banners/?hl=ja)
-    * 参考: [favicon やホーム画面アイコンの指定方法 2017](https://mamewaza.com/support/blog/favicon2017.html)
+      * 512px は PWA 対応で必要（用意してないと Lighthouse 3.0 で指摘される）
     * 参考: [favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
+    * 参考: [Polymer/pwa-starter-kit](https://github.com/Polymer/pwa-starter-kit/blob/master/index.html)
     * 参考: [All About Favicons](https://bitsofco.de/all-about-favicons-and-touch-icons/)
   * リンク各色、ウィンドウ幅増減、hover 表現などのインタラクティブ要素の確認方法
   * エラーページ (404, 422, 500, メンテナンスページ等)
