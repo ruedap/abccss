@@ -7,7 +7,8 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.10
+      # - image: circleci/node:8.10
+      - image: regviz/node-xcb
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -35,3 +36,5 @@ jobs:
 
       # run tests!
       - run: npm test
+      - run: npm run screenshot
+      - run: npm run regression
