@@ -59,3 +59,7 @@ typings/
 
 dist/*.map
 dist/*.js
+
+# Storybook
+/__screenshots__
+.reg
