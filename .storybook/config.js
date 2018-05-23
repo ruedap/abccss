@@ -5,7 +5,7 @@ import "../src/templates/stylesheets/application.scss";
 
 setDefaults({
   header: false, // Toggles display of header with component name and description
-  inline: true, // Displays info inline vs click button to view
+  inline: false, // Displays info inline vs click button to view
   source: true // Displays the source of story Component
 });
 addDecorator((story, context) => withInfo("")(story)(context));
