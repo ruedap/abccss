@@ -69,14 +69,14 @@ $a-color-green: #28a745;
 $a-color-teal: #20c997;
 $a-color-cyan: #17a2b8;
 
-$a-color-primary: $a-color-blue;
-$a-color-secondary: $a-color-gray-600;
-$a-color-success: $a-color-green;
-$a-color-info: $a-color-cyan;
-$a-color-warning: $a-color-yellow;
-$a-color-danger: $a-color-red;
-$a-color-light: $a-color-gray-100;
-$a-color-dark: $a-color-gray-800;
+$a-color-primary: $a-color-blue !default;
+$a-color-secondary: $a-color-gray-600 !default;
+$a-color-success: $a-color-green !default;
+$a-color-info: $a-color-cyan !default;
+$a-color-warning: $a-color-yellow !default;
+$a-color-danger: $a-color-red !default;
+$a-color-light: $a-color-gray-100 !default;
+$a-color-dark: $a-color-gray-800 !default;
 
 $a-color-text: #111;
 
