@@ -80,6 +80,7 @@
     "reg-notify-slack-plugin": "^0.7.1",
     "reg-publish-s3-plugin": "^0.7.3",
     "reg-suit": "^0.7.2",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "storybook-chrome-screenshot": "1.0.1",
     "stylelint": "^9.2.0",
