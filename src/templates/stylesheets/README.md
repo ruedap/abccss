@@ -6,7 +6,8 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
 
 ## 対象環境
 
-今回のプロジェクトの対象環境・OS・ブラウザーは以下になります。主要な対象はスマートフォン環境です。
+今回のプロジェクトで想定する主要な対象デバイスは **スマートフォン環境** です。  
+対象となるデバイス・OS・ブラウザーは以下になります。
 
 * スマートフォン環境
   * iOS
@@ -16,28 +17,27 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
     * Chrome 最新版
     * Android Browser は対象外
   * 画面解像度
-    * 最小: W320 x H568 (iPhone 5 サイズ)
-    * 最大横幅: 414px (iPhone 6 Plus サイズ)
+    * 最小横幅: 320px (iPhone 5 サイズ)
+    * 最大横幅: 575.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Extra small の上限)
     * 画像素材の高解像度(Retina)対応は @3x で必要
   * レスポンシブ対応
-    * 各ブレイクポイントの値: Bootstrap 4 のデフォルト値を使用
-  * 対象外ブラウザーで表示した場合
+    * 各ブレイクポイントの値: [Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) のデフォルト値を使用
+  * 対象外の環境で表示した場合
     * 何もしない
 * デスクトップ環境
   * Windows
     * Chrome 最新版
     * Firefox 最新版
     * Edge 最新版
-      * Internet Explorer 11
   * Mac
     * Chrome 最新版
     * Firefox 最新版
     * Safari 最新版
   * 画面解像度
-    * 最小: W1280px x H800px (MacBook 12 や 2015 年以前の MacBook Pro 13 サイズ)
+    * 最小横幅: 1200px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Extra large の下限)
     * 最大横幅: 指定なし
     * 画像素材の高解像度(Retina)対応は @2x で必要
-  * 対象外ブラウザーで表示した場合
+  * 対象外の環境で表示した場合
     * スマートフォン環境と同じ
 * タブレット環境
   * iOS
@@ -45,10 +45,14 @@ production 環境以外では `/styleguide` の URL にアクセスすると、�
   * Android
     * スマートフォン環境と同じ
   * 画面解像度
-    * 最小: W768 x H1024 (iPad 9.7 Portrait)
-    * 最大横幅: デスクトップ環境の最小サイズ未満
-  * 対象外ブラウザーで表示した場合
+    * 最小横幅: 576px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Small の下限)
+    * 最大横幅: 1199.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Large の上限)
+  * 対象外の環境で表示した場合
     * スマートフォン環境と同じ
+
+### 対象環境の表示確認方法
+
+対象環境の各 OS・ブラウザーでの表示確認は実機で行える範囲は実機で行いますが、それが困難な環境は iOS/Android のシミュレーターや modern.ie の [Virtual machines](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)、 [Browser screenshots](https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/) 等を使用して確認します。
 
 ## デザインデータおよび技術要件
 
