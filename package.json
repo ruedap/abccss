@@ -34,6 +34,7 @@
   },
   "scripts": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
+    "clean:screenshot": "rimraf './__screenshots__'",
     "compile:scss": "webpack --progress --colors",
     "lint:scss": "stylelint 'src/templates/stylesheets/**/*.scss'",
     "lint:scss:fix": "run-s lint:scss -- --fix",
@@ -42,7 +43,7 @@
     "format:scss": "prettier --write 'src/templates/stylesheets/**/*.scss'",
     "sprite:svg": "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "screenshot": "storybook-chrome-screenshot -p 6006 -c .storybook",
+    "screenshot": "run-s clean:screenshot && storybook-chrome-screenshot -p 6006 -c .storybook",
     "regression": "reg-suit run",
     "test": "run-s compile:scss",
     "version": "npm run changelog && git add CHANGELOG.md"
@@ -80,6 +81,7 @@
     "reg-notify-slack-plugin": "^0.7.1",
     "reg-publish-s3-plugin": "^0.7.3",
     "reg-suit": "^0.7.2",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "storybook-chrome-screenshot": "1.0.1",
     "stylelint": "^9.2.0",
