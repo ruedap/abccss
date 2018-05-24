@@ -1,5 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { withScreenshot } from "storybook-chrome-screenshot";
 
 const LoremList = props => {
   return (
@@ -40,6 +41,7 @@ const LoremList = props => {
 };
 
 storiesOf("Components/Atoms/List", module)
+  .addDecorator(withScreenshot())
   .add("List", () => <LoremList modifiers="" />)
   .add("List--circled", () => <LoremList modifiers="c-List--circled" />)
   .add("List--circledNumbers", () => (
