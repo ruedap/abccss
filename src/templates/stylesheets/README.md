@@ -2,7 +2,7 @@
 
 ## スタイルガイド
 
-CSS コンポーネントの使用例を見ることができるスタイルガイドは、development 環境では http://localhost:6006/ にアクセスすると閲覧できます。
+スタイルやコンポーネントの使用例を見ることができるスタイルガイドページは、development 環境では http://localhost:6006/ にアクセスすると閲覧できます。
 
 ## 対象環境
 
@@ -52,7 +52,7 @@ CSS コンポーネントの使用例を見ることができるスタイルガ�
 
 ### 対象環境の表示確認方法
 
-対象環境の各 OS・ブラウザーでの表示確認は実機で行える範囲は実機で行いますが、それが困難な環境は iOS/Android のシミュレーターや modern.ie の [Virtual machines](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)、 [Browser screenshots](https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/) 等を使用して確認します。
+対象環境の各 OS・ブラウザーでの表示確認は実機で行える範囲は実機で行いますが、それが困難な環境は iOS/Android のシミュレーターや Microsoft(modern.ie) の [Virtual machines](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)、[Browser screenshots](https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/) 等の仮想環境を使用して確認します。
 
 ## デザインデータおよび技術要件
 
@@ -66,12 +66,12 @@ CSS コンポーネントの使用例を見ることができるスタイルガ�
       * 参考: [Why is my favicon.ico file so much larger than the sum of its parts? - Stack Overflow](https://stackoverflow.com/questions/31395552/why-is-my-favicon-ico-file-so-much-larger-than-the-sum-of-its-parts)
     * iOS (120px, 152px, 180px)
       * 以下の 6 種類は iOS 端末から自動的にリクエストが飛んで、ファイルを用意していないとログに ActionController::RoutingError が残るため、これを抑止する場合は用意しておく
-        * apple-touch-icon.png
-        * apple-touch-icon-precomposed.png
-        * apple-touch-icon-120x120.png
-        * apple-touch-icon-120x120-precomposed.png
-        * apple-touch-icon-152x152.png
-        * apple-touch-icon-152x152-precomposed.png
+        * `apple-touch-icon.png`
+        * `apple-touch-icon-precomposed.png`
+        * `apple-touch-icon-120x120.png`
+        * `apple-touch-icon-120x120-precomposed.png`
+        * `apple-touch-icon-152x152.png`
+        * `apple-touch-icon-152x152-precomposed.png`
     * Android (48px, 96px, 144px, 192px, 512px)
       * [ウェブアプリのインストール バナー  \|  Web  \|  Google Developers](https://developers.google.com/web/fundamentals/app-install-banners/?hl=ja)
       * 512px は PWA 対応で必要（用意してないと Lighthouse 3.0 で指摘される）
@@ -106,11 +106,11 @@ CSS コンポーネントの使用例を見ることができるスタイルガ�
     * [OGP タグ確認に便利！ブックマークレットで手早くチェック](http://sinap.jp/blog/2012/05/ogp.html)
     * [how to test open graph on localhost - Stack Overflow](https://stackoverflow.com/questions/8569892/how-to-test-open-graph-on-localhost)
 * Analytics 対応
-  * Google Analytics, Mixpanel 等の ID または JS コード
+  * Google Analytics, Mixpanel 等の HTML 貼り付け用 JS コード
     * production 環境とそれ以外で計測を分ける場合はそれぞれ必要
 * 印刷対応
   * なし
-* 使用するプリプロセッサ
+* 使用するプリプロセッサー
   * HTML: Haml
   * CSS: Sass (.scss)
   * JavaScript: CoffeeScript
