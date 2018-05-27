@@ -1,17 +1,9 @@
 import { configure, addDecorator } from "@storybook/react";
-import { setDefaults, withInfo } from "@storybook/addon-info";
 import {
   setScreenshotOptions,
   initScreenshot
 } from "storybook-chrome-screenshot";
 import "../src/templates/stylesheets/application.scss";
-
-setDefaults({
-  header: false, // Toggles display of header with component name and description
-  inline: false, // Displays info inline vs click button to view
-  source: true // Displays the source of story Component
-});
-addDecorator((story, context) => withInfo("")(story)(context));
 
 setScreenshotOptions({
   delay: 0,
