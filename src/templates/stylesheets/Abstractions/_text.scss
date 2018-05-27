@@ -1,7 +1,11 @@
-$a-fontFamily-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic",
-  "YuGothic", "Verdana", "Meiryo", sans-serif;
-$a-fontFamily-meiryo: "Meiryo", sans-serif;
+$a-fontFamily-sans-hiragino: "Hiragino Sans", "Hiragino Kaku Gothic ProN";
+$a-fontFamily-sans-yugothic: "Yu Gothic", "YuGothic";
+$a-fontFamily-sans-noto: "Noto Sans CJK JP", "Noto Sans JP",
+  "Noto Sans Japanese";
+$a-fontFamily-sans-meiryo: "Meiryo";
 
+$a-fontFamily-sans: $a-fontFamily-sans-hiragino, $a-fontFamily-sans-yugothic,
+  $a-fontFamily-sans-noto, $a-fontFamily-sans-meiryo, sans-serif;
 $a-fontFamily-base: $a-fontFamily-sans;
 
 // Bootstrap ベース
