@@ -57,9 +57,13 @@ typings/
 # dotenv environment variables file
 .env
 
-dist/*.map
-dist/*.js
+# direnv
+.envrc
 
 # Storybook
 /__screenshots__
 .reg
+
+
+dist/*.map
+dist/*.js
