@@ -47,7 +47,8 @@
     "screenshot": "run-s clean:screenshot && storybook-chrome-screenshot -p 6006 -c .storybook",
     "regression": "reg-suit run",
     "report": "open .reg/index.html",
-    "test": "run-s compile:scss screenshot regression",
+    "test": "run-s compile:scss",
+    "ci": "run-s compile:scss screenshot regression",
     "version": "npm run changelog && git add CHANGELOG.md"
   },
   "dependencies": {
@@ -93,7 +94,7 @@
   },
   "peerDependencies": {
     "bootstrap": "^4.1.0",
-    "emma.css": "^0.14.0"
+    "emma.css": "^0.15.0"
   },
   "stylelint": {
     "extends": "@ruedap/stylelint-config-abccss"
