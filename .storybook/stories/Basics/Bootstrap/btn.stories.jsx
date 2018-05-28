@@ -1,6 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
+import { all } from "../../../screenshot-options";
 
 const LoremButton = props => {
   const modifiers = [
@@ -30,32 +31,8 @@ const LoremButton = props => {
   );
 };
 
-const ssopt = {
-  viewport: [
-    // Mobile
-    {
-      width: 320,
-      height: 3300,
-      isMobile: true,
-      hasTouch: true
-    },
-    // Tablet
-    {
-      width: 768,
-      height: 1900,
-      isMobile: true,
-      hasTouch: true
-    },
-    // Desktop
-    {
-      width: 1024,
-      height: 1600
-    }
-  ]
-};
-
 storiesOf("Basics/Bootstrap", module)
-  .addDecorator(withScreenshot(ssopt))
+  .addDecorator(withScreenshot(all(3300, 1900, 1600)))
   .add("btn", () => (
     <div className="p-2">
       <h3>Default</h3>

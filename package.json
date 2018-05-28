@@ -46,7 +46,8 @@
     "storybook": "start-storybook -p 6006 -c .storybook",
     "screenshot": "run-s clean:screenshot && storybook-chrome-screenshot -p 6006 -c .storybook",
     "regression": "reg-suit run",
-    "test": "run-s compile:scss",
+    "report": "open .reg/index.html",
+    "test": "run-s compile:scss screenshot regression",
     "version": "npm run changelog && git add CHANGELOG.md"
   },
   "dependencies": {
@@ -67,7 +68,7 @@
     "bootstrap": "^4.1.0",
     "conventional-changelog-cli": "^1.3.21",
     "css-loader": "^0.28.11",
-    "emma.css": "^0.14.0",
+    "emma.css": "0.15.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "jquery": "^3.3.1",
     "node-sass": "^4.8.3",
