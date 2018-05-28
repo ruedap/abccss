@@ -22,7 +22,8 @@ const rcPlaceholderFile = `${placeholdersDir}rc.js`;
 const rcPlaceholder = require(rcPlaceholderFile);
 const rcFile = `.${appName}rc`;
 
-const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
+const packageJson = path.normalize(`${cmdDir}/../package.json`);
+const pkg = JSON.parse(fs.readFileSync(packageJson, "utf8"));
 
 function isExistFile(file) {
   try {
