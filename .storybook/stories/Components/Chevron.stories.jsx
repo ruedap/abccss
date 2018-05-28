@@ -1,10 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
-import { mobile } from "../../screenshot-options";
+import { wh } from "../../screenshot-options";
 
 storiesOf("Components/Atoms/Chevron", module)
-  .addDecorator(withScreenshot(mobile))
+  .addDecorator(withScreenshot(wh(100, 100)))
   .add("Chevron", () => <span className="c-Chevron" />)
   .add("Chevron--top", () => <span className="c-Chevron c-Chevron--top" />)
   .add("Chevron--right", () => <span className="c-Chevron c-Chevron--right" />)

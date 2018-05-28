@@ -32,7 +32,7 @@ const Links = props => {
   );
 };
 storiesOf("Basics/utilities/transitions", module)
-  .addDecorator(withScreenshot(mobile))
+  .addDecorator(withScreenshot(mobile()))
   .add("borderHover", () => <Links classes="u-transition-borderHover" />)
   .add("borderHover--toRight", () => (
     <Links classes="u-transition-borderHover--toRight" />

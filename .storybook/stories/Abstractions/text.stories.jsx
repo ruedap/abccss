@@ -27,7 +27,7 @@ const Weight = () => {
 const loremText = `${lorem.ja}${lorem.en}`;
 
 storiesOf("Abstractions/text", module)
-  .addDecorator(withScreenshot(desktop))
+  .addDecorator(withScreenshot(desktop(1400)))
   .add("heading", () => (
     <React.Fragment>
       <h1 className="u-ff-ss">h1 {loremText}</h1>
@@ -44,6 +44,7 @@ storiesOf("Abstractions/text", module)
       <h6 className="u-ff-s">h6 {loremText}</h6>
     </React.Fragment>
   ))
+  .addDecorator(withScreenshot(desktop))
   .add("font-size", () => (
     <React.Fragment>
       <p className="u-ff-ss u-fz-xs">xs {loremText}</p>
@@ -58,4 +59,5 @@ storiesOf("Abstractions/text", module)
       <p className="u-ff-s u-fz-xl">xl {loremText}</p>
     </React.Fragment>
   ))
+  .addDecorator(withScreenshot(desktop(1200)))
   .add("font-weight", () => <Weight />);
