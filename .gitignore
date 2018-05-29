@@ -60,10 +60,18 @@ typings/
 # direnv
 .envrc
 
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
 # Storybook
 /__screenshots__
 .reg
-
 
 dist/*.map
 dist/*.js
