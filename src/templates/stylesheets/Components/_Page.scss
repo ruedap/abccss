@@ -12,16 +12,10 @@
   $_body-fontFamily: $a-fontFamily-sans;
   $_body-fontSize: $a-fontSize-base;
 
-  @mixin _BlockMixin {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "palt" 1;
-  }
-
   // Block
   // ===========================================================================
 
-  @include _BlockMixin;
+  @include a-fontSmoothing;
   font-family: $_body-fontFamily;
   font-size: $_body-fontSize;
   color: $_body-color;
