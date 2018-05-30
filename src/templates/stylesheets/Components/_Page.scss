@@ -8,7 +8,6 @@
   // Abstractions
   // ===========================================================================
 
-  $_body-minWidth: $a-minWidth-Page-body;
   $_body-color: $a-color-text;
   $_body-fontFamily: $a-fontFamily-sans;
   $_body-fontSize: $a-fontSize-base;
@@ -23,7 +22,6 @@
   // ===========================================================================
 
   @include _BlockMixin;
-  min-width: $_body-minWidth;
   font-family: $_body-fontFamily;
   font-size: $_body-fontSize;
   color: $_body-color;
