@@ -1,9 +1,32 @@
+// =============================================================================
+// ABCCSS
+// =============================================================================
+
+import "../src/templates/stylesheets/application.scss";
+
+import jquery from "jquery/dist/jquery.js";
+global.$ = jquery;
+global.jQuery = jquery;
+
+$(() => {
+  console.log("jQuery enabled.");
+});
+
+import "bootstrap/dist/js/bootstrap.bundle.js";
+
+$(() => {
+  // $(".dropdown-toggle").dropdown();
+});
+
+// =============================================================================
+// Storybook
+// =============================================================================
+
 import { configure, addDecorator } from "@storybook/react";
 import {
   setScreenshotOptions,
   initScreenshot
 } from "storybook-chrome-screenshot";
-import "../src/templates/stylesheets/application.scss";
 
 setScreenshotOptions({
   delay: 0,

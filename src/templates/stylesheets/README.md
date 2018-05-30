@@ -58,7 +58,7 @@
 
 * デザインデータ
   * データ形式: Photoshop, Illustrator, Sketch 等
-  * Web フォントの有無
+  * Web フォントの有無: なし
   * Favicon 用のデータ(48px, 96px, 120px, 144px, 152px, 180px, 192px, 512px)
     * favicon.ico (48px) ※高解像度対応のため。原寸は 16px での表示
       * .ico ファイルを作成する際は、PNG ではなく減色した GIF から convert コマンドで作成
@@ -86,9 +86,8 @@
   * ページネーション表示
   * Empty States 表示
   * 参考: [実装を引き受ける前に詰めておくべき Web フロントエンドの想定漏れチェックシート](https://qiita.com/y_hokkey/items/de88447bd31d9379b80a)
-* 多言語対応
-  * 日本語のみ
-* ソーシャル対応
+* 多言語対応: 日本語のみ
+* ソーシャル対応: 必要
   * [Facebook Open Graph](https://developers.facebook.com/docs/sharing/best-practices?locale=ja_JP)
     * 必須: site_name, title, description, keywords, type の各データ
       * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
@@ -105,15 +104,14 @@
     * [OGP 画像シミュレータ](http://ogimage.tsmallfield.com/)
     * [OGP タグ確認に便利！ブックマークレットで手早くチェック](http://sinap.jp/blog/2012/05/ogp.html)
     * [how to test open graph on localhost - Stack Overflow](https://stackoverflow.com/questions/8569892/how-to-test-open-graph-on-localhost)
-* Analytics 対応
+* Analytics 対応: 必要
   * Google Analytics, Mixpanel 等の HTML 貼り付け用 JS コード
     * production 環境とそれ以外で計測を分ける場合はそれぞれ必要
-* 印刷対応
-  * なし
+* 印刷対応: 不要
 * 使用するプリプロセッサー
   * HTML: Haml
   * CSS: Sass (.scss)
-  * JavaScript: CoffeeScript
+  * JavaScript: ES6
 * その他
   * 参考: [フロントエンドチェックリスト（日本語訳）](https://qiita.com/miya0001/items/8fff46c201bf9eaeba4a)
 
