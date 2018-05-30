@@ -1,7 +1,5 @@
 const path = require("path");
 
-const scssPath = path.resolve(__dirname, "../src/templates/stylesheets");
-
 module.exports = (config, env) => {
   const rules = config.module.rules;
 
@@ -18,13 +16,9 @@ module.exports = (config, env) => {
         }
       },
       {
-        loader: "sass-loader",
-        options: {
-          includePaths: [scssPath]
-        }
+        loader: "sass-loader"
       }
-    ],
-    include: scssPath
+    ]
   });
 
   rules.push({
