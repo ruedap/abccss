@@ -9,46 +9,46 @@
 今回のプロジェクトで想定する主要な対象デバイスは **スマートフォン環境** です。  
 対象となるデバイス・OS・ブラウザーは以下になります。
 
-* スマートフォン環境
-  * iOS
-    * Mobile Safari 最新版
-    * Chrome は対象外
-  * Android
-    * Chrome 最新版
-    * Android Browser は対象外
-  * 画面解像度
-    * 最小横幅: 320px (iPhone 5 サイズ)
-    * 最大横幅: 575.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Extra small の上限)
-    * 画像素材の高解像度(Retina)対応は @3x で必要
-  * レスポンシブ対応
-    * 各ブレイクポイントの値: [Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) のデフォルト値を使用
-  * 対象外の環境で表示した場合
-    * 何もしない
-* デスクトップ環境
-  * Windows
-    * Chrome 最新版
-    * Firefox 最新版
-    * Edge 最新版
-  * Mac
-    * Chrome 最新版
-    * Firefox 最新版
-    * Safari 最新版
-  * 画面解像度
-    * 最小横幅: 1200px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Extra large の下限)
-    * 最大横幅: 指定なし
-    * 画像素材の高解像度(Retina)対応は @2x で必要
-  * 対象外の環境で表示した場合
-    * スマートフォン環境と同じ
-* タブレット環境
-  * iOS
-    * スマートフォン環境と同じ
-  * Android
-    * スマートフォン環境と同じ
-  * 画面解像度
-    * 最小横幅: 576px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Small の下限)
-    * 最大横幅: 1199.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Large の上限)
-  * 対象外の環境で表示した場合
-    * スマートフォン環境と同じ
+- スマートフォン環境
+  - iOS
+    - Mobile Safari 最新版
+    - Chrome は対象外
+  - Android
+    - Chrome 最新版
+    - Android Browser は対象外
+  - 画面解像度
+    - 最小横幅: 320px (iPhone 5 サイズ)
+    - 最大横幅: 575.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Extra small の上限)
+    - 画像素材の高解像度(Retina)対応は @3x で必要
+  - レスポンシブ対応
+    - 各ブレイクポイントの値: [Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) のデフォルト値を使用
+  - 対象外の環境で表示した場合
+    - 何もしない
+- デスクトップ環境
+  - Windows
+    - Chrome 最新版
+    - Firefox 最新版
+    - Edge 最新版
+  - Mac
+    - Chrome 最新版
+    - Firefox 最新版
+    - Safari 最新版
+  - 画面解像度
+    - 最小横幅: 1200px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Extra large の下限)
+    - 最大横幅: 指定なし
+    - 画像素材の高解像度(Retina)対応は @2x で必要
+  - 対象外の環境で表示した場合
+    - スマートフォン環境と同じ
+- タブレット環境
+  - iOS
+    - スマートフォン環境と同じ
+  - Android
+    - スマートフォン環境と同じ
+  - 画面解像度
+    - 最小横幅: 576px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Small の下限)
+    - 最大横幅: 1199.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Large の上限)
+  - 対象外の環境で表示した場合
+    - スマートフォン環境と同じ
 
 ### 対象環境の表示確認方法
 
@@ -56,64 +56,64 @@
 
 ## デザインデータおよび技術要件
 
-* デザインデータ
-  * データ形式: Photoshop, Illustrator, Sketch 等
-  * Web フォントの有無: なし
-  * Favicon 用のデータ(48px, 96px, 120px, 144px, 152px, 180px, 192px, 512px)
-    * favicon.ico (48px) ※高解像度対応のため。原寸は 16px での表示
-      * .ico ファイルを作成する際は、PNG ではなく減色した GIF から convert コマンドで作成
-        * `$ convert icon-48.gif favicon.ico`
-      * 参考: [Why is my favicon.ico file so much larger than the sum of its parts? - Stack Overflow](https://stackoverflow.com/questions/31395552/why-is-my-favicon-ico-file-so-much-larger-than-the-sum-of-its-parts)
-    * iOS (120px, 152px, 180px)
-      * 以下の 6 種類は iOS 端末から自動的にリクエストが飛んで、ファイルを用意していないとログに ActionController::RoutingError が残るため、これを抑止する場合は用意しておく
-        * `apple-touch-icon.png`
-        * `apple-touch-icon-precomposed.png`
-        * `apple-touch-icon-120x120.png`
-        * `apple-touch-icon-120x120-precomposed.png`
-        * `apple-touch-icon-152x152.png`
-        * `apple-touch-icon-152x152-precomposed.png`
-    * Android (48px, 96px, 144px, 192px, 512px)
-      * [ウェブアプリのインストール バナー  \|  Web  \|  Google Developers](https://developers.google.com/web/fundamentals/app-install-banners/?hl=ja)
-      * 512px は PWA 対応で必要（用意してないと Lighthouse 3.0 で指摘される）
-    * 参考: [favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
-    * 参考: [Polymer/pwa-starter-kit](https://github.com/Polymer/pwa-starter-kit/blob/master/index.html)
-    * 参考: [All About Favicons](https://bitsofco.de/all-about-favicons-and-touch-icons/)
-  * リンク各色、ウィンドウ幅増減、hover 表現などのインタラクティブ要素の確認方法
-  * エラーページ (404, 422, 500, メンテナンスページ等)
-  * バリデーションエラー表示
-  * 通知(Flash メッセージ)表示
-  * ローディング表示
-  * ページネーション表示
-  * Empty States 表示
-  * 参考: [実装を引き受ける前に詰めておくべき Web フロントエンドの想定漏れチェックシート](https://qiita.com/y_hokkey/items/de88447bd31d9379b80a)
-* 多言語対応: 日本語のみ
-* ソーシャル対応: 必要
-  * [Facebook Open Graph](https://developers.facebook.com/docs/sharing/best-practices?locale=ja_JP)
-    * 必須: site_name, title, description, keywords, type の各データ
-      * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
-    * 必須: 1200 x 630 ピクセル以上の画像
-    * 任意: Facebook アプリ ID (fb:app_id)
-  * [Twitter Summary Card with Large Image](https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/cards/types/summary-large-image.html)
-    * 必須: site_name, title, description, keywords, card の各データ
-      * ページごとに個別に指定する場合は URL と上記項目の対応表が必要
-    * 必須: 1200 x 630 ピクセル以上の画像(Summary Card with Large Image の場合)
-    * 任意: Twitter アカウント ID (twitter:site, twitter:creator)
-  * 確認方法
-    * [Open Graph Debugger - Facebook for Developers](https://developers.facebook.com/tools/debug/)
-    * [Card Validator - Twitter Developers](https://cards-dev.twitter.com/validator)
-    * [OGP 画像シミュレータ](http://ogimage.tsmallfield.com/)
-    * [OGP タグ確認に便利！ブックマークレットで手早くチェック](http://sinap.jp/blog/2012/05/ogp.html)
-    * [how to test open graph on localhost - Stack Overflow](https://stackoverflow.com/questions/8569892/how-to-test-open-graph-on-localhost)
-* Analytics 対応: 必要
-  * Google Analytics, Mixpanel 等の HTML 貼り付け用 JS コード
-    * production 環境とそれ以外で計測を分ける場合はそれぞれ必要
-* 印刷対応: 不要
-* 使用するプリプロセッサー
-  * HTML: Haml
-  * CSS: Sass (.scss)
-  * JavaScript: ES6
-* その他
-  * 参考: [フロントエンドチェックリスト（日本語訳）](https://qiita.com/miya0001/items/8fff46c201bf9eaeba4a)
+- デザインデータ
+  - データ形式: Photoshop, Illustrator, Sketch 等
+  - Web フォントの有無: なし
+  - Favicon 用のデータ(48px, 96px, 120px, 144px, 152px, 180px, 192px, 512px)
+    - favicon.ico (48px) ※高解像度対応のため。原寸は 16px での表示
+      - .ico ファイルを作成する際は、PNG ではなく減色した GIF から convert コマンドで作成
+        - `$ convert icon-48.gif favicon.ico`
+      - 参考: [Why is my favicon.ico file so much larger than the sum of its parts? - Stack Overflow](https://stackoverflow.com/questions/31395552/why-is-my-favicon-ico-file-so-much-larger-than-the-sum-of-its-parts)
+    - iOS (120px, 152px, 180px)
+      - 以下の 6 種類は iOS 端末から自動的にリクエストが飛んで、ファイルを用意していないとログに ActionController::RoutingError が残るため、これを抑止する場合は用意しておく
+        - `apple-touch-icon.png`
+        - `apple-touch-icon-precomposed.png`
+        - `apple-touch-icon-120x120.png`
+        - `apple-touch-icon-120x120-precomposed.png`
+        - `apple-touch-icon-152x152.png`
+        - `apple-touch-icon-152x152-precomposed.png`
+    - Android (48px, 96px, 144px, 192px, 512px)
+      - [ウェブアプリのインストール バナー  \|  Web  \|  Google Developers](https://developers.google.com/web/fundamentals/app-install-banners/?hl=ja)
+      - 512px は PWA 対応で必要（用意してないと Lighthouse 3.0 で指摘される）
+    - 参考: [favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
+    - 参考: [Polymer/pwa-starter-kit](https://github.com/Polymer/pwa-starter-kit/blob/master/index.html)
+    - 参考: [All About Favicons](https://bitsofco.de/all-about-favicons-and-touch-icons/)
+  - リンク各色、ウィンドウ幅増減、hover 表現などのインタラクティブ要素の確認方法
+  - エラーページ (404, 422, 500, メンテナンスページ等)
+  - バリデーションエラー表示
+  - 通知(Flash メッセージ)表示
+  - ローディング表示
+  - ページネーション表示
+  - Empty States 表示
+  - 参考: [実装を引き受ける前に詰めておくべき Web フロントエンドの想定漏れチェックシート](https://qiita.com/y_hokkey/items/de88447bd31d9379b80a)
+- 多言語対応: 日本語のみ
+- ソーシャル対応: 必要
+  - [Facebook Open Graph](https://developers.facebook.com/docs/sharing/best-practices?locale=ja_JP)
+    - 必須: site_name, title, description, keywords, type の各データ
+      - ページごとに個別に指定する場合は URL と上記項目の対応表が必要
+    - 必須: 1200 x 630 ピクセル以上の画像
+    - 任意: Facebook アプリ ID (fb:app_id)
+  - [Twitter Summary Card with Large Image](https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/cards/types/summary-large-image.html)
+    - 必須: site_name, title, description, keywords, card の各データ
+      - ページごとに個別に指定する場合は URL と上記項目の対応表が必要
+    - 必須: 1200 x 630 ピクセル以上の画像(Summary Card with Large Image の場合)
+    - 任意: Twitter アカウント ID (twitter:site, twitter:creator)
+  - 確認方法
+    - [Open Graph Debugger - Facebook for Developers](https://developers.facebook.com/tools/debug/)
+    - [Card Validator - Twitter Developers](https://cards-dev.twitter.com/validator)
+    - [OGP 画像シミュレータ](http://ogimage.tsmallfield.com/)
+    - [OGP タグ確認に便利！ブックマークレットで手早くチェック](http://sinap.jp/blog/2012/05/ogp.html)
+    - [how to test open graph on localhost - Stack Overflow](https://stackoverflow.com/questions/8569892/how-to-test-open-graph-on-localhost)
+- Analytics 対応: 必要
+  - Google Analytics, Mixpanel 等の HTML 貼り付け用 JS コード
+    - production 環境とそれ以外で計測を分ける場合はそれぞれ必要
+- 印刷対応: 不要
+- 使用するプリプロセッサー
+  - HTML: Haml
+  - CSS: Sass (.scss)
+  - JavaScript: ES6
+- その他
+  - 参考: [フロントエンドチェックリスト（日本語訳）](https://qiita.com/miya0001/items/8fff46c201bf9eaeba4a)
 
 ## フレームワーク
 
@@ -272,15 +272,15 @@ yarn run lint:scss:fix
 **A**bstractions, **B**asics, **C**omponents, **D**ecorations, **E**xtras に分類するディレクトリ構成に合わせて、各ディレクトリ内で使用する CSS コードには、そのディレクトリ名の「頭文字 1 文字の小文字+ハイフン」（**C**omponents であれば `c-`）をプレフィックスとして使用します。基本的にプロジェクト固有に定義する CSS セレクタ名、Sass 変数名等にはこの分類用プレフィックスを付加しますが、何らかの理由でプレフィックスの付加が困難だったり、好ましくない場合は付けなくても構いません。
 
 1.  **A**bstractions （抽象）
-    * e.g. `$a-color-black`, `@mixin a-zIndex`
+    - e.g. `$a-color-black`, `@mixin a-zIndex`
 2.  **B**asics （基礎）
-    * e.g. `.b-errorMessage`, `.b-theme-primary`
+    - e.g. `.b-errorMessage`, `.b-theme-primary`
 3.  **C**omponents （部品）
-    * e.g. `.c-Page`, `.c-Page-body` (SUIT CSS の命名規則)
+    - e.g. `.c-Page`, `.c-Page-body` (SUIT CSS の命名規則)
 4.  **D**ecorations （装飾）
-    * e.g. `.d-HomeIndex`, `.d-HomeIndex-show` (SUIT CSS の命名規則)
+    - e.g. `.d-HomeIndex`, `.d-HomeIndex-show` (SUIT CSS の命名規則)
 5.  **E**xtras （臨時）
-    * e.g. `.e-color-temp`
+    - e.g. `.e-color-temp`
 
 ### コンポーネントの命名規則(SUIT CSS)
 
@@ -289,18 +289,18 @@ yarn run lint:scss:fix
 SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) によく似た概念および命名で、重要なのは以下の 5 つのルールです。
 
 1.  **Component** （BEM の Block 相当）は、頭文字**大文字**のキャメルケースで Component 名を書きます
-    * 例：`.ComponentName`
+    - 例：`.ComponentName`
 2.  **Descendent** （BEM の Element 相当）は、Component 名に続けてハイフン **1 個**と頭文字**小文字**のキャメルケースで Descendent 名を書きます。**必ず Component の子要素**として配置します
-    * 例：`.ComponentName-descendentName`
+    - 例：`.ComponentName-descendentName`
 3.  **Modifier** （BEM の Modifier 相当）は、Component の Modifier と Descendent の Modifier の 2 種類があります
-    * **Component の Modifier**: Component 名に続けてハイフン **2 個**と頭文字**小文字**のキャメルケースで Modifier 名を書きます。これを HTML 上で使用する際は、**必ず元の Component と連結**してクラス指定します
-      * 例：`.ComponentName--modifierName`
-    * **Descendent の Modifier**: Descendent 名に続けてハイフン **2 個**と頭文字**小文字**のキャメルケースで Modifier 名を書きます。これを HTML 上で使用する際は、**必ず元の Descendent と連結**してクラス指定します
-      * 例：`.ComponentName-descendentName--modifierName`
+    - **Component の Modifier**: Component 名に続けてハイフン **2 個**と頭文字**小文字**のキャメルケースで Modifier 名を書きます。これを HTML 上で使用する際は、**必ず元の Component と連結**してクラス指定します
+      - 例：`.ComponentName--modifierName`
+    - **Descendent の Modifier**: Descendent 名に続けてハイフン **2 個**と頭文字**小文字**のキャメルケースで Modifier 名を書きます。これを HTML 上で使用する際は、**必ず元の Descendent と連結**してクラス指定します
+      - 例：`.ComponentName-descendentName--modifierName`
 4.  **ステート（状態）クラス**は、`is-` プレフィックスを付けて頭文字**小文字**のキャメルケースで書き、**必ず Component/Modifier/Descendent のどれかと連結**します
-    * 例：`.ComponentName.is-stateName`, `.ComponentName-descendentName.is-stateName`, `.ComponentName--modifierName.is-stateName`
+    - 例：`.ComponentName.is-stateName`, `.ComponentName-descendentName.is-stateName`, `.ComponentName--modifierName.is-stateName`
 5.  **ユーティリティクラス**は、`u-` のプレフィックスを付けて頭文字**小文字**のキャメルケースで書きます
-    * 例：`.u-utilityName`
+    - 例：`.u-utilityName`
 
 (1)〜(3)の名称は、BEM の Block、Element、Modifier の方が有名でわかりやすいので、通常はそちらの名称を使用します。
 
@@ -308,51 +308,51 @@ SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-
 
 コンポーネントの粒度を決める難しさについては、以下の記事が参考になります。
 
-* [真のコンポーネント粒度を求めて \- builderscon tokyo 2017](https://builderscon.io/tokyo/2017/session/9f36fc8a-e174-4b39-87f2-7e4535afe120)
-* [最近のフロントエンドのコンポーネント設計に立ち向かう \- Qiita](https://qiita.com/seya/items/8814e905693f00cdade2)
+- [真のコンポーネント粒度を求めて \- builderscon tokyo 2017](https://builderscon.io/tokyo/2017/session/9f36fc8a-e174-4b39-87f2-7e4535afe120)
+- [最近のフロントエンドのコンポーネント設計に立ち向かう \- Qiita](https://qiita.com/seya/items/8814e905693f00cdade2)
 
 **C**omponents ディレクトリ内でのコンポーネントの粒度(Atomic Design)については、以下の記事・書籍が参考になります。
 
-* [Atomic Design を実案件に導入 \- UI コンポーネントの粒度を明確化した結果と副産物 \| ygoto3\.com](https://ygoto3.com/posts/atomic-design-on-actual-project/)
-* [Atomic Design ～堅牢で使いやすい UI を効率良く設計する：書籍案内｜技術評論社](http://gihyo.jp/book/2018/978-4-7741-9705-0)
+- [Atomic Design を実案件に導入 \- UI コンポーネントの粒度を明確化した結果と副産物 \| ygoto3\.com](https://ygoto3.com/posts/atomic-design-on-actual-project/)
+- [Atomic Design ～堅牢で使いやすい UI を効率良く設計する：書籍案内｜技術評論社](http://gihyo.jp/book/2018/978-4-7741-9705-0)
 
 **D**ecorations ディレクトリ内でのコンポーネントの粒度(ECSS)については、以下の記事が参考になります。
 
-* [抽象化を避ける CSS 設計方法論「Enduring CSS」 第 1 回 \| HTML5Experts\.jp](https://html5experts.jp/takazudo/21946/)
+- [抽象化を避ける CSS 設計方法論「Enduring CSS」 第 1 回 \| HTML5Experts\.jp](https://html5experts.jp/takazudo/21946/)
 
 #### モディファイアとステートの違い
 
 モディファイアとステートは使用目的が似ているので、以下を基準に使い分けます。
 
-* モディファイア： **静的**に適用されるバリエーションを表現するために使用します。JS からは**操作しません**
-  * 例えば、同じコンポーネントだけど使う場所によって背景色・マージンが違う、というようなケース
-* ステート： **動的**に適用される状態を表現するために使用します。JS からも**操作します**
-  * 例えば、その使用しているコンポーネント自体で ON/OFF の状態がある、というようなケース
-  * 後述の「JavaScript から参照・操作するセレクタの命名規則」も参考にしてください
+- モディファイア： **静的**に適用されるバリエーションを表現するために使用します。JS からは**操作しません**
+  - 例えば、同じコンポーネントだけど使う場所によって背景色・マージンが違う、というようなケース
+- ステート： **動的**に適用される状態を表現するために使用します。JS からも**操作します**
+  - 例えば、その使用しているコンポーネント自体で ON/OFF の状態がある、というようなケース
+  - 後述の「JavaScript から参照・操作するセレクタの命名規則」も参考にしてください
 
 #### ユーティリティとコンポーネントの違い
 
 ユーティリティとコンポーネントは使用目的が似ているので、以下を基準に分類します。
 
-* ユーティリティ： 別プロジェクトでも使いまわせるくらいの汎用性の高いもので、数行のスタイル指定で収まる単純なもの
-  * [ユーティリティはイミュータブルで、親のコンテキストに基づいて変更することはできません。](https://github.com/twbs/bootstrap/issues/25829#issuecomment-372382041)
-* コンポーネント： このプロジェクトだけで使いまわせるくらいの汎用性のもので、行数が多くバリエーション(Modifier)や子要素(Element)を持つ複雑なもの
+- ユーティリティ： 別プロジェクトでも使いまわせるくらいの汎用性の高いもので、数行のスタイル指定で収まる単純なもの
+  - [ユーティリティはイミュータブルで、親のコンテキストに基づいて変更することはできません。](https://github.com/twbs/bootstrap/issues/25829#issuecomment-372382041)
+- コンポーネント： このプロジェクトだけで使いまわせるくらいの汎用性のもので、行数が多くバリエーション(Modifier)や子要素(Element)を持つ複雑なもの
 
 #### CSS Modules
 
 React コンポーネント固有のスタイルは、[CSS Modules](http://postd.cc/css-modules/) で定義します。CSS Modules では、クラス名が JS のプロパティ名としても流用される影響で使用可能文字に制約があるため、SUIT CSS (BEM)の概念をベースに以下の独自ルールで命名します。
 
 1.  **Component** （BEM の Block 相当）は、どのコンポーネントも固定で `.root` と命名します
-    * 例：`.root`
+    - 例：`.root`
 2.  **Descendent** （BEM の Element 相当）は、頭文字**小文字**のキャメルケースで Descendent 名を書きます
-    * 例：`.descendentName`
+    - 例：`.descendentName`
 3.  **Modifier** （BEM の Modifier 相当）は、Component の Modifier と Descendent の Modifier の 2 種類があります
-    * **Component の Modifier**: `.root` に続けてアンダースコア **1 個**と頭文字**小文字**のキャメルケースで Modifier 名を書きます。これを HTML 上で使用する際は、**必ず元の Component と連結**してクラス指定します
-      * 例：`.root_modifierName`
-    * **Descendent の Modifier**: Descendent 名に続けてアンダースコア **1 個**と頭文字**小文字**のキャメルケースで Modifier 名を書きます。これを HTML 上で使用する際は、**必ず元の Descendent と連結**してクラス指定します
-      * 例：`.descendentName_modifierName`
+    - **Component の Modifier**: `.root` に続けてアンダースコア **1 個**と頭文字**小文字**のキャメルケースで Modifier 名を書きます。これを HTML 上で使用する際は、**必ず元の Component と連結**してクラス指定します
+      - 例：`.root_modifierName`
+    - **Descendent の Modifier**: Descendent 名に続けてアンダースコア **1 個**と頭文字**小文字**のキャメルケースで Modifier 名を書きます。これを HTML 上で使用する際は、**必ず元の Descendent と連結**してクラス指定します
+      - 例：`.descendentName_modifierName`
 
-* [CSS Modules の BEM ベースで命名したサンプルコード](https://gist.github.com/ruedap/5266de65da92c7e620a7c8b1326bf923)
+- [CSS Modules の BEM ベースで命名したサンプルコード](https://gist.github.com/ruedap/5266de65da92c7e620a7c8b1326bf923)
 
 1 つのコンポーネントの範囲を超えて別のコンポーネントやグローバル CSS 側と共有したい変数やミックスインがある場合は、グローバル CSS 側の **A**bstractions 内に定義して共有するようにします。
 
@@ -391,7 +391,7 @@ Sass の機能として利用できる変数・関数・mixin は、グローバ
 
 Sass の [extend 機能](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend) は、意図しないカスケーディング順になるリスクが高いため、この機能の使用を禁止します。プレースホルダーセレクターによる extend も禁止します。
 
-* [extend がわかりづらくなるコーディング例](https://codepen.io/ruedap/pen/rLQBOb)
+- [extend がわかりづらくなるコーディング例](https://codepen.io/ruedap/pen/rLQBOb)
 
 スタイルを共有（抽象化）したい場合は、extend 機能の代わりに [mixin 機能](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins) を使用してください。
 
@@ -433,12 +433,12 @@ $ bundle exec rake autoprefixer:info
 
 JavaScript から扱うセレクタには、`js-` または `is-` プレフィックスを付与し、それ以外の **CSS 側で使われているセレクタを直接使用しない**ようにします。
 
-* JavaScript からのみ使用する id/class 属性名のプレフィックスとして `js-` を付ける
-  * 例） `#js-foo-list`、`.js-foo-list-item`
-  * `js-` プレフィックスの付いた id/class には **CSS のスタイルを適用しない**
-* JavaScript から使用し、且つ CSS のスタイルも適用する class 属性名のプレフィックスとして `is-` を付ける
-  * 例） `.is-active`、`.is-hidden`
-  * `is-` プレフィックスの付いた class には CSS のスタイルを適用してもよい（SUIT CSS のステートクラスに該当）
+- JavaScript からのみ使用する id/class 属性名のプレフィックスとして `js-` を付ける
+  - 例） `#js-foo-list`、`.js-foo-list-item`
+  - `js-` プレフィックスの付いた id/class には **CSS のスタイルを適用しない**
+- JavaScript から使用し、且つ CSS のスタイルも適用する class 属性名のプレフィックスとして `is-` を付ける
+  - 例） `.is-active`、`.is-hidden`
+  - `is-` プレフィックスの付いた class には CSS のスタイルを適用してもよい（SUIT CSS のステートクラスに該当）
 
 ```haml
 -# HTML例
