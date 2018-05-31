@@ -42,6 +42,7 @@
     "format": "run-s format:*",
     "format:js": "prettier --write '**/*.js'",
     "format:scss": "prettier --write 'src/templates/stylesheets/**/*.scss'",
+    "format:md": "prettier --write '**/README.md'",
     "sprite:svg": "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "screenshot": "run-s clean:screenshot && storybook-chrome-screenshot -p 6006 -c .storybook",
