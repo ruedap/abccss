@@ -1,3 +1,24 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/ruedap/abccss/compare/v0.2.1...v0.3.0) (2018-05-31)
+
+
+### Bug Fixes
+
+* **rails:** Fix .postcssrc.yml ([3f3d150](https://github.com/ruedap/abccss/commit/3f3d150))
+
+
+### Features
+
+* **bootstrap:** Improve button colors ([06de0d2](https://github.com/ruedap/abccss/commit/06de0d2))
+* **rails:** Update application.html.haml ([27d2760](https://github.com/ruedap/abccss/commit/27d2760))
+* **scss:** Add a-fontSmoothing mixin ([bdde8bf](https://github.com/ruedap/abccss/commit/bdde8bf))
+* **scss:** Improve primary color of deodorizer button ([38a4f20](https://github.com/ruedap/abccss/commit/38a4f20))
+* **scss:** Improve utility import in Bootstrap ([e2a41ba](https://github.com/ruedap/abccss/commit/e2a41ba))
+* **scss:** Remove body min-width ([08eeece](https://github.com/ruedap/abccss/commit/08eeece))
+* **scss:** Update bootstrap to 4.1.1 ([71e7883](https://github.com/ruedap/abccss/commit/71e7883))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/ruedap/abccss/compare/v0.2.0...v0.2.1) (2018-05-29)
 
