@@ -4,19 +4,16 @@
 
 import "../src/templates/stylesheets/application.scss";
 
-import jquery from "jquery/dist/jquery.js";
-global.$ = jquery;
-global.jQuery = jquery;
+// import jquery from "jquery/dist/jquery.js";
+// global.$ = jquery;
+// global.jQuery = jquery;
 
 $(() => {
   console.log("jQuery enabled.");
 });
 
-import "bootstrap/dist/js/bootstrap.bundle.js";
-
-$(() => {
-  // $(".dropdown-toggle").dropdown();
-});
+// import "bootstrap/dist/js/bootstrap.bundle.js";
+import "bootstrap/js/dist/dropdown";
 
 // =============================================================================
 // Storybook
