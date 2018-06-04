@@ -5,6 +5,8 @@
 // https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
 // =============================================================================
 
+@import "./Abstractions";
+
 // Atoms
 @import "./Components/Button";
 @import "./Components/List";

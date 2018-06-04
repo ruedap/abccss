@@ -2,6 +2,8 @@
 // サイト全体で使用する基礎的なスタイルを定義します。
 // =============================================================================
 
+@import "./Abstractions";
+
 @import "./Basics/bootstrap-custom";
 @import "./Basics/bootstrap-deodorizer";
 @import "./Basics/emma-custom";
