@@ -12,22 +12,12 @@
     "url": "https://github.com/ruedap/abccss/issues"
   },
   "homepage": "https://github.com/ruedap/abccss",
-  "keywords": [
-    "css",
-    "scss",
-    "css-architecture",
-    "bem",
-    "suit-css"
-  ],
+  "keywords": ["css", "scss", "css-architecture", "bem", "suit-css"],
   "main": "src/index.js",
   "bin": {
     "abccss": "src/index.js"
   },
-  "files": [
-    "src",
-    "*.md",
-    "LICENSE"
-  ],
+  "files": ["src", "*.md", "LICENSE"],
   "engines": {
     "node": ">= 8",
     "npm": ">= 5"
@@ -43,14 +33,24 @@
     "format:js": "prettier --write '**/*.js'",
     "format:scss": "prettier --write 'src/templates/stylesheets/**/*.scss'",
     "format:md": "prettier --write '**/README.md'",
-    "sprite:svg": "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
+    "sprite:svg":
+      "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "screenshot": "run-s clean:screenshot && storybook-chrome-screenshot -p 6006 -c .storybook",
+    "screenshot":
+      "run-s clean:screenshot && storybook-chrome-screenshot -p 6006 -c .storybook",
     "regression": "reg-suit run",
     "report": "open .reg/index.html",
     "test": "run-s compile:scss",
     "ci": "run-s compile:scss screenshot regression",
-    "version": "npm run changelog && git add CHANGELOG.md"
+    "version": "npm run changelog && git add CHANGELOG.md",
+    "reg-cli:screenshot": "run-s reg-cli:screenshot:expected",
+    "reg-cli:screenshot:expected":
+      "storybook-chrome-screenshot -p 6006 -c .storybook -o ./.storybook/screenshots/expected",
+    "reg-cli:screenshot:actual":
+      "storybook-chrome-screenshot -p 6006 -c .storybook -o ./.storybook/screenshots/actual",
+    "reg-cli:regression":
+      "reg-cli ./.storybook/screenshots/actual ./.storybook/screenshots/expected ./.storybook/screenshots/diff -R ./.storybook/report.html",
+    "reg-cli:report": "open ./.storybook/report.html"
   },
   "dependencies": {
     "chalk": "^2.3.2",

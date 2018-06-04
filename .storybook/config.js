@@ -27,14 +27,8 @@ import {
   setScreenshotOptions,
   initScreenshot
 } from "storybook-chrome-screenshot";
-
-setScreenshotOptions({
-  delay: 0,
-  viewport: {
-    width: 1024,
-    height: 768
-  }
-});
+import { all } from "./screenshot-options";
+setScreenshotOptions(Object.assign(all(), { delay: 0 }));
 addDecorator(initScreenshot());
 
 const req = require.context("./stories", true, /.*\.stories\.jsx$/);
