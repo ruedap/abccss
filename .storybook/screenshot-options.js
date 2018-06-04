@@ -91,15 +91,25 @@ export const desktopMax = height => {
   return { viewport: desktopMaxViewport(height) };
 };
 
-export const all = () => {
+export const allMin = (h1, h2, h3) => {
   return {
     viewport: [
-      mobileMinViewport(),
-      mobileMaxViewport(),
-      tabletMinViewport(),
-      tabletMaxViewport(),
-      desktopMinViewport(),
-      desktopMaxViewport()
+      mobileMinViewport(h1),
+      tabletMinViewport(h2),
+      desktopMinViewport(h3)
+    ]
+  };
+};
+
+export const all = (h1, h2, h3, h4, h5, h6) => {
+  return {
+    viewport: [
+      mobileMinViewport(h1),
+      mobileMaxViewport(h2),
+      tabletMinViewport(h3),
+      tabletMaxViewport(h4),
+      desktopMinViewport(h5),
+      desktopMaxViewport(h6)
     ]
   };
 };

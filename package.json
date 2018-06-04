@@ -43,12 +43,22 @@
     "test": "run-s compile:scss",
     "ci": "run-s compile:scss screenshot regression",
     "version": "npm run changelog && git add CHANGELOG.md",
-    "reg-cli:screenshot": "run-s reg-cli:screenshot:expected",
+    "reg-cli:clean:expected":
+      "rimraf ./.storybook/screenshots/expected && mkdirp ./.storybook/screenshots/expected",
+    "reg-cli:clean:actual":
+      "rimraf ./.storybook/screenshots/actual && mkdirp ./.storybook/screenshots/actual",
     "reg-cli:screenshot:expected":
       "storybook-chrome-screenshot -p 6006 -c .storybook -o ./.storybook/screenshots/expected",
     "reg-cli:screenshot:actual":
       "storybook-chrome-screenshot -p 6006 -c .storybook -o ./.storybook/screenshots/actual",
-    "reg-cli:regression":
+    "reg-cli:save:expected":
+      "run-s reg-cli:clean:expected reg-cli:screenshot:expected",
+    "reg-cli:save:actual":
+      "run-s reg-cli:clean:actual reg-cli:screenshot:actual",
+    "reg-cli:save": "run-s reg-cli:save:expected",
+    "reg-cli:test": "run-s reg-cli:save:actual reg-cli:exec",
+    "reg-cli:update": "npm run reg-cli:exec -- --update",
+    "reg-cli:exec":
       "reg-cli ./.storybook/screenshots/actual ./.storybook/screenshots/expected ./.storybook/screenshots/diff -R ./.storybook/report.html",
     "reg-cli:report": "open ./.storybook/report.html"
   },

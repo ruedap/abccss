@@ -69,9 +69,14 @@ typings/
 ehthumbs.db
 Thumbs.db
 
-# Storybook
+# Storybook (reg-suit)
 /__screenshots__
-.reg
+/.reg
+
+# Storybook (reg-cli)
+/.storybook/report.html
+/.storybook/screenshots/
+/reg.json
 
 dist/*.map
 dist/*.js

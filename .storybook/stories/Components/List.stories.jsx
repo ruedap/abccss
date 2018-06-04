@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
-import { mobileMin, tabletMin, desktopMin } from "../../screenshot-options";
+import { allMin } from "../../screenshot-options";
 import lorem from "../../lorem";
 
 const LoremList = props => {
@@ -19,9 +19,7 @@ const LoremList = props => {
 };
 
 storiesOf("Components/Atoms/List", module)
-  .addDecorator(
-    withScreenshot([mobileMin(1000), tabletMin(500), desktopMin(400)])
-  )
+  .addDecorator(withScreenshot(allMin(1000, 500, 400)))
   .add("List", () => <LoremList modifiers="" />)
   .add("List--circled", () => <LoremList modifiers="c-List--circled" />)
   .add("List--circledNumbers", () => (
