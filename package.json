@@ -12,12 +12,22 @@
     "url": "https://github.com/ruedap/abccss/issues"
   },
   "homepage": "https://github.com/ruedap/abccss",
-  "keywords": ["css", "scss", "css-architecture", "bem", "suit-css"],
+  "keywords": [
+    "css",
+    "scss",
+    "css-architecture",
+    "bem",
+    "suit-css"
+  ],
   "main": "src/index.js",
   "bin": {
     "abccss": "src/index.js"
   },
-  "files": ["src", "*.md", "LICENSE"],
+  "files": [
+    "src",
+    "*.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">= 8",
     "npm": ">= 5"
@@ -33,33 +43,24 @@
     "format:js": "prettier --write '**/*.js'",
     "format:scss": "prettier --write 'src/templates/stylesheets/**/*.scss'",
     "format:md": "prettier --write '**/README.md'",
-    "sprite:svg":
-      "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
+    "sprite:svg": "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "screenshot":
-      "run-s clean:screenshot && storybook-chrome-screenshot -p 6006 -c .storybook",
+    "screenshot": "run-s clean:screenshot && storybook-chrome-screenshot -p 6006 -c .storybook",
     "regression": "reg-suit run",
     "report": "open .reg/index.html",
     "test": "run-s compile:scss",
     "ci": "run-s compile:scss screenshot regression",
     "version": "npm run changelog && git add CHANGELOG.md",
-    "reg-cli:clean:expected":
-      "rimraf ./.storybook/screenshots/expected && mkdirp ./.storybook/screenshots/expected",
-    "reg-cli:clean:actual":
-      "rimraf ./.storybook/screenshots/actual && mkdirp ./.storybook/screenshots/actual",
-    "reg-cli:screenshot:expected":
-      "storybook-chrome-screenshot -p 6006 -c .storybook -o ./.storybook/screenshots/expected",
-    "reg-cli:screenshot:actual":
-      "storybook-chrome-screenshot -p 6006 -c .storybook -o ./.storybook/screenshots/actual",
-    "reg-cli:save:expected":
-      "run-s reg-cli:clean:expected reg-cli:screenshot:expected",
-    "reg-cli:save:actual":
-      "run-s reg-cli:clean:actual reg-cli:screenshot:actual",
+    "reg-cli:clean:expected": "rimraf ./.storybook/screenshots/expected && mkdirp ./.storybook/screenshots/expected",
+    "reg-cli:clean:actual": "rimraf ./.storybook/screenshots/actual && mkdirp ./.storybook/screenshots/actual",
+    "reg-cli:screenshot:expected": "storybook-chrome-screenshot -p 6006 -c .storybook -o ./.storybook/screenshots/expected",
+    "reg-cli:screenshot:actual": "storybook-chrome-screenshot -p 6006 -c .storybook -o ./.storybook/screenshots/actual",
+    "reg-cli:save:expected": "run-s reg-cli:clean:expected reg-cli:screenshot:expected",
+    "reg-cli:save:actual": "run-s reg-cli:clean:actual reg-cli:screenshot:actual",
     "reg-cli:save": "run-s reg-cli:save:expected",
     "reg-cli:test": "run-s reg-cli:save:actual reg-cli:exec",
     "reg-cli:update": "npm run reg-cli:exec -- --update",
-    "reg-cli:exec":
-      "reg-cli ./.storybook/screenshots/actual ./.storybook/screenshots/expected ./.storybook/screenshots/diff -R ./.storybook/report.html",
+    "reg-cli:exec": "reg-cli ./.storybook/screenshots/actual ./.storybook/screenshots/expected ./.storybook/screenshots/diff -R ./.storybook/report.html",
     "reg-cli:report": "open ./.storybook/report.html"
   },
   "dependencies": {
@@ -70,7 +71,7 @@
     "rc": "^1.2.6"
   },
   "devDependencies": {
-    "@ruedap/stylelint-config-abccss": "^0.1.0",
+    "@ruedap/stylelint-config-abccss": "^0.5.0",
     "@storybook/addon-storysource": "^4.0.0-alpha.6",
     "@storybook/addon-viewport": "^4.0.0-alpha.6",
     "@storybook/react": "4.0.0-alpha.6",
