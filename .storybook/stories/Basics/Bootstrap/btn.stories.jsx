@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
-import { all } from "../../../screenshot-options";
+import { allMin } from "../../../screenshot-options";
 
 const LoremButton = props => {
   const modifiers = [
@@ -32,7 +32,7 @@ const LoremButton = props => {
 };
 
 storiesOf("Basics/Bootstrap", module)
-  .addDecorator(withScreenshot(all(3300, 1900, 1600)))
+  .addDecorator(withScreenshot(allMin(3300, 1900, 1600)))
   .add("btn", () => (
     <div className="p-2">
       <h3>Default</h3>

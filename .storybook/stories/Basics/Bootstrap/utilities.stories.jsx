@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
-import { desktop } from "../../../screenshot-options";
+import { desktopMin } from "../../../screenshot-options";
 import lorem from "../../../lorem";
 
 const Text = props => {
@@ -28,5 +28,5 @@ const Text = props => {
   );
 };
 storiesOf("Basics/Bootstrap/utilities", module)
-  .addDecorator(withScreenshot(desktop()))
+  .addDecorator(withScreenshot(desktopMin()))
   .add("text", () => <Text />);

@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
-import { mobile } from "../../screenshot-options";
+import { mobileMin } from "../../screenshot-options";
 import lorem from "../../lorem";
 
 const Links = props => {
@@ -32,7 +32,7 @@ const Links = props => {
   );
 };
 storiesOf("Basics/utilities/transitions", module)
-  .addDecorator(withScreenshot(mobile()))
+  .addDecorator(withScreenshot(mobileMin()))
   .add("borderHover", () => <Links classes="u-transition-borderHover" />)
   .add("borderHover--toRight", () => (
     <Links classes="u-transition-borderHover--toRight" />

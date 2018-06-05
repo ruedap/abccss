@@ -4,19 +4,16 @@
 
 import "../src/templates/stylesheets/application.scss";
 
-import jquery from "jquery/dist/jquery.js";
-global.$ = jquery;
-global.jQuery = jquery;
+// import jquery from "jquery/dist/jquery.js";
+// global.$ = jquery;
+// global.jQuery = jquery;
 
 $(() => {
   console.log("jQuery enabled.");
 });
 
-import "bootstrap/dist/js/bootstrap.bundle.js";
-
-$(() => {
-  // $(".dropdown-toggle").dropdown();
-});
+// import "bootstrap/dist/js/bootstrap.bundle.js";
+import "bootstrap/js/dist/dropdown";
 
 // =============================================================================
 // Storybook
@@ -27,14 +24,8 @@ import {
   setScreenshotOptions,
   initScreenshot
 } from "storybook-chrome-screenshot";
-
-setScreenshotOptions({
-  delay: 0,
-  viewport: {
-    width: 1024,
-    height: 768
-  }
-});
+import { mobileMin } from "./screenshot-options";
+setScreenshotOptions(Object.assign(mobileMin(), { delay: 0 }));
 addDecorator(initScreenshot());
 
 const req = require.context("./stories", true, /.*\.stories\.jsx$/);

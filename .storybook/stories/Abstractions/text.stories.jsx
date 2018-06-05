@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
-import { desktop } from "../../screenshot-options";
+import { desktopMin } from "../../screenshot-options";
 import lorem from "../../lorem";
 
 const Weight = () => {
@@ -27,7 +27,7 @@ const Weight = () => {
 const loremText = `${lorem.ja}${lorem.en}`;
 
 storiesOf("Abstractions/text", module)
-  .addDecorator(withScreenshot(desktop(1400)))
+  .addDecorator(withScreenshot(desktopMin(1400)))
   .add("heading", () => (
     <React.Fragment>
       <h1 className="u-ff-ss">h1 {loremText}</h1>
@@ -44,7 +44,7 @@ storiesOf("Abstractions/text", module)
       <h6 className="u-ff-s">h6 {loremText}</h6>
     </React.Fragment>
   ))
-  .addDecorator(withScreenshot(desktop))
+  .addDecorator(withScreenshot(desktopMin()))
   .add("font-size", () => (
     <React.Fragment>
       <p className="u-ff-ss u-fz-xs">xs {loremText}</p>
@@ -59,5 +59,5 @@ storiesOf("Abstractions/text", module)
       <p className="u-ff-s u-fz-xl">xl {loremText}</p>
     </React.Fragment>
   ))
-  .addDecorator(withScreenshot(desktop(1200)))
+  .addDecorator(withScreenshot(desktopMin(1200)))
   .add("font-weight", () => <Weight />);

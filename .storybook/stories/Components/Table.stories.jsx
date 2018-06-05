@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
-import { all } from "../../screenshot-options";
+import { allMin } from "../../screenshot-options";
 
 const Table = props => {
   return (
@@ -44,7 +44,7 @@ const Table = props => {
 };
 
 storiesOf("Components/Atoms/Table", module)
-  .addDecorator(withScreenshot(all(null, 400, 300)))
+  .addDecorator(withScreenshot(allMin(null, 400, 300)))
   .add("Table", () => <Table modifiers="" />)
   .add("Table--sm", () => <Table modifiers="c-Table--sm" />)
   .add("Table--bordered", () => <Table modifiers="c-Table--bordered" />)
