@@ -18,12 +18,22 @@
     - Android Browser は対象外
   - 画面解像度
     - 最小横幅: 320px (iPhone 5 サイズ)
-    - 最大横幅: 575.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Extra small の上限)
+    - 最大横幅: 767.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Small の上限)
     - 画像素材の高解像度(Retina)対応は @3x で必要
   - レスポンシブ対応
     - 各ブレイクポイントの値: [Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) のデフォルト値を使用
   - 対象外の環境で表示した場合
     - 何もしない
+- タブレット環境
+  - iOS
+    - スマートフォン環境と同じ
+  - Android
+    - スマートフォン環境と同じ
+  - 画面解像度
+    - 最小横幅: 768x ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Medium の下限)
+    - 最大横幅: 991.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Medium の上限)
+  - 対象外の環境で表示した場合
+    - スマートフォン環境と同じ
 - デスクトップ環境
   - Windows
     - Chrome 最新版
@@ -34,19 +44,9 @@
     - Firefox 最新版
     - Safari 最新版
   - 画面解像度
-    - 最小横幅: 1200px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Extra large の下限)
+    - 最小横幅: 992px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Large の下限)
     - 最大横幅: 指定なし
     - 画像素材の高解像度(Retina)対応は @2x で必要
-  - 対象外の環境で表示した場合
-    - スマートフォン環境と同じ
-- タブレット環境
-  - iOS
-    - スマートフォン環境と同じ
-  - Android
-    - スマートフォン環境と同じ
-  - 画面解像度
-    - 最小横幅: 576px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Small の下限)
-    - 最大横幅: 1199.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Large の上限)
   - 対象外の環境で表示した場合
     - スマートフォン環境と同じ
 
