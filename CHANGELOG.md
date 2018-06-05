@@ -1,3 +1,19 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/ruedap/abccss/compare/v0.3.0...v0.4.0) (2018-06-05)
+
+
+### Features
+
+* **placeholders:** Remove unnecessary example code ([ecfdf80](https://github.com/ruedap/abccss/commit/ecfdf80))
+* **rails:** Add csp_meta_tag ([0be28be](https://github.com/ruedap/abccss/commit/0be28be))
+* **rails:** Configure Storybook for Webpacker 4 ([5553ad2](https://github.com/ruedap/abccss/commit/5553ad2))
+* **rails:** Update favicon.ico ([a7dadb3](https://github.com/ruedap/abccss/commit/a7dadb3))
+* **scss:** Add font-weight variables ([527bac8](https://github.com/ruedap/abccss/commit/527bac8))
+* **scss:** Add notosansjp.scss ([4cb936c](https://github.com/ruedap/abccss/commit/4cb936c))
+* **scss:** Improve Abstractions import ([e392c5c](https://github.com/ruedap/abccss/commit/e392c5c))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/ruedap/abccss/compare/v0.2.1...v0.3.0) (2018-05-31)
 
