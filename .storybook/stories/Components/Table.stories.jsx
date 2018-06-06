@@ -35,7 +35,7 @@ const Table = props => {
         </tr>
         <tr>
           <th>3</th>
-          <td colspan="2">ジーナ</td>
+          <td colSpan="2">ジーナ</td>
           <td>@gina</td>
         </tr>
       </tbody>
@@ -43,7 +43,7 @@ const Table = props => {
   );
 };
 
-storiesOf("Components/Atoms/Table", module)
+storiesOf("Components/Molecules/Table", module)
   .addDecorator(withScreenshot(allMin(null, 400, 300)))
   .add("Table", () => <Table modifiers="" />)
   .add("Table--sm", () => <Table modifiers="c-Table--sm" />)

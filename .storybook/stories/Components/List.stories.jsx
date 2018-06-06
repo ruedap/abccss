@@ -18,7 +18,7 @@ const LoremList = props => {
   );
 };
 
-storiesOf("Components/Atoms/List", module)
+storiesOf("Components/Molecules/List", module)
   .addDecorator(withScreenshot(allMin(1000, 500, 400)))
   .add("List", () => <LoremList modifiers="" />)
   .add("List--circled", () => <LoremList modifiers="c-List--circled" />)
