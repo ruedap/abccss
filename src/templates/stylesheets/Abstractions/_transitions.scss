@@ -1,0 +1,43 @@
+// transition-borderHover
+// =============================================================================
+
+@mixin _transition-borderHover($borderColor) {
+  display: inline-block;
+  text-decoration: none;
+
+  &::after {
+    display: block;
+    content: "";
+    border-bottom: 1px solid $borderColor;
+    transition: transform 0.1s ease-in-out;
+    transform: scaleX(0);
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@mixin a-transition-borderHover($borderColor: currentColor) {
+  @include _transition-borderHover($borderColor);
+}
+
+@mixin a-transition-borderHover--toRight($borderColor: currentColor) {
+  @include _transition-borderHover($borderColor);
+
+  &::after {
+    transform-origin: left center;
+  }
+}
+
+@mixin a-transition-borderHover--toLeft($borderColor: currentColor) {
+  @include _transition-borderHover($borderColor);
+
+  &::after {
+    transform-origin: right center;
+  }
+}

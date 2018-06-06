@@ -1,0 +1,17 @@
+// 指定したブラウザの種類にスタイルを適用します。
+@mixin a-browser-hack($name) {
+  $n: to-lower-case($name);
+
+  @if $n == "ie" {
+    // IE 10 & 11
+    @media all and (-ms-high-contrast: none) {
+      @content;
+    }
+  } @else if $n == "edge" {
+    // Edge 12+
+    // https://jeffclayton.wordpress.com/2015/04/07/css-hacks-for-windows-10-and-spartan-browser-preview/
+    @supports (-ms-ime-align: auto) {
+      @content;
+    }
+  }
+}
