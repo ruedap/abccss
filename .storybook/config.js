@@ -2,7 +2,10 @@
 // ABCCSS
 // =============================================================================
 
-import "../src/templates/stylesheets/application.scss";
+import "../src/templates/stylesheets/basics.scss";
+import "../src/templates/stylesheets/components.scss";
+import "../src/templates/stylesheets/decorations.scss";
+import "../src/templates/stylesheets/extras.scss";
 
 // import jquery from "jquery/dist/jquery.js";
 // global.$ = jquery;
