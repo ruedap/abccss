@@ -121,7 +121,14 @@
 
 ## エントリーポイント
 
-今回のプロジェクトでは Rails 5.1 以降に導入された Webpacker を使用するため、CSS のエントリーポイントは `app/javascript/stylesheets/application.scss` になります。
+今回のプロジェクトでは Rails 5.1 以降に導入された Webpacker を使用するため、CSS のエントリーポイントは以下になります。
+
+- `app/javascript/stylesheets/basics.scss`
+- `app/javascript/stylesheets/components.scss`
+- `app/javascript/stylesheets/decorations.scss`
+- `app/javascript/stylesheets/extras.scss`
+
+HTTP2 環境を前提として複数ファイルに分かれていますが、HTTP1.x 環境の場合は上記ファイルを統合した `application.scss` を作成してください。
 
 Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的には使用しません。
 
@@ -157,8 +164,6 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 
 ```
 └── stylesheets/
-     ├── application.scss           - CSSファイルの起点（エントリーポイント）
-     ├── ...
      ├── Abstractions/              - 全体で使用する変数・関数・mixin等の定義
      │   ├── _colors.scss           - 全体で使用する色
      │   ├── _sizes.scss            - 全体で使用するサイズ
@@ -180,10 +185,15 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
      │   ├── _HomeShow.scss         - home#showページ
      │   ├── _AdminHomeShow.scss    - admin/home#showページ
      │   └── ...
-     └── Extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
-         ├── _temp.scss             - 定義場所が不明な一時的な定義
-         ├── _shame.scss            - CSSハックやブラウザ固有の定義
-         └── ...
+     ├── Extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
+     │   ├── _temp.scss             - 定義場所が不明な一時的な定義
+     │   └── ...
+     ├── _abstractions.scss         - Abstractionsのエントリーポイント
+     ├── basics.scss                - Basicsのエントリーポイント
+     ├── components.scss            - Componentsのエントリーポイント
+     ├── decorations.scss           - Decorationsのエントリーポイント
+     ├── extras.scss                - Extrasのエントリーポイント
+     └── ...
 ```
 
 ## スコープ付き CSS
@@ -199,7 +209,7 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 ※各ファイル名は参考例のため、**実際には異なる場合や存在しない場合**があります。
 
 ```
-└── packs/
+└── components/
      ├── hello.vue           - helloコンポーネント
      ├── hello.scss          - helloコンポーネントのためのCSS
      └── ...
