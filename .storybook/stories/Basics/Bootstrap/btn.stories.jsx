@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withScreenshot } from "storybook-chrome-screenshot";
-import { allMin } from "../../../screenshot-options";
+import { desktopMax } from "../../../screenshot-options";
 
 const LoremButton = props => {
   const modifiers = [
@@ -23,20 +23,20 @@ const LoremButton = props => {
               key={`button${i}`}
               className={`btn ${props.btnClass}${m} mr-2 mb-2`}
             >
-              button要素ボタン
+              button要素
             </button>
             <input
               key={`input${i}`}
               type="button"
               className={`btn ${props.btnClass}${m} mr-2 mb-2`}
-              value="input要素ボタン"
+              value="input要素"
             />
             <a
               key={`a${i}`}
               href="#"
               className={`btn ${props.btnClass}${m} mr-2 mb-2`}
             >
-              a要素ボタン
+              a要素
             </a>
           </React.Fragment>
         );
@@ -46,7 +46,7 @@ const LoremButton = props => {
 };
 
 storiesOf("Basics/Bootstrap", module)
-  .addDecorator(withScreenshot(allMin(3300, 1900, 1600)))
+  .addDecorator(withScreenshot(desktopMax(3600)))
   .add("btn", () => (
     <div className="p-2">
       <h3>Default</h3>
