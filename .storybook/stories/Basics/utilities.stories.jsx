@@ -13,6 +13,12 @@ const Links = props => {
 
       <br />
 
+      <a className={props.classes} href="#Storybook">
+        Storybook
+      </a>
+
+      <br />
+
       <a className={props.classes} href="http://localhost:6006/">
         http://localhost:6006/
       </a>
