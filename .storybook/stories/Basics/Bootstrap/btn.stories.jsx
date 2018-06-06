@@ -15,19 +15,33 @@ const LoremButton = props => {
     "dark"
   ];
   return (
-    <div>
+    <React.Fragment>
       {modifiers.map((m, i) => {
         return (
-          <button
-            key={i}
-            type="button"
-            className={`btn ${props.btnClass}${m} mr-2 mb-2`}
-          >
-            ボタン
-          </button>
+          <React.Fragment>
+            <button
+              key={`button${i}`}
+              className={`btn ${props.btnClass}${m} mr-2 mb-2`}
+            >
+              button要素ボタン
+            </button>
+            <input
+              key={`input${i}`}
+              type="button"
+              className={`btn ${props.btnClass}${m} mr-2 mb-2`}
+              value="input要素ボタン"
+            />
+            <a
+              key={`a${i}`}
+              href="#"
+              className={`btn ${props.btnClass}${m} mr-2 mb-2`}
+            >
+              a要素ボタン
+            </a>
+          </React.Fragment>
         );
       })}
-    </div>
+    </React.Fragment>
   );
 };
 
