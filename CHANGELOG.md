@@ -1,3 +1,25 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/ruedap/abccss/compare/v0.4.0...v0.5.0) (2018-06-07)
+
+
+### Bug Fixes
+
+* **placeholders:** Fix closing parenthesis ([b98496f](https://github.com/ruedap/abccss/commit/b98496f))
+
+
+### Features
+
+* **scss:** Add RequiredLabel component ([340ca8c](https://github.com/ruedap/abccss/commit/340ca8c))
+* **scss:** Change entry point to multiple ([7a8ca06](https://github.com/ruedap/abccss/commit/7a8ca06))
+* **scss:** Improve a-transition-borderHover transition speed ([dc42ed0](https://github.com/ruedap/abccss/commit/dc42ed0))
+
+
+### BREAKING CHANGES
+
+* **scss:** The entry point has changed to multiple.
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/ruedap/abccss/compare/v0.3.0...v0.4.0) (2018-06-05)
 
