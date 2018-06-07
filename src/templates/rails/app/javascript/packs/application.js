@@ -1,4 +1,7 @@
-import "../stylesheets/application.scss";
+import "../stylesheets/basics.scss";
+import "../stylesheets/components.scss";
+import "../stylesheets/decorations.scss";
+import "../stylesheets/extras.scss";
 require.context(
   "../images",
   true,
