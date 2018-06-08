@@ -18,8 +18,8 @@
   $_table-border-width: $table-border-width;
   $_table-border-color: $table-border-color;
   $_table-striped-order: $table-striped-order;
-  $_table-accent-bg: $table-accent-bg;
-  $_table-hover-bg: $table-hover-bg;
+  $_table-accent-bg: lighten($table-accent-bg, 35%);
+  $_table-hover-bg: lighten($a-color-info, 54%);
 
   // Basic Bootstrap table
   @mixin _BlockMixin {
