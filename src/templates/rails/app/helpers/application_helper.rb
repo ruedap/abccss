@@ -43,30 +43,14 @@ module ApplicationHelper
     }
   end
 
-  def flash_message(options = {})
-    alert_types = [:success, :danger]
-    flash_messages = []
-    flash.each do |type, message|
-      next if message.blank?
-
-      type = type.to_sym
-      type = alert_types[0] if type == :notice
-      type = alert_types[1] if type == :alert
-      next unless alert_types.include?(type)
-
-      tag_class = options.extract!(:class)[:class]
-      tag_options = {
-        class: "alert alert-#{type} #{tag_class}"
-      }.merge(options)
-
-      Array(message).each do |msg|
-        text = content_tag(:div, msg, tag_options)
-        flash_messages << text if msg
-      end
-    end
-
-    return '' if flash_messages.blank?
-    content_html = flash_messages.join("\n").html_safe
+  # https://gist.github.com/suryart/7418454#gistcomment-2584737
+  def flash_message_class_for(flash_type)
+    {
+      success: 'alert-success',
+      error: 'alert-danger',
+      alert: 'alert-warning',
+      notice: 'alert-info'
+    }[flash_type.to_sym] || flash_type.to_s
   end
 
   def svg_sprite(filename)

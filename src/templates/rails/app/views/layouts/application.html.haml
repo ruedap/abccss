@@ -23,6 +23,9 @@
 
   %body.c-Document-body.c-Page{ class: yield(:body_classes) }
     %header.c-Document-header.c-Page-header
-    = flash_message
-    .c-Document-content.c-Page-content= yield
+
+    .c-Document-content.c-Page-content
+      = render 'layouts/flash_message'
+      = yield
+
     %footer.c-Document-footer.c-Page-header

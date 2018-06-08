@@ -126,6 +126,62 @@
   .c-Button:focus {
     color: #fff; }
 
+.c-Chevron::before {
+  position: relative;
+  top: 0.25em;
+  left: 0.15em;
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  vertical-align: top;
+  content: "";
+  border-style: solid;
+  border-width: 0.15em 0.15em 0 0; }
+
+.c-Chevron--top::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+
+.c-Chevron--right::before {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.c-Chevron--bottom::before {
+  top: 0.1em;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg); }
+
+.c-Chevron--left::before {
+  left: 0.25em;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg); }
+
+.c-Checkmark::before {
+  position: relative;
+  top: 0.25em;
+  left: 0.35em;
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  vertical-align: top;
+  content: "";
+  border-style: solid;
+  border-width: 0 0.2em 0.2em 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.c-RequiredLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4em;
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: #fff;
+  white-space: nowrap;
+  background-color: #dc3545; }
+
 .c-List {
   padding-left: 0;
   margin-top: 0;
@@ -210,51 +266,6 @@
     margin-right: 0.6em;
     content: "\2473"; }
 
-.c-Chevron::before {
-  position: relative;
-  top: 0.25em;
-  left: 0.15em;
-  display: inline-block;
-  width: 0.55em;
-  height: 0.55em;
-  vertical-align: top;
-  content: "";
-  border-style: solid;
-  border-width: 0.15em 0.15em 0 0; }
-
-.c-Chevron--top::before {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg); }
-
-.c-Chevron--right::before {
-  left: 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg); }
-
-.c-Chevron--bottom::before {
-  top: 0.1em;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg); }
-
-.c-Chevron--left::before {
-  left: 0.25em;
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg); }
-
-.c-Checkmark::before {
-  position: relative;
-  top: 0.25em;
-  left: 0.35em;
-  display: inline-block;
-  width: 0.55em;
-  height: 1em;
-  vertical-align: top;
-  content: "";
-  border-style: solid;
-  border-width: 0 0.2em 0.2em 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg); }
-
 .c-Table {
   width: 100%;
   max-width: 100%;
@@ -294,17 +305,6 @@
     background-color: transparent; }
   .c-Table--hover tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.075); }
-
-.c-RequiredLabel {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.4em;
-  font-size: 0.75rem;
-  font-weight: normal;
-  color: #fff;
-  white-space: nowrap;
-  background-color: #dc3545; }
 
 .c-Page {
   -webkit-font-smoothing: antialiased;
