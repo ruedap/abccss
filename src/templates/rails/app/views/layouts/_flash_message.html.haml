@@ -1,0 +1,5 @@
+- flash.each do |type, content|
+  %div.alert.alert-dismissible.fade.show(role="alert"){class: flash_message_class_for(type)}
+    %button.close(data-aria-label="Close" data-dismiss="alert" type="button")
+      %span(aria-hidden="true") &times;
+    %div= content
