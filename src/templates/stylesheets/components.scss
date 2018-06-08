@@ -9,20 +9,20 @@
 
 // Atoms
 @import "./Components/Button";
-@import "./Components/List";
 @import "./Components/Chevron";
 @import "./Components/Checkmark";
-@import "./Components/Table";
 @import "./Components/RequiredLabel";
 
 // Molecules
+@import "./Components/List";
+@import "./Components/Table";
 
 // Organisms
 
 // Templates
-
-// Pages
 @import "./Components/Page";
 @import "./Components/Document";
+
+// Pages
 
 // 未分類
