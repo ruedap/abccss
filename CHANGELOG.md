@@ -1,3 +1,15 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/ruedap/abccss/compare/v0.5.0...v0.6.0) (2018-06-11)
+
+
+### Features
+
+* **rails:** Improve flash message helper ([31f6965](https://github.com/ruedap/abccss/commit/31f6965))
+* **scss:** Add PageFooter component ([f1678b4](https://github.com/ruedap/abccss/commit/f1678b4))
+* **scss:** Improve table accent/hover background-color ([8d2edae](https://github.com/ruedap/abccss/commit/8d2edae))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/ruedap/abccss/compare/v0.4.0...v0.5.0) (2018-06-07)
 
