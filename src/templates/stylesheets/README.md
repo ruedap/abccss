@@ -164,28 +164,28 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 
 ```
 └── stylesheets/
-     ├── Abstractions/              - 全体で使用する変数・関数・mixin等の定義
+     ├── abstractions/              - 全体で使用する変数・関数・mixin等の定義
      │   ├── _colors.scss           - 全体で使用する色
      │   ├── _sizes.scss            - 全体で使用するサイズ
      │   ├── _bootstrap-custom.scss - CSSフレームワークの変数・mixinの読み込み・上書き
      │   ├── _z-index.scss          - z-indexの値の管理
      │   └── ...
-     ├── Basics/                    - サイト全体で使用する基礎的なスタイル定義
+     ├── basics/                    - サイト全体で使用する基礎的なスタイル定義
      │   ├── _elements.scss         - 要素に適用するスタイル
      │   ├── _bootstrap-custom.scss - CSSフレームワークのコンポーネント読み込み・上書き
      │   ├── _utilities.scss        - ユーティリティクラス
      │   └── ...
-     ├── Components/                - コンポーネント単位のスタイル定義
-     │   ├── _Button.scss           - Buttonコンポーネント
-     │   ├── _Document.scss         - Documentコンポーネント
-     │   ├── _Page.scss             - Pageコンポーネント
+     ├── components/                - コンポーネント単位のスタイル定義
+     │   ├── _button.scss           - Buttonコンポーネント
+     │   ├── _document.scss         - Documentコンポーネント
+     │   ├── _page.scss             - Pageコンポーネント
      │   └── ...
-     ├── Decorations/               - ページ単位のスタイル定義
-     │   ├── _HomeIndex.scss        - home#indexページ
-     │   ├── _HomeShow.scss         - home#showページ
-     │   ├── _AdminHomeShow.scss    - admin/home#showページ
+     ├── decorations/               - ページ単位のスタイル定義
+     │   ├── _home-index.scss       - home#indexページ
+     │   ├── _home-show.scss        - home#showページ
+     │   ├── _users-index.scss      - users#indexページ
      │   └── ...
-     ├── Extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
+     ├── extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
      │   ├── _temp.scss             - 定義場所が不明な一時的な定義
      │   └── ...
      ├── _abstractions.scss         - Abstractionsのエントリーポイント
@@ -275,7 +275,7 @@ yarn run lint:scss:fix
 
 ### 一時的な CSS コードの定義場所
 
-どこに CSS コードを分類するべきか迷った場合、もしくは、追加する時点で分類が不明な CSS コードについては、一旦 `/Extras/_temp.scss` に追加してください。このファイルに定義されているスタイルは、最終的に適切な名前と定義場所になるようにリファクタリングします。
+どこに CSS コードを分類するべきか迷った場合、もしくは、追加する時点で分類が不明な CSS コードについては、一旦 `/extras/_temp.scss` に追加してください。このファイルに定義されているスタイルは、最終的に適切な名前と定義場所になるようにリファクタリングします。
 
 ### 分類用プレフィックス
 
@@ -294,7 +294,7 @@ yarn run lint:scss:fix
 
 ### コンポーネントの命名規則(SUIT CSS)
 
-このプロジェクトでは、**プロジェクト固有のコンポーネント**（前述の **C**omponents と **D**ecorations ディレクトリに含まれる SCSS ファイル）の命名規則に [SUIT CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md) を採用しています。「プロジェクト固有」には CSS フレームワークやプラグインなどの**外部ライブラリは含まれません**。
+このプロジェクトでは、**プロジェクト固有のコンポーネント**（前述の **C**omponents と **D**ecorations の分類に含まれる SCSS ファイル）の命名規則に [SUIT CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md) を採用しています。「プロジェクト固有」には CSS フレームワークやプラグインなどの**外部ライブラリは含まれません**。
 
 SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) によく似た概念および命名で、重要なのは以下の 5 つのルールです。
 
@@ -321,12 +321,12 @@ SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-
 - [真のコンポーネント粒度を求めて \- builderscon tokyo 2017](https://builderscon.io/tokyo/2017/session/9f36fc8a-e174-4b39-87f2-7e4535afe120)
 - [最近のフロントエンドのコンポーネント設計に立ち向かう \- Qiita](https://qiita.com/seya/items/8814e905693f00cdade2)
 
-**C**omponents ディレクトリ内でのコンポーネントの粒度(Atomic Design)については、以下の記事・書籍が参考になります。
+**C**omponents の分類でのコンポーネント粒度(Atomic Design)については、以下の記事・書籍が参考になります。
 
 - [Atomic Design を実案件に導入 \- UI コンポーネントの粒度を明確化した結果と副産物 \| ygoto3\.com](https://ygoto3.com/posts/atomic-design-on-actual-project/)
 - [Atomic Design ～堅牢で使いやすい UI を効率良く設計する：書籍案内｜技術評論社](http://gihyo.jp/book/2018/978-4-7741-9705-0)
 
-**D**ecorations ディレクトリ内でのコンポーネントの粒度(ECSS)については、以下の記事が参考になります。
+**D**ecorations の分類でのコンポーネント粒度(ECSS)については、以下の記事が参考になります。
 
 - [抽象化を避ける CSS 設計方法論「Enduring CSS」 第 1 回 \| HTML5Experts\.jp](https://html5experts.jp/takazudo/21946/)
 
