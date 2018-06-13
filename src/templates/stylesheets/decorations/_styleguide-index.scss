@@ -1,0 +1,246 @@
+// =============================================================================
+// スタイルガイドページを表します。
+// StyleguideControllerのindexアクションに対応しています。
+// =============================================================================
+
+.d-StyleguideIndex {
+  // Abstractions
+  // ===========================================================================
+
+  // Block
+  // ===========================================================================
+
+  // Elements
+  // ===========================================================================
+
+  &-htmlImageOuter,
+  &-cssImageOuter {
+    width: 20%;
+
+    & + & {
+      margin-left: 1rem;
+    }
+  }
+
+  &-htmlImage {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+  }
+
+  &-cssImage {
+    width: 100%;
+    padding-top: 100%;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    & + & {
+      margin-left: 1rem;
+    }
+
+    &--png {
+      background-image: url("../images/styleguide/test2.png");
+    }
+
+    &--jpg {
+      background-image: url("../images/styleguide/test2.jpg");
+    }
+
+    &--svg {
+      background-image: url("../images/styleguide/test2.svg");
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-areas:
+      "a1 a1"
+      "a2 a3"
+      "a4 a4";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  &-cell {
+    padding: 0.4em;
+    background-color: pink;
+
+    &--1a {
+      grid-area: a1;
+      background-color: powderblue;
+    }
+
+    &--2a {
+      grid-area: a2;
+      background-color: skyblue;
+    }
+
+    &--3a {
+      grid-area: a3;
+      background-color: cornflowerblue;
+    }
+
+    &--4a {
+      grid-area: a4;
+      background-color: steelblue;
+    }
+
+    &--1b {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+      background-color: powderblue;
+    }
+
+    &--2b {
+      grid-column: 1;
+      grid-row: 2;
+      background-color: skyblue;
+    }
+
+    &--3b {
+      grid-column: 2;
+      grid-row: 2;
+      background-color: cornflowerblue;
+    }
+
+    &--4b {
+      grid-column: 1 / span 2;
+      grid-row: 3;
+      background-color: steelblue;
+    }
+  }
+
+  &-breakpoint {
+    $_base: #ddd;
+    $_primary: pink;
+    $_secondary: skyblue;
+
+    background-color: $_base;
+
+    &--iphone5 {
+      @include media-breakpoint-down(xs, $a-grid-breakpoints--ios) {
+        background-color: $_secondary;
+      }
+      @include media-breakpoint-up(iphone5, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--iphone6 {
+      @include media-breakpoint-down(iphone5, $a-grid-breakpoints--ios) {
+        background-color: $_secondary;
+      }
+      @include media-breakpoint-up(iphone6, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--iphone6plus {
+      @include media-breakpoint-down(iphone6, $a-grid-breakpoints--ios) {
+        background-color: $_secondary;
+      }
+      @include media-breakpoint-up(iphone6plus, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--ipad {
+      @include media-breakpoint-down(iphone6plus, $a-grid-breakpoints--ios) {
+        background-color: $_secondary;
+      }
+      @include media-breakpoint-up(ipad, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--ipadpro {
+      @include media-breakpoint-down(ipad, $a-grid-breakpoints--ios) {
+        background-color: $_secondary;
+      }
+      @include media-breakpoint-up(ipadpro, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--iphone5Only {
+      @include media-breakpoint-only(iphone5, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--iphone6Only {
+      @include media-breakpoint-only(iphone6, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--iphone6plusOnly {
+      @include media-breakpoint-only(iphone6plus, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--ipadOnly {
+      @include media-breakpoint-only(ipad, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--ipadproOnly {
+      @include media-breakpoint-only(ipadpro, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+
+    &--iphone5Between {
+      @include media-breakpoint-between(
+        iphone5,
+        iphone6,
+        $a-grid-breakpoints--ios
+      ) {
+        background-color: $_primary;
+      }
+    }
+
+    &--iphone6Between {
+      @include media-breakpoint-between(
+        iphone6,
+        iphone6plus,
+        $a-grid-breakpoints--ios
+      ) {
+        background-color: $_primary;
+      }
+    }
+
+    &--iphone6plusBetween {
+      @include media-breakpoint-between(
+        iphone6plus,
+        ipad,
+        $a-grid-breakpoints--ios
+      ) {
+        background-color: $_primary;
+      }
+    }
+
+    &--ipadBetween {
+      @include media-breakpoint-between(
+        ipad,
+        ipadpro,
+        $a-grid-breakpoints--ios
+      ) {
+        background-color: $_primary;
+      }
+    }
+
+    &--ipadproBetween {
+      @include media-breakpoint-between(ipadpro, xl, $a-grid-breakpoints--ios) {
+        background-color: $_primary;
+      }
+    }
+  }
+
+  // Modifiers
+  // ===========================================================================
+}
