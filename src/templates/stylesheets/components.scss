@@ -1,28 +1,32 @@
 // =============================================================================
+// Components（部品）
+// =============================================================================
+
+//
 // 1つのSCSSファイルにつき、1つのコンポーネントを定義します。
 // ファイル名はコンポーネント名と同じにします。
 // ここで定義されるコンポーネントはSUIT CSSの命名規則に従います。
 // https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
-// =============================================================================
+//
 
 @import "./abstractions";
 
 // Atoms
-@import "./Components/Button";
-@import "./Components/Chevron";
-@import "./Components/Checkmark";
-@import "./Components/RequiredLabel";
+@import "./components/button";
+@import "./components/chevron";
+@import "./components/checkmark";
+@import "./components/required-label";
 
 // Molecules
-@import "./Components/List";
-@import "./Components/Table";
+@import "./components/list";
+@import "./components/table";
 
 // Organisms
-@import "./Components/PageFooter";
+@import "./components/page-footer";
 
 // Templates
-@import "./Components/Page";
-@import "./Components/Document";
+@import "./components/page";
+@import "./components/document";
 
 // Pages
 

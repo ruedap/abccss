@@ -1,0 +1,44 @@
+// =============================================================================
+// ページフッター
+// =============================================================================
+
+.c-PageFooter {
+  // Variables
+  // ===========================================================================
+
+  // Block
+  // ===========================================================================
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: a-px2rem(40px);
+  padding: a-px2rem(8px);
+  font-size: $a-fontSize-sm;
+  font-weight: $a-fontWeight-normal;
+  color: $a-color-white;
+  text-align: center;
+  background-color: $a-color-dark;
+
+  // Elements
+  // ===========================================================================
+
+  &-copyright {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+  }
+
+  &-space {
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: inline;
+    }
+  }
+
+  // Modifiers
+  // ===========================================================================
+}

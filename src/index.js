@@ -9,14 +9,15 @@ const path = require("path");
 const fs = require("fs");
 const fse = require("fs-extra");
 const config = require("rc")(appName, { stylesheetsRootDir: "./" });
+const changeCase = require("change-case");
 
 const stylesheetsRootDir = path.normalize(config.stylesheetsRootDir);
 const cmdDir = path.dirname(fs.realpathSync(__filename));
 const stylesheetsDir = `${cmdDir}/templates/stylesheets/`;
 const placeholdersDir = `${cmdDir}/placeholders/`;
-const componentPlaceholderFile = `${placeholdersDir}_Component.js`;
+const componentPlaceholderFile = `${placeholdersDir}__component.js`;
 const componentPlaceholder = require(componentPlaceholderFile);
-const decorationPlaceholderFile = `${placeholdersDir}_Decoration.js`;
+const decorationPlaceholderFile = `${placeholdersDir}__decoration.js`;
 const decorationPlaceholder = require(decorationPlaceholderFile);
 const rcPlaceholderFile = `${placeholdersDir}rc.js`;
 const rcPlaceholder = require(rcPlaceholderFile);
@@ -74,12 +75,13 @@ program
   )
   .action(function(name, options) {
     const dir = getStylesheetsRootDir(options.dir);
-    const componentsDir = path.normalize(`${dir}/Components`);
-    const file = `${componentsDir}/_${name}.scss`;
-    const importFile = path.normalize(`${dir}/_Components.scss`);
+    const componentsDir = path.normalize(`${dir}/components`);
+    const fileName = changeCase.paramCase(name);
+    const file = `${componentsDir}/_${fileName}.scss`;
+    const importFile = path.normalize(`${dir}/_components.scss`);
     fse.mkdirpSync(dir);
     fse.outputFileSync(file, componentPlaceholder(name));
-    fs.appendFileSync(importFile, `@import "./Components/${name}";\n`);
+    fs.appendFileSync(importFile, `@import "./components/${fileName}";\n`);
     putGeneratedLog(file);
   });
 
@@ -93,12 +95,13 @@ program
   )
   .action(function(name, options) {
     const dir = getStylesheetsRootDir(options.dir);
-    const decorationDir = path.normalize(`${dir}/Decorations`);
-    const file = `${decorationDir}/_${name}.scss`;
-    const importFile = path.normalize(`${dir}/_Decorations.scss`);
+    const decorationDir = path.normalize(`${dir}/decorations`);
+    const fileName = changeCase.paramCase(name);
+    const file = `${decorationDir}/_${fileName}.scss`;
+    const importFile = path.normalize(`${dir}/_decorations.scss`);
     fse.mkdirpSync(dir);
     fse.outputFileSync(file, decorationPlaceholder(name));
-    fs.appendFileSync(importFile, `@import "./Decorations/${name}";\n`);
+    fs.appendFileSync(importFile, `@import "./decorations/${fileName}";\n`);
     putGeneratedLog(file);
   });
 

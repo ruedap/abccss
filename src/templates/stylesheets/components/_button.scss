@@ -1,0 +1,55 @@
+// =============================================================================
+// ボタン
+// =============================================================================
+
+.c-Button {
+  // Variables
+  // ===========================================================================
+
+  $_borderWidth: $btn-border-width; // 1px
+  $_focusBoxShadow: $btn-focus-box-shadow;
+  $_disabled-opacity: 0.65;
+
+  @mixin _BlockMixin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    border: $_borderWidth solid transparent;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: $btn-focus-box-shadow;
+    }
+
+    &:disabled {
+      opacity: $_disabled-opacity;
+    }
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+  }
+
+  // Block
+  // ===========================================================================
+
+  @include _BlockMixin;
+  @include a-linkColors(#fff, #fff, #fff, #fff, #fff);
+  min-width: 300px;
+  min-height: 50px;
+  padding: 0 0.8em;
+  border-radius: 6px;
+
+  // Elements
+  // ===========================================================================
+
+  // Modifiers
+  // ===========================================================================
+}

@@ -1,8 +1,40 @@
 # [WIP] CSS ガイドライン
 
+## 目次
+
+- [スタイルガイド](#styleguide)
+- [対象環境](#target)
+- [デザインデータおよび技術要件](#design-spec)
+- [フレームワーク](#framework)
+- [エントリーポイント](#entry-points)
+- [グローバル CSS](#global-css)
+  - [概念図](#conceptual-diagram)
+  - [構成例](#configuration-example)
+- [スコープ付き CSS](#scope-css)
+- [アセット](#assets)
+  - [画像・SVG](#img-svg)
+  - [アイコン](#icons)
+  - [Web フォント](#web-fonts)
+- [コーディングルール](#coding-rules)
+  - [一時的な CSS の定義場所](#extras-temp)
+  - [コンポーネントの命名規則](#component-naming)
+  - [変数・関数・mixin の命名規則](#variables-naming)
+  - [分類用プレフィックス](#abc-prefix)
+  - [ローカルスコープを表すプレフィックス](#local-scope-prefix)
+  - [JavaScript から参照・操作するセレクタのプレフィックス](#js-prefix)
+  - [ベンダープレフィックス](#vendor-prefix)
+  - [extend 機能の使用禁止](#sass-extend)
+  - [Lint ツール](#lint)
+  - [コードフォーマット](#code-format)
+  - [SCSS ファイルの書式](#file-format)
+
+<a name="styleguide"></a>
+
 ## スタイルガイド
 
 スタイルやコンポーネントの使用例を見ることができるスタイルガイドページは、development 環境では http://localhost:6006/ にアクセスすると閲覧できます。
+
+<a name="target"></a>
 
 ## 対象環境
 
@@ -53,6 +85,8 @@
 ### 対象環境の表示確認方法
 
 対象環境の各 OS・ブラウザーでの表示確認は実機で行える範囲は実機で行いますが、それが困難な環境は iOS/Android のシミュレーターや Microsoft(modern.ie) の [Virtual machines](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)、[Browser screenshots](https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/) 等の仮想環境を使用して確認します。
+
+<a name="design-spec"></a>
 
 ## デザインデータおよび技術要件
 
@@ -115,9 +149,13 @@
 - その他
   - 参考: [フロントエンドチェックリスト（日本語訳）](https://qiita.com/miya0001/items/8fff46c201bf9eaeba4a)
 
+<a name="framework"></a>
+
 ## フレームワーク
 
 今回のプロジェクトでは CSS フレームワークとして [Bootstrap 4.1](https://getbootstrap.com/docs/4.1/) を使用します。
+
+<a name="entry-points"></a>
 
 ## エントリーポイント
 
@@ -132,6 +170,8 @@ HTTP2 環境を前提として複数ファイルに分かれていますが、HT
 
 Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的には使用しません。
 
+<a name="global-css"></a>
+
 ## グローバル CSS
 
 「グローバル CSS」とは、後述する「スコープ付き CSS」の対義語として使っている用語で、スコープ付き CSS 以外のすべての CSS を指します。グローバル CSS のディレクトリ構成は、エントリーポイントと同じ階層に以下のディレクトリを作成し**この並び順に読み込まれる（カスケードする）ようにします**。
@@ -143,6 +183,8 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 5.  **E**xtras （臨時）
 
 各ティレクトリ（グループ）の説明や配置するファイルなどは以下の概念図やツリー図（構成例）を参考にしてください。また、実際の各.scss ファイル内の冒頭にも説明のコメントを入れてありますので、そちらも併せて参照してください。
+
+<a name="conceptual-diagram"></a>
 
 ### 概念図
 
@@ -156,6 +198,8 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 
 **上位へ行くほど影響範囲が広がるので、特に Abstractions や Basics へのコードの追加は慎重にお願いします。**
 
+<a name="configuration-example"></a>
+
 ### 構成例
 
 以下の構成例を参考に新しいスタイル定義を追加してください。
@@ -164,28 +208,28 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 
 ```
 └── stylesheets/
-     ├── Abstractions/              - 全体で使用する変数・関数・mixin等の定義
+     ├── abstractions/              - 全体で使用する変数・関数・mixin等の定義
      │   ├── _colors.scss           - 全体で使用する色
      │   ├── _sizes.scss            - 全体で使用するサイズ
      │   ├── _bootstrap-custom.scss - CSSフレームワークの変数・mixinの読み込み・上書き
      │   ├── _z-index.scss          - z-indexの値の管理
      │   └── ...
-     ├── Basics/                    - サイト全体で使用する基礎的なスタイル定義
+     ├── basics/                    - サイト全体で使用する基礎的なスタイル定義
      │   ├── _elements.scss         - 要素に適用するスタイル
      │   ├── _bootstrap-custom.scss - CSSフレームワークのコンポーネント読み込み・上書き
      │   ├── _utilities.scss        - ユーティリティクラス
      │   └── ...
-     ├── Components/                - コンポーネント単位のスタイル定義
-     │   ├── _Button.scss           - Buttonコンポーネント
-     │   ├── _Document.scss         - Documentコンポーネント
-     │   ├── _Page.scss             - Pageコンポーネント
+     ├── components/                - コンポーネント単位のスタイル定義
+     │   ├── _button.scss           - Buttonコンポーネント
+     │   ├── _document.scss         - Documentコンポーネント
+     │   ├── _page.scss             - Pageコンポーネント
      │   └── ...
-     ├── Decorations/               - ページ単位のスタイル定義
-     │   ├── _HomeIndex.scss        - home#indexページ
-     │   ├── _HomeShow.scss         - home#showページ
-     │   ├── _AdminHomeShow.scss    - admin/home#showページ
+     ├── decorations/               - ページ単位のスタイル定義
+     │   ├── _home-index.scss       - home#indexページ
+     │   ├── _home-show.scss        - home#showページ
+     │   ├── _users-index.scss      - users#indexページ
      │   └── ...
-     ├── Extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
+     ├── extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
      │   ├── _temp.scss             - 定義場所が不明な一時的な定義
      │   └── ...
      ├── _abstractions.scss         - Abstractionsのエントリーポイント
@@ -196,13 +240,15 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
      └── ...
 ```
 
+<a name="scope-css"></a>
+
 ## スコープ付き CSS
 
 「スコープ付き CSS」とは、[Vue.js](https://vue-loader.vuejs.org/ja/features/scoped-css.html) や [React.js (CSS Modules)](http://postd.cc/css-modules/) などで利用できる「ハッシュ値の自動付与によるスコープ付きセレクタ」によって書かれた CSS コードを指します。スコープ付き CSS の構成は、`app/javascript/packs/` 以下に JS コンポーネントと 1 対 1 になるように CSS ファイルを作成し、そこにはその JS コンポーネントで使用する CSS コードのみを含めるようにします。よって**グローバル CSS のディレクトリ構成とは別の場所で定義する**ことになります。
 
 1 つのコンポーネントの範囲を超えて別のコンポーネントやグローバル CSS 側と共有したい変数・関数やミックスインがある場合は、グローバル CSS 側の **A**bstractions 内に定義して共有するようにしてください。
 
-### スコープ付き CSS の構成例
+### 構成例
 
 新しいスタイルを追加する場合は、以下の構成例を参考にしてください。
 
@@ -215,7 +261,11 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
      └── ...
 ```
 
+<a name="assets"></a>
+
 ## アセット
+
+<a name="img-svg"></a>
 
 ### 画像・SVG
 
@@ -223,8 +273,9 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 
 SVG スプライトを使用する場合は、スプライト用 SVG ファイルを `app/javascript/images/sprite.svg` に配置・更新します。
 
-#### SVG スプライトの生成・参照
-
+<details>
+<summary><strong>SVG スプライトの生成・参照</strong></summary>
+<br />
 SVG スプライトの生成は、元となる SVG ファイルを `app/javascript/images/sprite_svg/*.svg` に配置した上で以下のコマンドを実行すると、その SVG を含んだ SVG スプライトファイルが `app/javascript/images/sprite.svg` に生成されます。
 
 ```sh
@@ -237,64 +288,36 @@ SVG スプライトの参照は、独自実装した `svg_sprite` ヘルパー�
 %svg= svg_sprite('fa-thumbs-o-up') // 元SVGファイル名が `fa-thumbs-o-up` の場合
 ```
 
+<br />
+</details>
+
+<a name="icons"></a>
+
 ### アイコン
 
 このプロジェクトでは、アイコンセットとして [Material Icons](https://material.io/icons/) を使用します。このアイコンセットに含まれないアイコンを使用する必要がある場合は、SVG ファイルとして独自に追加してください。
+
+<a name="web-fonts"></a>
 
 ### Web フォント
 
 サイト内で使用する Web フォントファイルがある場合は `app/javascript/fonts` 以下に配置します。
 
+<a name="coding-rules"></a>
+
 ## コーディングルール
 
-### コードフォーマット
+<a name="extras-temp"></a>
 
-SCSS ファイルにコードフォーマットを適用する npm コマンドが追加してあるので、SCSS コードの追加や編集を行った際は以下のコマンドを実行して、こまめにコードフォーマットを適用してください。
+### 一時的な CSS の定義場所
 
-```sh
-yarn run format:scss
-```
+どこに CSS コードを分類するべきか迷った場合、もしくは、追加する時点で分類が不明な CSS コードについては、一旦 `/extras/_temp.scss` に追加してください。このファイルに定義されているスタイルは、最終的に適切な名前と定義場所になるようにリファクタリングします。
 
-### Lint
+<a name="component-naming"></a>
 
-SCSS ファイルに Lint を適用するコマンドが追加してあるので、SCSS コードの追加や編集を行った際は以下のコマンドを実行して、可能な範囲で一貫性のある書き方に直してください。コードフォーマットと Lint の優先順位としては、コードフォーマットの方を優先してください。
+### コンポーネントの命名規則
 
-```sh
-yarn run lint:scss
-```
-
-Lint の結果の中には自動で修復可能なものがあり、その自動修復を適用する場合は以下のコマンドを実行してください。
-
-```sh
-yarn run lint:scss:fix
-```
-
-また、時々出力後の HTML を [HTML5 バリデーター](https://checker.html5.org/) や [aXe](https://www.axe-core.org/) に通して、不備がないかチェックしてください。
-
-納品・リリース前には [Lighthouse](https://github.com/GoogleChrome/lighthouse) でページごとのパフォーマンスやユーザビリティをチェックしてください。[sonarwhal](https://sonarwhal.com/) や [PageSpeed Insights](https://github.com/addyosmani/psi) は URL が必要になるため、ステージング環境やリリース後の本番環境でチェックしてください。
-
-### 一時的な CSS コードの定義場所
-
-どこに CSS コードを分類するべきか迷った場合、もしくは、追加する時点で分類が不明な CSS コードについては、一旦 `/Extras/_temp.scss` に追加してください。このファイルに定義されているスタイルは、最終的に適切な名前と定義場所になるようにリファクタリングします。
-
-### 分類用プレフィックス
-
-**A**bstractions, **B**asics, **C**omponents, **D**ecorations, **E**xtras に分類するディレクトリ構成に合わせて、各ディレクトリ内で使用する CSS コードには、そのディレクトリ名の「頭文字 1 文字の小文字+ハイフン」（**C**omponents であれば `c-`）をプレフィックスとして使用します。基本的にプロジェクト固有に定義する CSS セレクタ名、Sass 変数名等にはこの分類用プレフィックスを付加しますが、何らかの理由でプレフィックスの付加が困難だったり、好ましくない場合は付けなくても構いません。
-
-1.  **A**bstractions （抽象）
-    - e.g. `$a-color-black`, `@mixin a-zIndex`
-2.  **B**asics （基礎）
-    - e.g. `.b-errorMessage`, `.b-theme-primary`
-3.  **C**omponents （部品）
-    - e.g. `.c-Page`, `.c-Page-body` (SUIT CSS の命名規則)
-4.  **D**ecorations （装飾）
-    - e.g. `.d-HomeIndex`, `.d-HomeIndex-show` (SUIT CSS の命名規則)
-5.  **E**xtras （臨時）
-    - e.g. `.e-color-temp`
-
-### コンポーネントの命名規則(SUIT CSS)
-
-このプロジェクトでは、**プロジェクト固有のコンポーネント**（前述の **C**omponents と **D**ecorations ディレクトリに含まれる SCSS ファイル）の命名規則に [SUIT CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md) を採用しています。「プロジェクト固有」には CSS フレームワークやプラグインなどの**外部ライブラリは含まれません**。
+このプロジェクトでは、**プロジェクト固有のコンポーネント**（前述の **C**omponents と **D**ecorations の分類に含まれる SCSS ファイル）の命名規則に [SUIT CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md) を採用しています。「プロジェクト固有」には CSS フレームワークやプラグインなどの**外部ライブラリは含まれません**。
 
 SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) によく似た概念および命名で、重要なのは以下の 5 つのルールです。
 
@@ -314,23 +337,30 @@ SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-
 
 (1)〜(3)の名称は、BEM の Block、Element、Modifier の方が有名でわかりやすいので、通常はそちらの名称を使用します。
 
-#### コンポーネントの粒度について
+<details>
+<summary><strong>コンポーネントの粒度について</strong></summary>
+<br />
 
 コンポーネントの粒度を決める難しさについては、以下の記事が参考になります。
 
 - [真のコンポーネント粒度を求めて \- builderscon tokyo 2017](https://builderscon.io/tokyo/2017/session/9f36fc8a-e174-4b39-87f2-7e4535afe120)
 - [最近のフロントエンドのコンポーネント設計に立ち向かう \- Qiita](https://qiita.com/seya/items/8814e905693f00cdade2)
 
-**C**omponents ディレクトリ内でのコンポーネントの粒度(Atomic Design)については、以下の記事・書籍が参考になります。
+**C**omponents の分類でのコンポーネント粒度(Atomic Design)については、以下の記事・書籍が参考になります。
 
 - [Atomic Design を実案件に導入 \- UI コンポーネントの粒度を明確化した結果と副産物 \| ygoto3\.com](https://ygoto3.com/posts/atomic-design-on-actual-project/)
 - [Atomic Design ～堅牢で使いやすい UI を効率良く設計する：書籍案内｜技術評論社](http://gihyo.jp/book/2018/978-4-7741-9705-0)
 
-**D**ecorations ディレクトリ内でのコンポーネントの粒度(ECSS)については、以下の記事が参考になります。
+**D**ecorations の分類でのコンポーネント粒度(ECSS)については、以下の記事が参考になります。
 
 - [抽象化を避ける CSS 設計方法論「Enduring CSS」 第 1 回 \| HTML5Experts\.jp](https://html5experts.jp/takazudo/21946/)
 
-#### モディファイアとステートの違い
+<br />
+</details>
+
+<details>
+<summary><strong>モディファイアとステートの違い</strong></summary>
+<br />
 
 モディファイアとステートは使用目的が似ているので、以下を基準に使い分けます。
 
@@ -340,7 +370,12 @@ SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-
   - 例えば、その使用しているコンポーネント自体で ON/OFF の状態がある、というようなケース
   - 後述の「JavaScript から参照・操作するセレクタの命名規則」も参考にしてください
 
-#### ユーティリティとコンポーネントの違い
+<br />
+</details>
+
+<details>
+<summary><strong>ユーティリティとコンポーネントの違い</strong></summary>
+<br />
 
 ユーティリティとコンポーネントは使用目的が似ているので、以下を基準に分類します。
 
@@ -348,7 +383,12 @@ SUIT CSS の命名規則は、[BEM](https://csswizardry.com/2013/01/mindbemding-
   - [ユーティリティはイミュータブルで、親のコンテキストに基づいて変更することはできません。](https://github.com/twbs/bootstrap/issues/25829#issuecomment-372382041)
 - コンポーネント： このプロジェクトだけで使いまわせるくらいの汎用性のもので、行数が多くバリエーション(Modifier)や子要素(Element)を持つ複雑なもの
 
-#### CSS Modules
+<br />
+</details>
+
+<details>
+<summary><strong>CSS Modules</strong></summary>
+<br />
 
 React コンポーネント固有のスタイルは、[CSS Modules](http://postd.cc/css-modules/) で定義します。CSS Modules では、クラス名が JS のプロパティ名としても流用される影響で使用可能文字に制約があるため、SUIT CSS (BEM)の概念をベースに以下の独自ルールで命名します。
 
@@ -366,20 +406,18 @@ React コンポーネント固有のスタイルは、[CSS Modules](http://postd
 
 1 つのコンポーネントの範囲を超えて別のコンポーネントやグローバル CSS 側と共有したい変数やミックスインがある場合は、グローバル CSS 側の **A**bstractions 内に定義して共有するようにします。
 
-### ローカルスコープを表すプレフィックス
+<br />
+</details>
 
-例えば `$_foo` や `_bar()` などのように変数名、関数名、ミックスイン名の最初にアンダースコアを付けた場合は、それを定義しているコンポーネント（＝ SCSS ファイル）内でのみ参照されることを表しています。これは、ローカルスコープをプレフィックスで表し、別のコンポーネントや別のファイルからはそれを参照しないことを意味しています。
-
-```scss
-$color-foo: #fff; // 別のコンポーネント（.scssファイル）から使用される可能性がある
-$_color-foo: #fff; // 定義したコンポーネント（.scssファイル）内だけで使用される
-```
+<a name="variables-naming"></a>
 
 ### 変数・関数・mixin の命名規則
 
 Sass の機能として利用できる変数・関数・mixin は、グローバルな場合とローカルな場合で分けて、以下の命名規則を採用しています。
 
-#### グローバル
+<details>
+<summary><strong>グローバルな変数・関数・mixin</strong></summary>
+<br />
 
 **A**bstractions 内に配置するグローバルな変数・関数・mixin の命名規則は、[SUIT CSS の非コンポーネントの場合のカスタムプロパティの命名規則](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#theme-variables) を参考に以下のシンタックスで命名し、ネームスペースには **A**bstractions を示す `a-` プレフィックスを付与します。
 
@@ -387,7 +425,12 @@ Sass の機能として利用できる変数・関数・mixin は、グローバ
 
 命名例: `$a-lineHeight-md`, `$a-fontSize-h1`, `$a-minWidth-StickyFooter-footer`, `$a-minWidth-StickyFooter--darkTheme-footer`, `$a-minWidth-StickyFooter-footer--active`, `@function a-stripUnit`, `@mixin a-linkColors`
 
-#### ローカル
+<br />
+</details>
+
+<details>
+<summary><strong>ローカルな変数・関数・mixin</strong></summary>
+<br />
 
 **C**omponents や **D**ecorations のコンポーネント内に配置するローカルな変数・関数・mixin の命名規則は以下のシンタックスで命名し、ネームスペース部分にはローカル変数を表すアンダースコアをプレフィックスとして付与します。
 
@@ -397,49 +440,40 @@ Sass の機能として利用できる変数・関数・mixin は、グローバ
 
 `$_BlockName` は、ブロック名を指すローカル変数として、[モディファイアのネスト時の文字列展開](https://gist.github.com/ruedap/f622215fc7752db643e5ef8a37c1f3d7) などに使用します。
 
-### extend 機能の使用禁止
+<br />
+</details>
 
-Sass の [extend 機能](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend) は、意図しないカスケーディング順になるリスクが高いため、この機能の使用を禁止します。プレースホルダーセレクターによる extend も禁止します。
+<a name="abc-prefix"></a>
 
-- [extend がわかりづらくなるコーディング例](https://codepen.io/ruedap/pen/rLQBOb)
+### 分類用プレフィックス
 
-スタイルを共有（抽象化）したい場合は、extend 機能の代わりに [mixin 機能](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins) を使用してください。
+**A**bstractions, **B**asics, **C**omponents, **D**ecorations, **E**xtras に分類するディレクトリ構成に合わせて、各ディレクトリ内で使用する CSS コードには、そのディレクトリ名の「頭文字 1 文字の小文字+ハイフン」（**C**omponents であれば `c-`）をプレフィックスとして使用します。基本的にプロジェクト固有に定義する CSS セレクタ名、Sass 変数名等にはこの分類用プレフィックスを付加しますが、何らかの理由でプレフィックスの付加が困難だったり、好ましくない場合は付けなくても構いません。
+
+1.  **A**bstractions （抽象）
+    - e.g. `$a-color-black`, `@mixin a-zIndex`
+2.  **B**asics （基礎）
+    - e.g. `.b-errorMessage`, `.b-theme-primary`
+3.  **C**omponents （部品）
+    - e.g. `.c-Page`, `.c-Page-body` (SUIT CSS の命名規則)
+4.  **D**ecorations （装飾）
+    - e.g. `.d-HomeIndex`, `.d-HomeIndex-show` (SUIT CSS の命名規則)
+5.  **E**xtras （臨時）
+    - e.g. `.e-color-temp`
+
+<a name="local-scope-prefix"></a>
+
+### ローカルスコープを表すプレフィックス
+
+例えば `$_foo` や `_bar()` などのように変数名、関数名、ミックスイン名の最初にアンダースコアを付けた場合は、それを定義しているコンポーネント（＝ SCSS ファイル）内でのみ参照されることを表しています。これは、ローカルスコープをプレフィックスで表し、別のコンポーネントや別のファイルからはそれを参照しないことを意味しています。
 
 ```scss
-// NG
-%foo {
-  color: #fff;
-}
-
-.bar {
-  @extend %foo;
-}
-
-// OK
-@mixin foo {
-  color: #fff;
-}
-
-.baz {
-  @include foo;
-}
+$color-foo: #fff; // 別のコンポーネント（.scssファイル）から使用される可能性がある
+$_color-foo: #fff; // 定義したコンポーネント（.scssファイル）内だけで使用される
 ```
 
-### ベンダープレフィックス
+<a name="js-prefix"></a>
 
-CSS のベンダープレフィックスは、[Autoprefixer](https://github.com/postcss/autoprefixer) によって自動付加されるように設定されていますので、手動でベンダープレフィックスを付加することは基本的に避けます（一部の例外を除く）。
-
-Autoprefixer で設定されている対象ブラウザーのバージョン及び自動付加されるベンダープレフィックス一覧は、以下のコマンドで確認することができます。
-
-```sh
-# Webpacker
-$ yarn run autoprefixer --info
-
-# Sprockets
-$ bundle exec rake autoprefixer:info
-```
-
-### JavaScript から参照・操作するセレクタの命名規則
+### JavaScript から参照・操作するセレクタのプレフィックス
 
 JavaScript から扱うセレクタには、`js-` または `is-` プレフィックスを付与し、それ以外の **CSS 側で使われているセレクタを直接使用しない**ようにします。
 
@@ -477,3 +511,85 @@ if $('#js-foo-list').length > 0
   $('.js-foo-list-item').on 'click', ->
     $(this).addClass('is-active')
 ```
+
+<a name="vendor-prefix"></a>
+
+### ベンダープレフィックス
+
+CSS のベンダープレフィックスは、[Autoprefixer](https://github.com/postcss/autoprefixer) によって自動付加されるように設定されていますので、手動でベンダープレフィックスを付加することは基本的に避けます（一部の例外を除く）。
+
+Autoprefixer で設定されている対象ブラウザーのバージョン及び自動付加されるベンダープレフィックス一覧は、以下のコマンドで確認することができます。
+
+```sh
+# Webpacker
+$ yarn run autoprefixer --info
+
+# Sprockets
+$ bundle exec rake autoprefixer:info
+```
+
+<a name="sass-extend"></a>
+
+### extend 機能の使用禁止
+
+Sass の [extend 機能](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend) は、意図しないカスケーディング順になるリスクが高いため、この機能の使用を禁止します。プレースホルダーセレクターによる extend も禁止します。
+
+- [extend がわかりづらくなるコーディング例](https://codepen.io/ruedap/pen/rLQBOb)
+
+スタイルを共有（抽象化）したい場合は、extend 機能の代わりに [mixin 機能](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins) を使用してください。
+
+```scss
+// NG
+%foo {
+  color: #fff;
+}
+
+.bar {
+  @extend %foo;
+}
+
+// OK
+@mixin foo {
+  color: #fff;
+}
+
+.baz {
+  @include foo;
+}
+```
+
+<a name="lint"></a>
+
+### Lint ツール
+
+SCSS ファイルに Lint を適用するコマンドが追加してあるので、SCSS コードの追加や編集を行った際は以下のコマンドを実行して、可能な範囲で一貫性のある書き方に直してください。コードフォーマットと Lint の優先順位としては、コードフォーマットの方を優先してください。
+
+```sh
+yarn run lint:scss
+```
+
+Lint の結果の中には自動で修復可能なものがあり、その自動修復を適用する場合は以下のコマンドを実行してください。
+
+```sh
+yarn run lint:scss:fix
+```
+
+また、時々出力後の HTML を [HTML5 バリデーター](https://checker.html5.org/) や [aXe](https://www.axe-core.org/) に通して、不備がないかチェックしてください。
+
+納品・リリース前には [Lighthouse](https://github.com/GoogleChrome/lighthouse) でページごとのパフォーマンスやユーザビリティをチェックしてください。[sonarwhal](https://sonarwhal.com/) や [PageSpeed Insights](https://github.com/addyosmani/psi) は URL が必要になるため、ステージング環境やリリース後の本番環境でチェックしてください。
+
+<a name="code-format"></a>
+
+### コードフォーマット
+
+SCSS ファイルにコードフォーマットを適用する npm コマンドが追加してあるので、SCSS コードの追加や編集を行った際は以下のコマンドを実行して、こまめにコードフォーマットを適用してください。
+
+```sh
+yarn run format:scss
+```
+
+<a name="file-format"></a>
+
+### SCSS ファイルの書式
+
+SCSS ファイル内の書式は、[idiomatic-css](https://github.com/necolas/idiomatic-css/tree/master/translations/ja-JP) のフォーマットに沿って記述します。

@@ -1,15 +1,21 @@
 // =============================================================================
-// サイト全体で使用する変数、関数、mixin等を定義します。
+// Abstractions（抽象）
 // =============================================================================
 
-@import "./Abstractions/functions";
-@import "./Abstractions/browser-gem";
-@import "./Abstractions/workaround";
-@import "./Abstractions/bootstrap-deodorizer";
-@import "./Abstractions/colors";
-@import "./Abstractions/sizes";
-@import "./Abstractions/text";
-@import "./Abstractions/z-index";
-@import "./Abstractions/transitions";
-@import "./Abstractions/bootstrap-custom";
-@import "./Abstractions/emma-custom";
+//
+// サイト全体で使用する変数、関数、mixin等を定義します。
+// ここで定義するコードは、Sassのコンパイルを実行した時にCSSコードが出力されない
+// 抽象的なコードに限定されます。
+//
+
+@import "./abstractions/functions";
+@import "./abstractions/browser-gem";
+@import "./abstractions/workaround";
+@import "./abstractions/bootstrap-deodorizer";
+@import "./abstractions/colors";
+@import "./abstractions/sizes";
+@import "./abstractions/text";
+@import "./abstractions/z-index";
+@import "./abstractions/transitions";
+@import "./abstractions/bootstrap-custom";
+@import "./abstractions/emma-custom";
