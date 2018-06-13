@@ -273,6 +273,10 @@ yarn run lint:scss:fix
 
 納品・リリース前には [Lighthouse](https://github.com/GoogleChrome/lighthouse) でページごとのパフォーマンスやユーザビリティをチェックしてください。[sonarwhal](https://sonarwhal.com/) や [PageSpeed Insights](https://github.com/addyosmani/psi) は URL が必要になるため、ステージング環境やリリース後の本番環境でチェックしてください。
 
+### SCSS ファイルの書式
+
+SCSS ファイルの書式は、[idiomatic-css](https://github.com/necolas/idiomatic-css/tree/master/translations/ja-JP) のフォーマットに沿って記述します。
+
 ### 一時的な CSS コードの定義場所
 
 どこに CSS コードを分類するべきか迷った場合、もしくは、追加する時点で分類が不明な CSS コードについては、一旦 `/extras/_temp.scss` に追加してください。このファイルに定義されているスタイルは、最終的に適切な名前と定義場所になるようにリファクタリングします。
