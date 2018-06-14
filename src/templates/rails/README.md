@@ -1,30 +1,27 @@
-# ABCCSS
+# PROJECT NAME
 
 ## 動作環境
 
-- Ruby 2.5.1
+- Ruby
 - PostgreSQL
-- Node.js 8.1
-- yarn
-- direnv
+- Node.js
+- Yarn
 
 ## 初期設定
 
-- `.envrc.sample` を `.envrc` にコピーします
-- `.envrc` の `DATABASE_URL` に、適切な設定を記述します
-  - `postgresql://#{ユーザ}:#{パスワード}@#{接続先ホスト}/`
-  - パスワード無しなら `#{ユーザ}@#{接続先ホスト}` のように記述します
-  - 例 `postgresql://postgres@localhost/`
-- `.envrc` の `RAILS_PORT` に rails server を動かすポートを指定します
-- `direnv allow` を実行して、`.envrc` を有効化します
+- `.env.sample` を `.env` にコピーします（必要があれば適切な値を設定します）
+- `yarn install` を実行して、npm パッケージをインストールします
+- `bundle install` を実行して、gem をインストールします
 - `rails db:setup` を実行して、データベースを準備します
+- `rails db:seed`を実行して、初期データをインポートします
 
 ## 開発手順
 
-- `bundle install` で gem をインストールします
-- `yarn install` で npm パッケージをインストールします
-- `rails db:seed` で開発用のデータを投入します
-- `foreman start -f Procfile.dev` で rails server と webpack-dev-server を起動します
+- `yarn install` を実行して、npm パッケージをインストールします
+- `bundle install` を実行して、gem をインストールします
+- `rails db:setup` を実行して、データベースを準備します
+- `rails db:migrate` を実行して、データベースのマイグレーションを実行します
+- `bin/dev-server` で開発用サーバーを起動します
 - トピックブランチで開発を行います
 - 完了したら、push して PR を出します
 - 誰かにレビューしてもらい、OK が出たら「PR を出した人」がマージします
