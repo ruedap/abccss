@@ -1,3 +1,20 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/ruedap/abccss/compare/v0.6.0...v0.7.0) (2018-06-14)
+
+
+### Features
+
+* **scss:** Change SCSS file name to kebab case ([3dd032d](https://github.com/ruedap/abccss/commit/3dd032d))
+* **scss:** Update comments based on idiomatic-css ([9efd78c](https://github.com/ruedap/abccss/commit/9efd78c))
+* **scss:** Update placeholders based on idiomatic-css ([cc0f89f](https://github.com/ruedap/abccss/commit/cc0f89f))
+
+
+### BREAKING CHANGES
+
+* **scss:** The name of SCSS files have changed from pascal-case to kebab-case.
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/ruedap/abccss/compare/v0.5.0...v0.6.0) (2018-06-11)
 
