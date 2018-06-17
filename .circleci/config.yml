@@ -5,7 +5,7 @@
 defaults: &defaults
   docker:
     - image: ruedap/node-xcb-noto
-  working_directory: ~/repo
+  working_directory: ~/cli
 
 version: 2
 jobs:
@@ -13,45 +13,41 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
+            - v1-npm-{{checksum ".circleci/config.yml"}}-{{ checksum "package-lock.json"}}
+            - v1-npm-{{checksum ".circleci/config.yml"}}
       - run: npm install
-
+      - run: ./bin/run --version
+      - run: ./bin/run --help
       - save_cache:
+          key: v1-npm-{{checksum ".circleci/config.yml"}}-{{ checksum "package-lock.json"}}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - ~/cli/node_modules
+            - ~/.npm
+            - /usr/local/lib/node_modules
       - run: npm run ci:test
 
   deploy:
     <<: *defaults
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
+            - v1-npm-{{checksum ".circleci/config.yml"}}-{{ checksum "package-lock.json"}}
+            - v1-npm-{{checksum ".circleci/config.yml"}}
       - run: npm install
-
       - save_cache:
+          key: v1-npm-{{checksum ".circleci/config.yml"}}-{{ checksum "package-lock.json"}}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - ~/cli/node_modules
+            - ~/.npm
+            - /usr/local/lib/node_modules
       - run: npm run deploy-storybook
 
 workflows:
   version: 2
-  build_and_deploy:
+  "abccss":
     jobs:
       - build
       - deploy:
