@@ -37,4 +37,15 @@ export class Env {
       args.stylesheets_root_dir || Env.CONFIG.stylesheetsRootDir
     );
   }
+
+  public static isExistFile(file: string): boolean {
+    try {
+      fs.statSync(file);
+      return true;
+    } catch (err) {
+      if (err.code === "ENOENT") return false;
+    }
+
+    return false;
+  }
 }

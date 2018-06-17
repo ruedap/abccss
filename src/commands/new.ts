@@ -31,20 +31,9 @@ export default class New extends Command {
     fse.mkdirpSync(dir);
     fse.copySync(Env.SRC_STYLESHEETS_DIR, dir);
     this.log(Env.generatedLog(dir));
-    if (!this.isExistFile(Env.RC_FILE)) {
+    if (!Env.isExistFile(Env.RC_FILE)) {
       fse.outputFileSync(Env.RC_FILE, Env.SRC_PLACEHOLDER(dir));
       this.log(Env.generatedLog(Env.RC_FILE));
     }
-  }
-
-  private isExistFile(file: string): boolean {
-    try {
-      fs.statSync(file);
-      return true;
-    } catch (err) {
-      if (err.code === "ENOENT") return false;
-    }
-
-    return false;
   }
 }
