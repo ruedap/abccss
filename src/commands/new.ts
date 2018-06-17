@@ -8,6 +8,12 @@ const path = require("path");
 export default class New extends Command {
   static description = "generate new ABCCSS structure files";
 
+  static examples = [
+    `$ abccss new path/to/stylesheets/
+Generated: path/to/stylesheets/
+Generated: .abccssrc`
+  ];
+
   static flags = {
     help: flags.help({
       char: "h"

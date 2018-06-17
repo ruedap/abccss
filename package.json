@@ -37,7 +37,7 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
     "compile:scss": "webpack --progress --colors",
     "lint:scss": "stylelint 'src/templates/stylesheets/**/*.scss'",
     "lint:scss:fix": "run-s lint:scss -- --fix",
@@ -48,7 +48,8 @@
     "sprite:svg": "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
     "test": "run-s compile:scss",
     "ci:test": "run-s compile:scss oclif:test reg-suit:screenshot reg-suit:test",
-    "version": "npm run changelog && git add CHANGELOG.md",
+    "version": "run-s changelog",
+    "release": "np",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook -c .storybook -o tmp/storybook",
@@ -68,12 +69,8 @@
     "reg-cli:update": "npm run reg-cli:exec -- --update",
     "reg-cli:exec": "reg-cli ./.storybook/screenshots/actual ./.storybook/screenshots/expected ./.storybook/screenshots/diff -R ./.storybook/report.html",
     "reg-cli:report": "open ./.storybook/report.html",
-    "oclif:postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
-    "oclif:posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
-    "oclif:prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
-    "oclif:prepare": "rm -rf lib && tsc",
     "oclif:test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
-    "oclif:version": "oclif-dev readme && git add README.md"
+    "oclif:readme": "oclif-dev readme"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
@@ -110,6 +107,7 @@
     "jquery": "^3.3.1",
     "mocha": "^5.1.1",
     "node-sass": "^4.8.3",
+    "np": "^3.0.4",
     "npm-run-all": "^4.1.2",
     "nyc": "^12.0.2",
     "oclif": "^1.8.5",
