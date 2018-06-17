@@ -47,7 +47,7 @@
     "format:md": "prettier --write '**/README.md'",
     "sprite:svg": "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
     "test": "run-s compile:scss",
-    "ci:test": "run-s compile:scss reg-suit:screenshot reg-suit:test",
+    "ci:test": "run-s compile:scss oclif:test reg-suit:screenshot reg-suit:test",
     "version": "npm run changelog && git add CHANGELOG.md",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006 -c .storybook",
