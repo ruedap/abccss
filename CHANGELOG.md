@@ -1,3 +1,13 @@
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/ruedap/abccss/compare/v0.7.0...v0.8.0) (2018-06-17)
+
+
+### Features
+
+* **cli:** Rewrite CLI commands with oclif ([6f44c07](https://github.com/ruedap/abccss/commit/6f44c07))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/ruedap/abccss/compare/v0.6.0...v0.7.0) (2018-06-14)
 
