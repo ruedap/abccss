@@ -419,7 +419,7 @@ Sass の機能として利用できる変数・関数・mixin は、グローバ
 <summary><strong>グローバルな変数・関数・mixin</strong></summary>
 <br />
 
-**A**bstractions 内に配置するグローバルな変数・関数・mixin の命名規則は、[SUIT CSS の非コンポーネントの場合のカスタムプロパティの命名規則](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#theme-variables) を参考に以下のシンタックスで命名し、ネームスペースには **A**bstractions を示す `a-` プレフィックスを付与します。
+**A**bstractions 内で宣言するグローバルな変数・関数・mixin の命名規則は、[SUIT CSS の非コンポーネントの場合のカスタムプロパティの命名規則](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#theme-variables) を参考に以下のシンタックスで命名し、ネームスペースには **A**bstractions を示す `a-` プレフィックスを付与します。
 
 シンタックス: `<namespace>-(cssProperty|name)[-BlockName][(--modifierName|-descendentName)]`
 
@@ -432,7 +432,7 @@ Sass の機能として利用できる変数・関数・mixin は、グローバ
 <summary><strong>ローカルな変数・関数・mixin</strong></summary>
 <br />
 
-**C**omponents や **D**ecorations のコンポーネント内に配置するローカルな変数・関数・mixin の命名規則は以下のシンタックスで命名し、ネームスペース部分にはローカル変数を表すアンダースコアをプレフィックスとして付与します。
+**C**omponents や **D**ecorations のコンポーネント内で宣言するローカルな変数・関数・mixin の命名規則は以下のシンタックスで命名し、ネームスペース部分にはローカル変数を表すアンダースコアをプレフィックスとして付与します。
 
 シンタックス: `_[(--modifierName|descendentName|name)-](cssProperty|name)`
 
