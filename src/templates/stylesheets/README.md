@@ -62,7 +62,7 @@
   - Android
     - スマートフォン環境と同じ
   - 画面解像度
-    - 最小横幅: 768x ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Medium の下限)
+    - 最小横幅: 768px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Medium の下限)
     - 最大横幅: 991.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Medium の上限)
   - 対象外の環境で表示した場合
     - スマートフォン環境と同じ
