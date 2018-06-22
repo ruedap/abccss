@@ -23,10 +23,11 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: I18n.t('meta_tags.site'), # TODO: サイト名設定
-      reverse: true,
       title: nil,
       description: I18n.t('meta_tags.description'), # TODO: 説明文設定
       keywords: I18n.t('meta_tags.keywords'), # TODO: キーワード設定
+      separator: '&ndash;'.html_safe,
+      reverse: true,
       canonical: request.original_url,
       og: {
         site_name: :site,
