@@ -1,4 +1,5 @@
-# ABCCSS
+ABCCSS
+======
 
 <!-- toc -->
 * [Usage](#usage)
@@ -13,7 +14,7 @@ $ npm install -g @ruedap/abccss
 $ abccss COMMAND
 running command...
 $ abccss (-v|--version|version)
-@ruedap/abccss/0.7.0 darwin-x64 node-v8.10.0
+@ruedap/abccss/0.8.0 darwin-x64 node-v8.10.0
 $ abccss --help [COMMAND]
 USAGE
   $ abccss COMMAND
@@ -49,7 +50,7 @@ EXAMPLE
   Generated: .abccssrc
 ```
 
-_See code: [src/commands/new.ts](https://github.com/ruedap/abccss/blob/v0.7.0/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/ruedap/abccss/blob/v0.8.0/src/commands/new.ts)_
 
 ## `abccss component COMPONENT_NAME [STYLESHEETS_ROOT_DIR]`
 
@@ -71,7 +72,7 @@ EXAMPLE
   Generated: path/to/stylesheets/components/_my-awesome-component.scss
 ```
 
-_See code: [src/commands/component.ts](https://github.com/ruedap/abccss/blob/v0.7.0/src/commands/component.ts)_
+_See code: [src/commands/component.ts](https://github.com/ruedap/abccss/blob/v0.8.0/src/commands/component.ts)_
 
 ## `abccss decoration DECORATION_NAME [STYLESHEETS_ROOT_DIR]`
 
@@ -93,7 +94,7 @@ EXAMPLE
   Generated: path/to/stylesheets/decorations/_my-awesome-decoration.scss
 ```
 
-_See code: [src/commands/decoration.ts](https://github.com/ruedap/abccss/blob/v0.7.0/src/commands/decoration.ts)_
+_See code: [src/commands/decoration.ts](https://github.com/ruedap/abccss/blob/v0.8.0/src/commands/decoration.ts)_
 
 ## `abccss help [COMMAND]`
 
@@ -109,9 +110,7 @@ ARGUMENTS
 OPTIONS
   --all  see all commands in CLI
 ```
-
 <!-- commandsstop -->
-
 
 ---
 

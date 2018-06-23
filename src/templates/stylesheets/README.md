@@ -276,6 +276,7 @@ SVG スプライトを使用する場合は、スプライト用 SVG ファイ�
 <details>
 <summary><strong>SVG スプライトの生成・参照</strong></summary>
 <br />
+
 SVG スプライトの生成は、元となる SVG ファイルを `app/javascript/images/sprite_svg/*.svg` に配置した上で以下のコマンドを実行すると、その SVG を含んだ SVG スプライトファイルが `app/javascript/images/sprite.svg` に生成されます。
 
 ```sh
@@ -295,7 +296,7 @@ SVG スプライトの参照は、独自実装した `svg_sprite` ヘルパー�
 
 ### アイコン
 
-このプロジェクトでは、アイコンセットとして [Material Icons](https://material.io/icons/) を使用します。このアイコンセットに含まれないアイコンを使用する必要がある場合は、SVG ファイルとして独自に追加してください。
+このプロジェクトでは、アイコンセットとして [Font Awesome 5](https://fontawesome.com/how-to-use/use-with-node-js) を使用します。このアイコンセットに含まれないアイコンを使用する必要がある場合は、SVG ファイルとして独自に追加してください。
 
 <a name="web-fonts"></a>
 
