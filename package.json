@@ -49,7 +49,7 @@
     "test": "run-s compile:scss",
     "ci:test": "run-s compile:scss oclif:test reg-suit:screenshot reg-suit:test",
     "version": "run-s changelog",
-    "release": "np",
+    "release": "run-s np oclif:readme",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook -c .storybook -o tmp/storybook",
