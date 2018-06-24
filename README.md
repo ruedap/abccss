@@ -14,7 +14,7 @@ $ npm install -g @ruedap/abccss
 $ abccss COMMAND
 running command...
 $ abccss (-v|--version|version)
-@ruedap/abccss/0.8.0 darwin-x64 node-v8.10.0
+@ruedap/abccss/0.9.0 darwin-x64 node-v8.10.0
 $ abccss --help [COMMAND]
 USAGE
   $ abccss COMMAND
@@ -25,32 +25,10 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`abccss new [STYLESHEETS_ROOT_DIR]`](#abccss-new-stylesheets-root-dir)
 * [`abccss component COMPONENT_NAME [STYLESHEETS_ROOT_DIR]`](#abccss-component-component-name-stylesheets-root-dir)
 * [`abccss decoration DECORATION_NAME [STYLESHEETS_ROOT_DIR]`](#abccss-decoration-decoration-name-stylesheets-root-dir)
 * [`abccss help [COMMAND]`](#abccss-help-command)
-
-## `abccss new [STYLESHEETS_ROOT_DIR]`
-
-generate new ABCCSS structure files
-
-```
-USAGE
-  $ abccss new [STYLESHEETS_ROOT_DIR]
-
-ARGUMENTS
-  STYLESHEETS_ROOT_DIR  set output dir. defaults to "src/templates/stylesheets/"
-
-OPTIONS
-  -h, --help  show CLI help
-
-EXAMPLE
-  $ abccss new path/to/stylesheets/
-  Generated: path/to/stylesheets/
-  Generated: .abccssrc
-```
-
-_See code: [src/commands/new.ts](https://github.com/ruedap/abccss/blob/v0.8.0/src/commands/new.ts)_
+* [`abccss new [STYLESHEETS_ROOT_DIR]`](#abccss-new-stylesheets-root-dir)
 
 ## `abccss component COMPONENT_NAME [STYLESHEETS_ROOT_DIR]`
 
@@ -72,7 +50,7 @@ EXAMPLE
   Generated: path/to/stylesheets/components/_my-awesome-component.scss
 ```
 
-_See code: [src/commands/component.ts](https://github.com/ruedap/abccss/blob/v0.8.0/src/commands/component.ts)_
+_See code: [src/commands/component.ts](https://github.com/ruedap/abccss/blob/v0.9.0/src/commands/component.ts)_
 
 ## `abccss decoration DECORATION_NAME [STYLESHEETS_ROOT_DIR]`
 
@@ -94,7 +72,7 @@ EXAMPLE
   Generated: path/to/stylesheets/decorations/_my-awesome-decoration.scss
 ```
 
-_See code: [src/commands/decoration.ts](https://github.com/ruedap/abccss/blob/v0.8.0/src/commands/decoration.ts)_
+_See code: [src/commands/decoration.ts](https://github.com/ruedap/abccss/blob/v0.9.0/src/commands/decoration.ts)_
 
 ## `abccss help [COMMAND]`
 
@@ -110,6 +88,30 @@ ARGUMENTS
 OPTIONS
   --all  see all commands in CLI
 ```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
+
+## `abccss new [STYLESHEETS_ROOT_DIR]`
+
+generate new ABCCSS structure files
+
+```
+USAGE
+  $ abccss new [STYLESHEETS_ROOT_DIR]
+
+ARGUMENTS
+  STYLESHEETS_ROOT_DIR  set output dir. defaults to "src/templates/stylesheets/"
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ abccss new path/to/stylesheets/
+  Generated: path/to/stylesheets/
+  Generated: .abccssrc
+```
+
+_See code: [src/commands/new.ts](https://github.com/ruedap/abccss/blob/v0.9.0/src/commands/new.ts)_
 <!-- commandsstop -->
 
 ---
