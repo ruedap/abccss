@@ -1,3 +1,19 @@
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/ruedap/abccss/compare/v0.8.0...v0.9.0) (2018-06-24)
+
+
+### Bug Fixes
+
+* **rails:** Fix helper for meta-tags template ([a826679](https://github.com/ruedap/abccss/commit/a826679))
+* **rails:** Fix keywords for meta-tags template ([7363d1d](https://github.com/ruedap/abccss/commit/7363d1d))
+
+
+### Features
+
+* **placeholder:** Improve Decoration placeholder ([73f137e](https://github.com/ruedap/abccss/commit/73f137e))
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/ruedap/abccss/compare/v0.7.0...v0.8.0) (2018-06-17)
 
