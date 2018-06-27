@@ -86,6 +86,8 @@ Thumbs.db
 /lib
 /tmp
 /yarn.lock
+/npm-shrinkwrap.json
+/oclif.manifest.json
 node_modules
 
 # Project

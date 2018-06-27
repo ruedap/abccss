@@ -22,13 +22,22 @@
     "bem",
     "suit-css"
   ],
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "abccss",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "types": "lib/index.d.ts",
   "files": [
-    "/src",
-    "/*.md",
+    "/README.md",
+    "/CHANGELOG.md",
     "LICENSE",
     "/bin",
     "/lib",
+    "/src",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
@@ -49,7 +58,7 @@
     "test": "run-s compile:scss",
     "ci:test": "run-s compile:scss oclif:test reg-suit:screenshot reg-suit:test",
     "version": "run-s changelog",
-    "release": "run-s np oclif:readme",
+    "release": "run-s oclif:prepack np oclif:postpack",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook -c .storybook -o tmp/storybook",
@@ -70,7 +79,9 @@
     "reg-cli:exec": "reg-cli ./.storybook/screenshots/actual ./.storybook/screenshots/expected ./.storybook/screenshots/diff -R ./.storybook/report.html",
     "reg-cli:report": "open ./.storybook/report.html",
     "oclif:test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
-    "oclif:readme": "oclif-dev readme"
+    "oclif:readme": "oclif-dev readme",
+    "oclif:prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme && npm shrinkwrap && git checkout package-lock.json",
+    "oclif:postpack": "oclif-dev readme && rm -f oclif.manifest.json npm-shrinkwrap.json"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
@@ -139,13 +150,5 @@
   },
   "stylelint": {
     "extends": "@ruedap/stylelint-config-abccss"
-  },
-  "oclif": {
-    "commands": "./lib/commands",
-    "bin": "abccss",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
-  },
-  "types": "lib/index.d.ts"
+  }
 }
