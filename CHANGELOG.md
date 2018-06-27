@@ -1,3 +1,8 @@
+<a name="0.9.2"></a>
+## [0.9.2](https://github.com/ruedap/abccss/compare/v0.9.1...v0.9.2) (2018-06-27)
+
+
+
 <a name="0.9.1"></a>
 ## [0.9.1](https://github.com/ruedap/abccss/compare/v0.9.0...v0.9.1) (2018-06-27)
 
