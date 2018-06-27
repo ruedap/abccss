@@ -14,7 +14,7 @@ $ npm install -g @ruedap/abccss
 $ abccss COMMAND
 running command...
 $ abccss (-v|--version|version)
-@ruedap/abccss/0.9.3 darwin-x64 node-v8.10.0
+@ruedap/abccss/0.9.4 darwin-x64 node-v8.10.0
 $ abccss --help [COMMAND]
 USAGE
   $ abccss COMMAND
@@ -50,7 +50,7 @@ EXAMPLE
   Generated: path/to/stylesheets/components/_my-awesome-component.scss
 ```
 
-_See code: [src/commands/component.ts](https://github.com/ruedap/abccss/blob/v0.9.3/src/commands/component.ts)_
+_See code: [src/commands/component.ts](https://github.com/ruedap/abccss/blob/v0.9.4/src/commands/component.ts)_
 
 ## `abccss decoration DECORATION_NAME [STYLESHEETS_ROOT_DIR]`
 
@@ -72,7 +72,7 @@ EXAMPLE
   Generated: path/to/stylesheets/decorations/_my-awesome-decoration.scss
 ```
 
-_See code: [src/commands/decoration.ts](https://github.com/ruedap/abccss/blob/v0.9.3/src/commands/decoration.ts)_
+_See code: [src/commands/decoration.ts](https://github.com/ruedap/abccss/blob/v0.9.4/src/commands/decoration.ts)_
 
 ## `abccss help [COMMAND]`
 
@@ -111,7 +111,7 @@ EXAMPLE
   Generated: .abccssrc
 ```
 
-_See code: [src/commands/new.ts](https://github.com/ruedap/abccss/blob/v0.9.3/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/ruedap/abccss/blob/v0.9.4/src/commands/new.ts)_
 <!-- commandsstop -->
 
 ---
