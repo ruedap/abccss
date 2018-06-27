@@ -46,6 +46,10 @@
     "npm": ">= 5"
   },
   "scripts": {
+    "prepare": "npm install && npm test",
+    "version": "npm run changelog",
+    "prepack": "npm run oclif:prepack && git add . && git commit -m 'docs: Update README' && git push && git push --tags",
+    "release": "npm publish && npm run oclif:postpack",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
     "compile:scss": "webpack --progress --colors",
     "lint:scss": "stylelint 'src/templates/stylesheets/**/*.scss'",
@@ -57,8 +61,6 @@
     "sprite:svg": "svgstore -o src/templates/images/sprite.svg -p svg- src/templates/images/sprite_svg/**/*.svg",
     "test": "npm run compile:scss",
     "ci:test": "run-s compile:scss oclif:test reg-suit:screenshot reg-suit:test",
-    "version": "npm run changelog",
-    "release": "npm run oclif:prepack && np && npm run oclif:postpack",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook -c .storybook -o tmp/storybook",
@@ -81,7 +83,7 @@
     "oclif:test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
     "oclif:readme": "oclif-dev readme",
     "oclif:prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme && npm shrinkwrap && git checkout package-lock.json",
-    "oclif:postpack": "oclif-dev readme && rm -f oclif.manifest.json npm-shrinkwrap.json"
+    "oclif:postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
