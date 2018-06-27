@@ -46,7 +46,7 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "prepare": "npm install && npm test",
+    "prepare": "npm test",
     "version": "npm run changelog",
     "prepack": "npm run oclif:prepack && git add . && git commit -m 'docs: Update README' && git push && git push --tags",
     "release": "npm publish && npm run oclif:postpack",
