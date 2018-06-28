@@ -38,8 +38,8 @@
     "/bin",
     "/lib",
     "/src",
-    "/oclif.manifest.json",
-    "/package-lock.json"
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
   ],
   "engines": {
     "node": ">= 8",
@@ -81,8 +81,9 @@
     "reg-cli:exec": "reg-cli ./.storybook/screenshots/actual ./.storybook/screenshots/expected ./.storybook/screenshots/diff -R ./.storybook/report.html",
     "reg-cli:report": "open ./.storybook/report.html",
     "oclif:test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
-    "oclif:prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
-    "oclif:postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json"
+    "oclif:shrinkwrap": "npm prune --production && rm -f package-lock.json && npm shrinkwrap && git checkout package-lock.json",
+    "oclif:prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme  && npm run oclif:shrinkwrap",
+    "oclif:postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json && npm install"
   },
   "dependencies": {
     "@oclif/command": "^1.4.33",

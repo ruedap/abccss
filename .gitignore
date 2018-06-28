@@ -85,6 +85,7 @@ Thumbs.db
 /dist
 /lib
 /tmp
+/npm-shrinkwrap.json
 /oclif.manifest.json
 
 # Project
