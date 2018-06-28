@@ -85,10 +85,7 @@ Thumbs.db
 /dist
 /lib
 /tmp
-/yarn.lock
-/npm-shrinkwrap.json
 /oclif.manifest.json
-node_modules
 
 # Project
 dist/*.map

@@ -38,7 +38,6 @@
     "/bin",
     "/lib",
     "/src",
-    "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
   "engines": {
@@ -48,7 +47,7 @@
   "scripts": {
     "preversion": "npm test",
     "version": "npm run changelog",
-    "release": "npm run oclif:prepack && git add . && git commit -m 'docs: Update version within README' && git push && git push --tags",
+    "release": "npm run oclif:prepack && git add README && git commit -m 'docs: Update version within README' && git push && git push --tags",
     "postpublish": "npm run oclif:postpack",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
     "compile:scss": "webpack --progress --colors",
@@ -81,8 +80,7 @@
     "reg-cli:exec": "reg-cli ./.storybook/screenshots/actual ./.storybook/screenshots/expected ./.storybook/screenshots/diff -R ./.storybook/report.html",
     "reg-cli:report": "open ./.storybook/report.html",
     "oclif:test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
-    "oclif:readme": "oclif-dev readme",
-    "oclif:prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme && npm shrinkwrap && git checkout package-lock.json",
+    "oclif:prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
     "oclif:postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json"
   },
   "dependencies": {
