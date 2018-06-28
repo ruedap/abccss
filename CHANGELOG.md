@@ -1,3 +1,13 @@
+<a name="0.9.5"></a>
+## [0.9.5](https://github.com/ruedap/abccss/compare/v0.9.4...v0.9.5) (2018-06-28)
+
+
+### Bug Fixes
+
+* **cli:** Fix CMD_DIR path ([6a3c8a5](https://github.com/ruedap/abccss/commit/6a3c8a5))
+
+
+
 <a name="0.9.4"></a>
 ## [0.9.4](https://github.com/ruedap/abccss/compare/v0.9.3...v0.9.4) (2018-06-27)
 
