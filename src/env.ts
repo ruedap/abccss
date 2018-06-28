@@ -1,17 +1,19 @@
 const fs = require("fs");
 const rc = require("rc");
 const path = require("path");
+const pkgDir = require("pkg-dir");
 
 export class Env {
   public static readonly APP_NAME = "abccss";
   public static readonly CONFIG = rc(Env.APP_NAME, {
     stylesheetsRootDir: "./"
   });
-  public static readonly CMD_DIR = fs.realpathSync(__dirname);
+  public static readonly ROOT_DIR = pkgDir.sync(__dirname);
+  public static readonly SRC_DIR = `${Env.ROOT_DIR}/src/`;
   public static readonly SRC_STYLESHEETS_DIR = `${
-    Env.CMD_DIR
+    Env.SRC_DIR
   }/templates/stylesheets/`;
-  public static readonly SRC_PLACEHOLDER_DIR = `${Env.CMD_DIR}/placeholders/`;
+  public static readonly SRC_PLACEHOLDER_DIR = `${Env.SRC_DIR}/placeholders/`;
   public static readonly SRC_RC_PLACEHOLDER_FILE = `${
     Env.SRC_PLACEHOLDER_DIR
   }rc.js`;
