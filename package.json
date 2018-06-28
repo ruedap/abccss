@@ -38,7 +38,8 @@
     "/bin",
     "/lib",
     "/src",
-    "/oclif.manifest.json"
+    "/oclif.manifest.json",
+    "/package-lock.json"
   ],
   "engines": {
     "node": ">= 8",
