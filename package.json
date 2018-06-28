@@ -47,7 +47,7 @@
   "scripts": {
     "preversion": "npm test",
     "version": "npm run changelog",
-    "release": "npm run oclif:prepack && git add README && git commit -m 'docs: Update version within README' && git push && git push --tags",
+    "release": "npm run oclif:prepack && git add README.md && git commit -m 'docs: Update version within README' && git push && git push --tags",
     "postpublish": "npm run oclif:postpack",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
     "compile:scss": "webpack --progress --colors",
