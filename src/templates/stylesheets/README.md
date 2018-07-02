@@ -166,7 +166,7 @@
 - `app/javascript/stylesheets/decorations.scss`
 - `app/javascript/stylesheets/extras.scss`
 
-HTTP2 環境を前提として複数ファイルに分かれていますが、HTTP1.x 環境の場合は上記ファイルを統合した `application.scss` を作成してください。
+上記は [HTTP2 環境を前提](https://blog.jxck.io/entries/2016-02-15/loading-css-over-http2.html)としているためエントリーポイントが複数ファイルに分かれていますが、HTTP1.x 環境の場合は上記ファイルを統合した `application.scss` を作成してください。
 
 Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的には使用しません。
 
