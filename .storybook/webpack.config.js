@@ -44,6 +44,5 @@ module.exports = (storybookBaseConfig, configType) => {
     }
   });
 
-  // throw new Error();
   return storybookBaseConfig;
 };
