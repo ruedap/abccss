@@ -10,3 +10,11 @@
 .e-fooBarBaz {
   display: flex;
 }
+
+.e-bs4-button-variant-color-override {
+  @include a-bs4-button-variant-color-override(#fff);
+}
+
+.e-bs4-button-outline-variant-color-override {
+  @include a-bs4-button-outline-variant-color-override(#fff);
+}

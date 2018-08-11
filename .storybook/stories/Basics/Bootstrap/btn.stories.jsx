@@ -53,6 +53,10 @@ storiesOf("Basics/Bootstrap", module)
       <LoremButton btnClass="btn-" />
       <h3>Outline</h3>
       <LoremButton btnClass="btn-outline-" />
+      <h3>Button color override mixin</h3>
+      <LoremButton btnClass="e-bs4-button-variant-color-override btn-" />
+      <br />
+      <LoremButton btnClass="e-bs4-button-outline-variant-color-override btn-outline-" />
       <h3>Active state</h3>
       <LoremButton btnClass="active btn-" />
       <LoremButton btnClass="active btn-outline-" />
