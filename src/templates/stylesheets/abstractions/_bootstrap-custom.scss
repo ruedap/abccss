@@ -68,3 +68,34 @@ $line-height-sm: $a-lineHeight-sm;
 
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+
+@mixin a-bs4-button-variant-color-override($color) {
+  color: $color;
+
+  @include hover {
+    color: $color;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $color;
+  }
+}
+
+@mixin a-bs4-button-outline-variant-color-override($color) {
+  @include hover {
+    color: $color;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $color;
+  }
+}
