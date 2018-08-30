@@ -1,3 +1,18 @@
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/ruedap/abccss/compare/v0.9.9...v0.10.0) (2018-08-30)
+
+
+### Bug Fixes
+
+* **rails:** Improve favicon code ([1c27d5c](https://github.com/ruedap/abccss/commit/1c27d5c))
+
+
+### Features
+
+* **scss:** Add bs4-button-variant-color-override mixin ([b02b513](https://github.com/ruedap/abccss/commit/b02b513))
+
+
+
 <a name="0.9.9"></a>
 ## [0.9.9](https://github.com/ruedap/abccss/compare/v0.9.8...v0.9.9) (2018-06-28)
 
