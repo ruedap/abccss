@@ -1,3 +1,20 @@
+<a name="0.11.0"></a>
+# [0.11.0](https://github.com/ruedap/abccss/compare/v0.10.0...v0.11.0) (2018-08-31)
+
+
+### Bug Fixes
+
+* **cli:** Fix import path ([626bf01](https://github.com/ruedap/abccss/commit/626bf01))
+* **rails:** Fix application.html.haml ([aa929a8](https://github.com/ruedap/abccss/commit/aa929a8))
+
+
+### Features
+
+* **npm:** Add package.json template ([1f079b9](https://github.com/ruedap/abccss/commit/1f079b9))
+* **rails:** Add .postcssrc.yml ([ee4a37b](https://github.com/ruedap/abccss/commit/ee4a37b))
+
+
+
 <a name="0.10.0"></a>
 # [0.10.0](https://github.com/ruedap/abccss/compare/v0.9.9...v0.10.0) (2018-08-30)
 
