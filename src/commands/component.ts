@@ -42,7 +42,7 @@ Generated: path/to/stylesheets/components/_my-awesome-component.scss`
     const componentsDir = path.normalize(`${dir}/components`);
     const fileName = changeCase.paramCase(args.component_name);
     const file = `${componentsDir}/_${fileName}.scss`;
-    const importFile = path.normalize(`${dir}/_components.scss`);
+    const importFile = path.normalize(`${dir}/components.scss`);
     fse.mkdirpSync(dir);
     fse.outputFileSync(
       file,

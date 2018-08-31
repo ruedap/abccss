@@ -42,7 +42,7 @@ Generated: path/to/stylesheets/decorations/_my-awesome-decoration.scss`
     const decorationsDir = path.normalize(`${dir}/decorations`);
     const fileName = changeCase.paramCase(args.decoration_name);
     const file = `${decorationsDir}/_${fileName}.scss`;
-    const importFile = path.normalize(`${dir}/_decorations.scss`);
+    const importFile = path.normalize(`${dir}/decorations.scss`);
     fse.mkdirpSync(dir);
     fse.outputFileSync(
       file,

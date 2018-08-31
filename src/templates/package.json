@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "lint:scss": "stylelint 'app/javascript/stylesheets/**/*.scss'",
+    "lint:scss:fix": "npm run lint:scss -- --fix",
+    "format:scss": "prettier --write 'app/javascript/stylesheets/**/*.scss'"
+  },
+  "stylelint": {
+    "extends": "@ruedap/stylelint-config-abccss"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "autoprefixer": "^9.0.1",
+    "bootstrap": "^4.1.1",
+    "emma.css": "^0.15.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  },
+  "devDependencies": {
+    "@ruedap/abccss": "^0.10.0",
+    "@ruedap/stylelint-config-abccss": "^0.6.0",
+    "prettier": "^1.13.7",
+    "stylelint": "^9.3.0"
+  }
+}
