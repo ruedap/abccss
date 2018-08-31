@@ -12,7 +12,10 @@
     -# = display_meta_tags(default_meta_tags)
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag    'application', media: 'all'
+    = stylesheet_pack_tag 'stylesheets/basics'
+    = stylesheet_pack_tag 'stylesheets/components'
+    = stylesheet_pack_tag 'stylesheets/decorations'
+    = stylesheet_pack_tag 'stylesheets/extras'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag    'application'
     -# TODO: favicon
@@ -27,4 +30,4 @@
       = render 'layouts/flash_message'
       = yield
 
-    %footer.c-Document-footer.c-Page-header
+    %footer.c-Document-footer.c-Page-footer
