@@ -14,6 +14,20 @@
   $_body-color: $a-color-text;
   $_body-fontFamily: $a-fontFamily-sans;
   $_body-fontSize: $a-fontSize-base;
+  $_nav-width: 200px;
+
+  @mixin _Page-content {
+    display: flex;
+  }
+
+  @mixin _Page-nav {
+    flex: 0 0 $_nav-width;
+    width: $_nav-width;
+  }
+
+  @mixin _Page-main {
+    flex: 1 1 0;
+  }
 
   // Block
   // ===========================================================================
@@ -25,6 +39,32 @@
 
   // Elements
   // ===========================================================================
+
+  &-content {
+    @include _Page-content;
+  }
+
+  &-nav {
+    @include _Page-nav;
+  }
+
+  &-main {
+    @include _Page-main;
+    padding-top: $a-padding-md;
+    padding-bottom: $a-padding-lg;
+  }
+
+  &-headingOuter {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: $a-margin-md;
+    margin-bottom: $a-margin-lg;
+  }
+
+  &-heading {
+    margin-bottom: 0;
+  }
 
   // Modifiers
   // ===========================================================================
