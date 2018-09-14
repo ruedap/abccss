@@ -4,6 +4,8 @@ import { withScreenshot } from "storybook-chrome-screenshot";
 import { desktopMin } from "../../screenshot-options";
 import lorem from "../../lorem";
 
+const loremText = lorem.all;
+
 const Weight = () => {
   const l = ["100", "200", "300", "400", "500", "600", "700", "800", "900"];
   return (
@@ -23,8 +25,6 @@ const Weight = () => {
     </React.Fragment>
   );
 };
-
-const loremText = `${lorem.ja}${lorem.en}`;
 
 storiesOf("Abstractions/text", module)
   .addDecorator(withScreenshot(desktopMin(1400)))
