@@ -334,9 +334,26 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-feature-settings: "palt" 1;
           font-feature-settings: "palt" 1;
-  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans Japanese", "Meiryo", sans-serif;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans Japanese", "Meiryo", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   color: #111; }
+  .c-Page-content {
+    display: flex; }
+  .c-Page-nav {
+    flex: 0 0 200px;
+    width: 200px; }
+  .c-Page-main {
+    flex: 1 1 0;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem; }
+  .c-Page-headingOuter {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem; }
+  .c-Page-heading {
+    margin-bottom: 0; }
 
 .c-Document--stickyFooter {
   height: 100%; }
@@ -389,7 +406,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans Japanese", "Meiryo", sans-serif;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans Japanese", "Meiryo", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -4972,10 +4989,10 @@ a.text-dark:hover, a.text-dark:focus {
   margin-bottom: 3rem !important; }
 
 .u-ff-s {
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif", "Noto Serif CJK JP", "Noto Serif JP", "Noto Serif Japanese", serif !important; }
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif", "Noto Serif CJK JP", "Noto Serif JP", "Noto Serif Japanese", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important; }
 
 .u-ff-ss {
-  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans Japanese", "Meiryo", sans-serif !important; }
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans Japanese", "Meiryo", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important; }
 
 .u-ff-c {
   font-family: cursive !important; }
