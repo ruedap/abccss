@@ -1,3 +1,20 @@
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/ruedap/abccss/compare/v0.11.0...v0.12.0) (2018-09-19)
+
+
+### Bug Fixes
+
+* **scss:** Remove unnecessary import declaration ([eceae2e](https://github.com/ruedap/abccss/commit/eceae2e))
+
+
+### Features
+
+* **npm:** Update package.json template ([6a8d406](https://github.com/ruedap/abccss/commit/6a8d406))
+* **scss:** Add elements of Page component ([e89763d](https://github.com/ruedap/abccss/commit/e89763d))
+* **scss:** Improve font family ([f13713f](https://github.com/ruedap/abccss/commit/f13713f))
+
+
+
 <a name="0.11.0"></a>
 # [0.11.0](https://github.com/ruedap/abccss/compare/v0.10.0...v0.11.0) (2018-08-31)
 
