@@ -25,9 +25,17 @@
 
   %body.c-Document-body.c-Page{ class: yield(:body_classes) }
     %header.c-Document-header.c-Page-header
+      -# = render 'layouts/page_header'
 
     .c-Document-content.c-Page-content
-      = render 'layouts/flash_message'
-      = yield
+      .container-fluid
+        .row
+          .col-2.bg-light.c-Page-nav.c-PageNav
+            .c-PageNav-sticky
+              -# = render 'layouts/page_nav'
+          .col-10.ml-auto.c-Page-main
+            -# = render 'layouts/flash_message'
+            = yield
 
     %footer.c-Document-footer.c-Page-footer
+      -# = render 'layouts/page_footer'
