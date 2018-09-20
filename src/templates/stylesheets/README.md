@@ -49,7 +49,7 @@
     - Chrome 最新版
     - Android Browser は対象外
   - 画面解像度
-    - 最小横幅： 320px (iPhone 5 サイズ)
+    - 最小横幅： 375px (iPhone 6 サイズ)
     - 最大横幅： 767.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.1/layout/grid/#grid-options) の Small の上限)
     - 画像素材の高解像度(Retina)対応は @3x で必要
   - レスポンシブ対応
