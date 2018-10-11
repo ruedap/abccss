@@ -110,6 +110,14 @@
     }
   }
 
+  @mixin _--hoverless {
+    tbody tr {
+      @include hover {
+        background-color: inherit;
+      }
+    }
+  }
+
   // Block
   // ===========================================================================
 
@@ -144,5 +152,9 @@
   // Placed here since it has to come after the potential zebra striping
   &--hover {
     @include _--hover;
+  }
+
+  &--hoverless {
+    @include _--hoverless;
   }
 }

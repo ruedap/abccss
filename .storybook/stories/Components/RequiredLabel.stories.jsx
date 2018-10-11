@@ -6,4 +6,4 @@ import { wh } from "../../screenshot-options";
 storiesOf("Components/Atoms/RequiredLabel", module)
   .addDecorator(withScreenshot(wh(100, 100)))
   .add("Japanese", () => <span className="c-RequiredLabel">必須</span>)
-  .add("Engelish", () => <span className="c-RequiredLabel">Required</span>);
+  .add("English", () => <span className="c-RequiredLabel">Required</span>);
