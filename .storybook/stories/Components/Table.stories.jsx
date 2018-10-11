@@ -51,4 +51,5 @@ storiesOf("Components/Molecules/Table", module)
   .add("Table--borderless", () => <Table modifiers="c-Table--borderless" />)
   .add("Table--striped", () => <Table modifiers="c-Table--striped" />)
   .add("Table--stripeless", () => <Table modifiers="c-Table--stripeless" />)
-  .add("Table--hover", () => <Table modifiers="c-Table--hover" />);
+  .add("Table--hover", () => <Table modifiers="c-Table--hover" />)
+  .add("Table--hoverless", () => <Table modifiers="c-Table--hoverless" />);
