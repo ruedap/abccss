@@ -65,7 +65,12 @@ module ApplicationHelper
     "#{asset_pack_path("images/sprite.svg")}#svg-#{filename}"
   end
 
-  def active_path_class(controller_path)
-    controller.controller_path.start_with?(controller_path) ? 'active' : ''
+  def active_path_class(controller_path_array)
+    is_active = false
+    controller_path_array.each do |p|
+      break if is_active
+      is_active = true if controller.controller_path.start_with?(p)
+    end
+    is_active ? 'active' : nil
   end
 end
