@@ -41,3 +41,8 @@
     flex: 1 0 calc(1vw - 1px);
   }
 }
+
+.e-debug-multilineEllipsis {
+  @include a-multilineEllipsis;
+  width: 200px;
+}

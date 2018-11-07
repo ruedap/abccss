@@ -35,6 +35,22 @@ $a-fontFamily-base: $a-fontFamily-sans;
   font-feature-settings: "palt" 1;
 }
 
+@mixin a-multilineEllipsis($lines: 2) {
+  @supports (-webkit-line-clamp: $lines) {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: $lines;
+    /*! autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+  }
+  @supports not (-webkit-line-clamp: $lines) {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
 // Bootstrap ベース
 // https://github.com/twbs/bootstrap/blob/v4.1.0/scss/_variables.scss#L229
 $a-fontSize-base: a-px2rem(16px);
