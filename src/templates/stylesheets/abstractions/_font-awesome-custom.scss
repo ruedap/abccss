@@ -1,0 +1,28 @@
+// 疑似要素用のスタイル
+// https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements
+
+@mixin a-fa($content, $type: solid) {
+  &::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    @if $type == solid {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+
+    @if $type == regular {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 400;
+    }
+
+    @if $type == brands {
+      font-family: "Font Awesome 5 Brands";
+    }
+
+    content: quote($content);
+  }
+}

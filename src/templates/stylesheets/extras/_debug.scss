@@ -1,0 +1,48 @@
+// =============================================================================
+// デバッグ用コードの定義場所、ここに書かれたコードは最終的に削除します
+// =============================================================================
+
+// https://github.com/hail2u/node-css-mqpacker#synopsis
+.e-debug-css-mqpacker {
+  &-foo { width: 240px; }
+  @media screen and (min-width: 768px) {
+    &-foo { width: 576px; }
+  }
+
+  &-bar { width: 160px; }
+  @media screen and (min-width: 768px) {
+    &-bar { width: 384px; }
+  }
+}
+
+// https://github.com/jonathantneal/postcss-gap-properties
+.e-debug-postcss-gap-properties {
+  &-standard-grid { gap: 20px; }
+  &-spaced-grid {
+    column-gap: 40px;
+    row-gap: 20px;
+  }
+}
+
+// https://github.com/luisrudge/postcss-flexbugs-fixes#bug-4
+.e-debug-postcss-flexbugs-fixes {
+  &-bug4 {
+    &-foo { flex: 1; }
+    &-bar { flex: 1 1; }
+    &-foz { flex: 1 1 0; }
+    &-baz { flex: 1 1 0px; }
+  }
+
+  &-bug6 {
+    flex: 1;
+  }
+
+  &-bug8a {
+    flex: 1 0 calc(1vw - 1px);
+  }
+}
+
+.e-debug-multilineEllipsis {
+  @include a-multilineEllipsis;
+  width: 200px;
+}

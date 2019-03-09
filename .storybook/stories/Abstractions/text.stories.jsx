@@ -60,4 +60,10 @@ storiesOf("Abstractions/text", module)
     </React.Fragment>
   ))
   .addDecorator(withScreenshot(desktopMin(1200)))
-  .add("font-weight", () => <Weight />);
+  .add("font-weight", () => <Weight />)
+  .addDecorator(withScreenshot(desktopMin()))
+  .add("multiline ellipsis", () => (
+    <React.Fragment>
+      <div className="e-debug-multilineEllipsis">{loremText}</div>
+    </React.Fragment>
+  ));
