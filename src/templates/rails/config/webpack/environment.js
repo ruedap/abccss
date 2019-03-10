@@ -15,7 +15,7 @@ environment.plugins.prepend(
     jQuery: "jquery",
     jquery: "jquery",
     Popper: ["popper.js", "default"],
-    Util: ["exports-loader?Util!bootstrap/js/dist/util"]
+    svg4everybody: 'svg4everybody/dist/svg4everybody',
   })
 );
 
