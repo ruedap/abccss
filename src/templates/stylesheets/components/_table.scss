@@ -89,14 +89,14 @@
 
   // Zebra-striping
   // Default zebra-stripe styles (alternating gray and transparent backgrounds)
-  @mixin _--striped {
-    tbody tr:nth-of-type(#{$_table-striped-order}) {
+  @mixin _--striped($order: $_table-striped-order) {
+    tbody tr:nth-of-type(#{$order}) {
       background-color: $_table-accent-bg;
     }
   }
 
-  @mixin _--stripeless {
-    tbody tr:nth-of-type(#{$_table-striped-order}) {
+  @mixin _--stripeless($order: $_table-striped-order) {
+    tbody tr:nth-of-type(#{$order}) {
       background-color: transparent;
     }
   }
