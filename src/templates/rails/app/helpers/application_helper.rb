@@ -65,6 +65,20 @@ module ApplicationHelper
     "#{asset_pack_path("images/sprite.svg")}#svg-#{filename}"
   end
 
+  def current_page_class(current_page_args, active_class_name='is-active')
+    current_page?(current_page_args) ? active_class_name : nil
+  end
+
+  def current_pages?(current_page_args_array)
+    current_page_args_array.any? do |arg|
+      current_page?(arg)
+    end
+  end
+
+  def current_pages_class(current_page_args_array, active_class_name='is-active')
+    current_pages?(current_page_args_array) ? active_class_name : nil
+  end
+
   def active_path_class(controller_path_array, active_class_name='is-active')
     is_active = controller_path_array.any? do |p|
       if p.is_a?(Regexp)
