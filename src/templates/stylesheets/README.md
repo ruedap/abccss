@@ -11,6 +11,7 @@
   - [概念図](#conceptual-diagram)
   - [構成例](#configuration-example)
 - [スコープ付き CSS](#scope-css)
+- [CSS Modules](#css-modules)
 - [アセット](#assets)
   - [画像・SVG](#img-svg)
   - [アイコン](#icons)
@@ -260,6 +261,27 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
      ├── hello.scss          - helloコンポーネントのためのCSS
      └── ...
 ```
+
+<a name="css-modules"></a>
+
+## CSS Modules
+
+Reactコンポーネント固有のスタイルは、[CSS Modules](https://github.com/css-modules/css-modules)で定義します。CSS Modulesでは、クラス名がJSのプロパティ名としても流用され使用可能文字に制約があるため、SUIT CSS (BEM)の概念をベースに以下の独自ルールで命名します。
+
+1. **Component** （BEMのBlock相当）は、どのコンポーネントも固定で`.root`と命名します。
+    * 例：`.root`
+2. **Descendent** （BEMのElement相当）は、頭文字**小文字**のキャメルケースでDescendent名を書きます。
+    * 例：`.descendentName`
+3. **Modifier** （BEMのModifier相当）は、ComponentのModifierとDescendentのModifierの2種類があります
+    * **ComponentのModifier**: `.root`に続けてアンダースコア**1個**と頭文字**小文字**のキャメルケースでModifier名を書きます。これをHTML上で使用する際は、**必ず元のComponentと連結**してクラス指定します
+        * 例：`.root_modifierName`
+    * **DescendentのModifier**: Descendent名に続けてアンダースコア**1個**と頭文字**小文字**のキャメルケースでModifier名を書きます。これをHTML上で使用する際は、**必ず元のDescendentと連結**してクラス指定します
+        * 例：`.descendentName_modifierName`
+
+* [CSS Modulesでの命名例](https://gist.github.com/ruedap/5266de65da92c7e620a7c8b1326bf923)
+
+コンポーネントの範囲を超えて別のコンポーネントやグローバルCSS側と共有したい変数やミックスインがある場合は、編集ページ(`application.scss`)側のabstractions内に定義して共有するようにしてください。
+
 
 <a name="assets"></a>
 
