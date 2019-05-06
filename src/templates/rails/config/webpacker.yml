@@ -1,0 +1,5 @@
+default: &default
+
+  # Extract and emit a css file
+  # https://github.com/rails/webpacker/blob/master/docs/v4-upgrade.md
+  extract_css: true
