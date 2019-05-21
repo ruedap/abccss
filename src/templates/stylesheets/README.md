@@ -410,6 +410,25 @@ React コンポーネント固有のスタイルは、[CSS Modules](http://postd
 <br />
 </details>
 
+<details>
+<summary><strong>styled-components / Emotion</strong></summary>
+<br />
+
+React コンポーネント固有のスタイルは、CSS-in-JS で定義します。CSS-in-JS 用のライブラリーは [styled-components](https://github.com/styled-components/styled-components) または [Emotion](https://github.com/emotion-js/emotion) を使用します。
+
+1.  **Component**（BEM の Block 相当）は、export される React コンポーネントに相当します。例えば `Table.jsx` というファイルで `Table` という React コンポーネントが export される場合、このコンポーネントに styled-components によって適用されるスタイル群が Component に相当します。
+    - 例：` const Table = styled.table``; export default Table; `
+2.  **Descendent**（BEM の Element 相当）は、上記 Component の React コンポーネントの jsx ファイルに含まれる export されていない React コンポーネントに相当します。
+    - 例：` const Td = styled.td``; `
+3.  **Modifier**（BEM の Modifier 相当）は、Component の Modifier と Descendent の Modifier の 2 種類がありますが、styled-components では実装方法は同じです。data 属性または props を使用して表現します。
+    - **data 属性を使った Modifier**: `data-m-` のプレフィックスに続けてケバブケースで Modifier を表した data 属性名を使用します。
+      - 例：`&[data-m-margin-bottom] { margin-bottom: 1rem; }`
+    - **props を使った Modifier**: キャメルケースで Modifier を表した props を使用します。
+      - 例：`` ${props => props.marginBottom && css`margin-bottom: 1rem;`} ``
+
+<br />
+</details>
+
 <a name="variables-naming"></a>
 
 ### 変数・関数・mixin の命名規則
@@ -498,7 +517,7 @@ JavaScript から扱うセレクターには、`js-` または `is-` プレフ�
 .c-FooList {
   &-item {
     background-color: #fff;
-    
+
     &.is-active {
       background-color: #f00;
     }
@@ -512,11 +531,11 @@ JavaScript から扱うセレクターには、`js-` または `is-` プレフ�
 
 ```javascript
 // JavaScript(ES6)例
-if ($('#js-foo-list').length > 0) {
-  $('.js-foo-list-item').on('click', (e) => {
-    $(e.currentTarget).addClass('is-active');
+if ($("#js-foo-list").length > 0) {
+  $(".js-foo-list-item").on("click", e => {
+    $(e.currentTarget).addClass("is-active");
   });
-} 
+}
 ```
 
 <a name="vendor-prefix"></a>
