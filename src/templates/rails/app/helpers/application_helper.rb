@@ -30,16 +30,19 @@ module ApplicationHelper
       reverse: true,
       canonical: request.original_url,
       og: {
+        type: 'website',
         site_name: :site,
         title: :title,
         description: :description,
-        type: 'website',
         url: request.original_url,
+        locale: 'ja_JP',
         # image: image_url('ogp/1200x630.png', host: "#{request.protocol}#{request.host_with_port}"), # Sprockets
         image: asset_pack_path('images/ogp/1200x630.png', host: "#{request.protocol}#{request.host_with_port}"), # Webpacker
       },
       twitter: {
         card: "summary_large_image",
+        title: :title,
+        description: :description,
       }
     }
   end
