@@ -49,9 +49,9 @@
     - Chrome 最新版
     - Android Browser は対象外
   - 画面解像度
-    - 最小横幅： 375px (iPhone 6 サイズ)
+    - 最小横幅： 360px (Androidの一般的サイズ) または 375px (iPhone 6 サイズ)
     - 最大横幅： 767.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.3/layout/grid/#grid-options) の Small の上限)
-    - 画像素材の高解像度(Retina)対応は @3x で必要
+    - 画像素材の高解像度(Retina)対応は @2x で必要
   - レスポンシブ対応
     - 各ブレイクポイントの値： [Bootstrap 4](http://getbootstrap.com/docs/4.3/layout/grid/#grid-options) のデフォルト値を使用
   - 対象外の環境で表示した場合
@@ -60,10 +60,10 @@
   - iOS
     - スマートフォン環境と同じ
   - Android
-    - スマートフォン環境と同じ
+    - 対象外
   - 画面解像度
     - 最小横幅： 768px ([Bootstrap 4](http://getbootstrap.com/docs/4.3/layout/grid/#grid-options) の Medium の下限)
-    - 最大横幅： 991.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.3/layout/grid/#grid-options) の Medium の上限)
+    - 最大横幅： 1199.98px ([Bootstrap 4](http://getbootstrap.com/docs/4.3/layout/grid/#grid-options) の Large の上限)
   - 対象外の環境で表示した場合
     - スマートフォン環境と同じ
 - デスクトップ環境
@@ -76,7 +76,7 @@
     - Firefox 最新版
     - Safari 最新版
   - 画面解像度
-    - 最小横幅： 992px ([Bootstrap 4](http://getbootstrap.com/docs/4.3/layout/grid/#grid-options) の Large の下限)
+    - 最小横幅： 1200px ([Bootstrap 4](http://getbootstrap.com/docs/4.3/layout/grid/#grid-options) の Extra large の下限)
     - 最大横幅： 指定なし
     - 画像素材の高解像度(Retina)対応は @2x で必要
   - 対象外の環境で表示した場合
@@ -91,7 +91,7 @@
 ## デザインデータおよび技術要件
 
 - デザインデータ
-  - データ形式： Photoshop, Illustrator, Sketch 等
+  - データ形式： Adobe XD, Figma, Sketch, Illustrator, Photoshop 等
   - Web フォントの有無： なし
   - Favicon 用のデータ(48px, 96px, 120px, 144px, 152px, 180px, 192px, 512px)
     - favicon.ico (48px) ※高解像度対応のため。原寸は 16px での表示
