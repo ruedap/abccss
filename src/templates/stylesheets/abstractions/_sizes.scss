@@ -18,6 +18,8 @@ $a-padding-md: $a-margin-md;
 $a-padding-lg: $a-margin-lg;
 $a-padding-xl: $a-margin-xl;
 
+$a-breakpoints: $grid-breakpoints;
+
 // Bootstrapの $grid-breakpoints をベースにiOS用のサイズを定義
 $a-grid-breakpoints--ios: (
   xs: 0,

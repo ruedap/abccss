@@ -69,6 +69,18 @@ $line-height-sm: $a-lineHeight-sm;
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
+@mixin a-mq-up($name, $a-breakpoints) {
+  @include media-breakpoint-up($name, $a-breakpoints) {
+    @content;
+  }
+}
+
+@mixin a-mq-down($name, $a-breakpoints) {
+  @include media-breakpoint-down($name, $a-breakpoints) {
+    @content;
+  }
+}
+
 @mixin a-bs4-button-variant-color-override($color) {
   color: $color;
 
