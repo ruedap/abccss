@@ -66,17 +66,19 @@ $line-height-base: $a-lineHeight-md;
 $line-height-lg: $a-lineHeight-lg;
 $line-height-sm: $a-lineHeight-sm;
 
+$grid-breakpoints: $a-breakpoints;
+
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
-@mixin a-mq-up($name, $a-breakpoints) {
-  @include media-breakpoint-up($name, $a-breakpoints) {
+@mixin a-mq-up($name, $breakpoints: $a-breakpoints) {
+  @include media-breakpoint-up($name, $breakpoints) {
     @content;
   }
 }
 
-@mixin a-mq-down($name, $a-breakpoints) {
-  @include media-breakpoint-down($name, $a-breakpoints) {
+@mixin a-mq-down($name, $breakpoints: $a-breakpoints) {
+  @include media-breakpoint-down($name, $breakpoints) {
     @content;
   }
 }
