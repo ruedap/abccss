@@ -141,6 +141,7 @@
 - Analytics 対応： 必要
   - Google Analytics, Mixpanel 等の HTML 貼り付け用 JS コード
     - production 環境とそれ以外で計測を分ける場合はそれぞれ必要
+- テーマ対応： 不要
 - 印刷対応： 不要
 - 使用するプリプロセッサー
   - HTML: Haml
