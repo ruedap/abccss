@@ -38,7 +38,7 @@
 
 ## 対象環境
 
-今回のプロジェクトで想定する主要な対象デバイスは **スマートフォン環境** です。  
+このプロジェクトで想定する主要な対象デバイスは **スマートフォン環境** です。  
 対象となるデバイス・OS・ブラウザーは以下になります。
 
 - スマートフォン環境
@@ -154,13 +154,13 @@
 
 ## フレームワーク
 
-今回のプロジェクトでは CSS フレームワークとして [Bootstrap 4.3](https://getbootstrap.com/docs/4.3/) を使用します。
+このプロジェクトでは CSS フレームワークとして [Bootstrap 4.3](https://getbootstrap.com/docs/4.3/) を使用します。
 
 <a name="entry-points"></a>
 
 ## エントリーポイント
 
-今回のプロジェクトでは Rails 5.1 以降に導入された Webpacker を使用するため、CSS のエントリーポイントは以下になります。
+このプロジェクトでは Rails 5.1 以降に導入された Webpacker を使用するため、CSS のエントリーポイントは以下になります。
 
 - `app/javascript/stylesheets/basics.scss`
 - `app/javascript/stylesheets/components.scss`
