@@ -122,7 +122,7 @@
   - 参考： [実装を引き受ける前に詰めておくべき Web フロントエンドの想定漏れチェックシート](https://qiita.com/y_hokkey/items/de88447bd31d9379b80a)
 - 多言語対応： 日本語のみ
 - テーマ対応： ダークテーマ対応は不要
-- ソーシャル対応： 必要
+- OGP対応： 必要
   - [Facebook Open Graph](https://developers.facebook.com/docs/sharing/best-practices?locale=ja_JP)
     - 必須： site_name, title, description, keywords, type の各データ
       - ページごとに個別に指定する場合は URL と上記項目の対応表が必要
