@@ -197,7 +197,7 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 
 たとえば、最初はページ単位(**D**)で実装していき、ページ間で共通するような部分をコンポーネント単位(**C**)に抽出し、コンポーネント間でも共通する部分をユーティリティクラスや要素への直接適用する基礎的なスタイル(**B**)として抽出します。また、それらの中で CSS 全体の範囲で共有したい変数・関数・mixin を抽象コード(**A**)として抽出します。
 
-**上位へ行くほど影響範囲が広がるので、とくに Abstractions や Basics へのコードの追加は慎重にお願いします。**
+**上位へ行くほど影響範囲が広がるので、とくに Abstractions や Basics のコードの編集は慎重にお願いします。**
 
 <a name="configuration-example"></a>
 
@@ -208,16 +208,22 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
 ※各ファイル名は参考例のため、**実際には異なる場合や存在しない場合**があります。
 
 ```
-└── stylesheets/
+└── styles/
      ├── abstractions/              - 全体で使用する変数・関数・mixin等の定義
-     │   ├── _colors.scss           - 全体で使用する色
-     │   ├── _sizes.scss            - 全体で使用するサイズ
-     │   ├── _bootstrap-custom.scss - CSSフレームワークの変数・mixinの読み込み・上書き
-     │   ├── _z-index.scss          - z-indexの値の管理
+     │   ├── _vars.scss             - SCSS全体で使用する変数（ただし基本カスタムプロパティ）
+     │   ├── _funcs.scss            - SCSS全体で使用する関数
+     │   ├── _mixins.scss           - SCSS全体で使用するmixin
+     │   ├── _mq.scss               - SCSS全体で使用するメディアクエリ
+     │   ├── _bootstrap_custom.scss - CSSフレームワークの変数・mixinの読み込み・上書き
+     │   ├── vars.scss              - CSS-in-JS全体で使用する変数（ただし基本カスタムプロパティ）
+     │   ├── funcs.ts               - CSS-in-JS全体で使用する関数
+     │   ├── mixins.ts              - CSS-in-JS全体で使用するmixin
+     │   ├── mq.ts                  - CSS-in-JS全体で使用するメディアクエリ
      │   └── ...
      ├── basics/                    - サイト全体で使用する基礎的なスタイル定義
+     │   ├── _custom_props.scss     - カスタムプロパティ
      │   ├── _elements.scss         - 要素に適用するスタイル
-     │   ├── _bootstrap-custom.scss - CSSフレームワークのコンポーネント読み込み・上書き
+     │   ├── _bootstrap_custom.scss - CSSフレームワークのコンポーネント読み込み・上書き
      │   ├── _utilities.scss        - ユーティリティクラス
      │   └── ...
      ├── components/                - コンポーネント単位のスタイル定義
@@ -226,18 +232,21 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
      │   ├── _page.scss             - Pageコンポーネント
      │   └── ...
      ├── decorations/               - ページ単位のスタイル定義
-     │   ├── _home-index.scss       - home#indexページ
-     │   ├── _home-show.scss        - home#showページ
-     │   ├── _users-index.scss      - users#indexページ
+     │   ├── _home_index.scss       - home#indexページ
+     │   ├── _home_show.scss        - home#showページ
+     │   ├── _users_index.scss      - users#indexページ
      │   └── ...
      ├── extras/                    - 上記に属さない臨時のスタイル定義（リファクタ対象）
      │   ├── _temp.scss             - 定義場所が不明な一時的な定義
      │   └── ...
      ├── _abstractions.scss         - Abstractionsのエントリーポイント
+     ├── normalize.scss             - normalize.cssのエントリーポイント
+     ├── custom_props.scss          - カスタムプロパティのエントリーポイント
      ├── basics.scss                - Basicsのエントリーポイント
      ├── components.scss            - Componentsのエントリーポイント
      ├── decorations.scss           - Decorationsのエントリーポイント
      ├── extras.scss                - Extrasのエントリーポイント
+     ├── index.ts                   - CSS-in-JS全体で使用するコードのエントリーポイント
      └── ...
 ```
 
