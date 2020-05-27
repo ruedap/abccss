@@ -215,7 +215,7 @@ Sprockets 経由の CSS (`app/assets/stylesheets/application.css`)は基本的�
      │   ├── _mixins.scss           - SCSS全体で使用するmixin
      │   ├── _mq.scss               - SCSS全体で使用するメディアクエリ
      │   ├── _bootstrap_custom.scss - CSSフレームワークの変数・mixinの読み込み・上書き
-     │   ├── vars.scss              - CSS-in-JS全体で使用する変数（ただし基本カスタムプロパティ）
+     │   ├── vars.ts                - CSS-in-JS全体で使用する変数（ただし基本カスタムプロパティ）
      │   ├── funcs.ts               - CSS-in-JS全体で使用する関数
      │   ├── mixins.ts              - CSS-in-JS全体で使用するmixin
      │   ├── mq.ts                  - CSS-in-JS全体で使用するメディアクエリ
