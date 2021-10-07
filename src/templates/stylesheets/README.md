@@ -120,7 +120,6 @@
   - ページネーション表示
   - Empty States 表示
   - 参考： [実装を引き受ける前に詰めておくべき Web フロントエンドの想定漏れチェックシート](https://qiita.com/y_hokkey/items/de88447bd31d9379b80a)
-- 多言語対応： 日本語のみ
 - OGP対応： 必要
   - [Facebook Open Graph](https://developers.facebook.com/docs/sharing/best-practices?locale=ja_JP)
     - 必須： site_name, title, description, keywords, type の各データ
@@ -141,6 +140,8 @@
 - Analytics 対応： 必要
   - Google Analytics, Mixpanel 等の HTML 貼り付け用 JS コード
     - production 環境とそれ以外で計測を分ける場合はそれぞれ必要
+- 多言語対応： 日本語のみ
+- アクセシビリティ対応: 不要
 - テーマ対応： 不要
 - 印刷対応： 不要
 - 使用するプリプロセッサー
