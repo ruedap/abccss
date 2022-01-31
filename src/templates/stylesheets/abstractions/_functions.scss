@@ -1,9 +1,11 @@
+@use "sass:math";
+
 // =============================================================================
 // functions
 // =============================================================================
 
 @function a-stripUnit($num) {
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, $num * 0 + 1);
 }
 
 @function a-rem2px($rem) {
@@ -14,7 +16,8 @@
 
 @function a-px2rem($px) {
   $_browser-context: 1.6;
-  $_rem: (a-stripUnit($px) / $_browser-context) / 10 * 1rem;
+  $_px: math.div(stripUnit($px), $_browser-context);
+  $_rem: math.div($_px, 10) * 1rem;
   @return $_rem;
 }
 
