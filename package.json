@@ -101,7 +101,7 @@
     "@ruedap/stylelint-config-abccss": "^0.5.0",
     "@storybook/addon-storysource": "^4.0.0-alpha.6",
     "@storybook/addon-viewport": "^4.0.0-alpha.6",
-    "@storybook/react": "4.0.0-alpha.6",
+    "@storybook/react": "4.1.18",
     "@storybook/storybook-deployer": "^2.3.0",
     "@types/chai": "^4.1.4",
     "@types/mocha": "^5.2.2",
