@@ -433,9 +433,9 @@ Sass の機能として利用できる変数・関数・mixin は、グローバ
 
 **A**bstractions 内で宣言するグローバルな変数・関数・mixin の命名規則は、[SUIT CSS の非コンポーネントの場合のカスタムプロパティの命名規則](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md#theme-variables) を参考に以下のシンタックスで命名し、ネームスペースには **A**bstractions を示す `a-` プレフィックスを付与します。
 
-シンタックス： `<namespace>-(cssProperty|name)[-BlockName][(--modifierName|-descendentName)]`
+シンタックス： `<namespace>[-BlockName][(--modifierName|-descendentName)]-(cssProperty|name)`
 
-命名例： `$a-lineHeight-md`, `$a-fontSize-h1`, `$a-minWidth-StickyFooter-footer`, `$a-minWidth-StickyFooter--darkTheme-footer`, `$a-minWidth-StickyFooter-footer--active`, `@function a-stripUnit`, `@mixin a-linkColors`
+命名例： `$a-lineHeight-md`, `$a-fontSize-h1`, `$a-StickyFooter-footer-minWidth`, `$a-StickyFooter--darkTheme-footer-minWidth`, `$a-StickyFooter-footer--active-minWidth`, `@function a-stripUnit`, `@mixin a-linkColors`
 
 <br />
 </details>
